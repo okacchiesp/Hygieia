@@ -1,0 +1,26 @@
+@use "global" as *;
+.pc-nav {
+  display: none;
+  height: inherit;
+  @include mq(md) {
+    display: block;
+  }
+}
+.pc-nav__items {
+  display: flex;
+  align-items: center;
+  height: inherit;
+  color: $white;
+  gap: rem(40);
+}
+.pc-nav__item {
+  font-family: $english-font-family;
+  font-size: rem(18);
+  text-align: center;
+  text-transform: capitalize;
+}
+.pc-nav__link span {
+  display: block;
+  font-size: rem(10);
+  line-height: 1.5;
+}
