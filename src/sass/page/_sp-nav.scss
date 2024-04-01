@@ -1,6 +1,6 @@
 @use "global" as *;
 .sp-nav {
-  display: flex;
+  display: none;
   gap: rem(8);
   width: 100%;
   height: 100vh;
@@ -13,8 +13,10 @@
   color: $white;
   padding-top: rem(104);
   padding-left: rem(15);
-  opacity: 0;
-  transition: all 0.5s;
+}
+
+.sp-nav__inner {
+  display: flex;
 }
 
 .sp-nav__item {

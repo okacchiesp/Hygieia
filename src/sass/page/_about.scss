@@ -1,0 +1,44 @@
+@use "global" as *;
+.about {
+  padding: rem(80) 0;
+}
+
+.about__image {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: rem(50);
+}
+
+.about__image img {
+  max-width: rem(281);
+  width: 100%;
+}
+
+.about__image::before {
+  content: url(../images/about_2.jpg);
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: rem(-26);
+}
+
+.about__title {
+  font-family: $english-font-family;
+  font-size: rem(40);
+  color: $greenaccent;
+  line-height: 1;
+  margin-top: rem(40);
+}
+
+.about__text {
+  font-size: rem(16);
+  line-height: 1.5;
+  margin-top: rem(16);
+}
+
+.about__btn {
+  margin-top: rem(40);
+  text-align: center;
+}

@@ -2,19 +2,29 @@
 .section-header {
   text-align: center;
 }
-.section-header_title {
+.section-header__title {
   font-family: $english-font-family;
   font-size: rem(32);
   line-height: 1.25;
   font-weight: $regular;
   text-transform: capitalize;
 }
-.section-header_title::first-letter {
+.section-header__title::first-letter {
   color: $greenaccent;
 }
-.section-header_subtitle {
+.section-header__subtitle {
   font-size: rem(12);
   color: $greenaccent;
   line-height: 1.5;
   margin-top: rem(4);
+}
+.section-header--white {
+  @include mq(md) {
+    color: $white;
+  }
+}
+.section-header--white::first-letter {
+  @include mq(md) {
+    color: #ddf0f1;
+  }
 }
