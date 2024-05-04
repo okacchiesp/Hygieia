@@ -13,6 +13,7 @@
   bottom: 0;
   z-index: 100;
   @include mq(md) {
+    height: rem(90);
     padding: 0 rem(40);
   }
 }
@@ -21,4 +22,8 @@
   height: rem(38);
   position: relative;
   z-index: 999;
+  @include mq(md) {
+    width: rem(133);
+    height: rem(50);
+  }
 }

@@ -2,6 +2,9 @@
 .information {
   background-color: $green2;
   padding: rem(80) 0;
+  @include mq(md) {
+    padding: rem(100) 0 rem(76);
+  }
 }
 
 .information__content {
@@ -23,6 +26,7 @@
 }
 
 .information__image {
+  position: relative;
   @include mq(md) {
     width: 50%;
   }
@@ -34,6 +38,11 @@
   line-height: 1.2;
   border-bottom: 1px solid $greenaccent;
   padding-bottom: rem(4);
+  @include mq(md) {
+    font-size: rem(24);
+    line-height: 1;
+    padding-bottom: rem(8);
+  }
 }
 
 .information__text {

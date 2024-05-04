@@ -116,3 +116,10 @@ a {
   color: inherit;
   transition: opacity 0.3s;
 }
+
+table,
+tbody,
+tr {
+  display: block;
+  width: 100%;
+}

@@ -1,9 +1,20 @@
 @use "global" as *;
 .blog {
-  padding: rem(80) 0;
+  padding-top: rem(80);
   @include mq(md) {
     background: url(../images/blog-bg.jpg) no-repeat;
     background-size: contain;
+    padding-top: rem(100);
+  }
+}
+
+.blog__inner {
+  padding: 0 rem(21);
+  margin: auto;
+  @include mq(md) {
+    max-width: 1130px;
+    padding-left: 25px;
+    padding-right: 25px;
   }
 }
 

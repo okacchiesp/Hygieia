@@ -7,7 +7,10 @@
   font-size: rem(32);
   line-height: 1.25;
   font-weight: $regular;
-  text-transform: capitalize;
+  @include mq(md) {
+    font-size: rem(40);
+    line-height: 1;
+  }
 }
 .section-header__title::first-letter {
   color: $greenaccent;
@@ -17,6 +20,15 @@
   color: $greenaccent;
   line-height: 1.5;
   margin-top: rem(4);
+  @include mq(md) {
+    margin-top: rem(8);
+  }
+}
+.section-header__contact-subtitle {
+  font-size: rem(12);
+  color: $greenaccent;
+  line-height: 1.5;
+  margin-top: rem(-6);
 }
 .section-header--white {
   @include mq(md) {
@@ -26,5 +38,11 @@
 .section-header--white::first-letter {
   @include mq(md) {
     color: #ddf0f1;
+  }
+}
+.section-header--big {
+  @include mq(md) {
+    font-size: rem(80);
+    line-height: 1;
   }
 }

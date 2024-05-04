@@ -5,9 +5,15 @@
   font-family: $english-font-family;
   font-size: rem(14);
   line-height: 1.5714;
-  padding: rem(16) rem(40);
+  width: rem(202);
+  height: rem(54);
+  padding: rem(16) 0;
   position: relative;
   display: inline-block;
+  transition: all 0.5s;
+  box-shadow: 3px 3px 0 0 $white, 3px 3px 0 1px $greenaccent;
+  border: 1px solid $greenaccent;
+  overflow: hidden;
 }
 
 .button span {
@@ -20,13 +26,12 @@
   transform: skew(45deg);
   margin-left: rem(8);
 }
+.button:hover {
+  background-color: $white;
+  color: $greenaccent;
+}
 
-.button::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  border: 1px solid $greenaccent;
-  right: rem(-4);
-  bottom: rem(-4);
+.button:hover span {
+  border-bottom: 1px solid $greenaccent;
+  border-right: 1px solid $greenaccent;
 }
