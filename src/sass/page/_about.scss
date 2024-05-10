@@ -1,6 +1,7 @@
 @use "global" as *;
 .about {
   padding-bottom: rem(73);
+  position: relative;
   @include mq(md) {
     padding-bottom: rem(164);
   }
@@ -10,9 +11,18 @@
   margin-top: rem(50);
   position: relative;
   @include mq(md) {
-    padding-left: rem(200);
     width: inherit;
     margin-top: rem(120);
+  }
+}
+
+.about__images {
+  max-width: rem(375);
+  width: 100%;
+  margin: auto;
+  position: relative;
+  @include mq(md) {
+    max-width: rem(1080);
   }
 }
 
@@ -94,5 +104,18 @@
   text-align: center;
   @include mq(md) {
     margin-top: rem(40);
+  }
+}
+
+.about__icon {
+  display: none;
+  @include mq(md) {
+    width: rem(194);
+    height: rem(181);
+    position: absolute;
+    right: rem(83);
+    bottom: rem(74);
+    z-index: 10;
+    display: inline-block;
   }
 }

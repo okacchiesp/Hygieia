@@ -1,9 +1,9 @@
 @use "global" as *;
 .price {
-  padding: rem(80) 0 rem(100);
+  padding: rem(80) 0;
   background-color: $green2;
   @include mq(md) {
-    background: $green2 url(../images/fish-green.png) no-repeat;
+    background: $green2 url(../images/top/fish-green.png) no-repeat;
     background-position: left rem(100) bottom rem(60);
     background-size: rem(437) rem(201);
     padding: rem(100) 0;

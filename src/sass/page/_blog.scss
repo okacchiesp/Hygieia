@@ -1,10 +1,25 @@
 @use "global" as *;
 .blog {
   padding-top: rem(80);
+  position: relative;
   @include mq(md) {
-    background: url(../images/blog-bg.jpg) no-repeat;
-    background-size: contain;
     padding-top: rem(100);
+  }
+}
+
+.blog::before {
+  @include mq(md) {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: rem(500);
+    background: url(../images/top/blog-bg.jpg) no-repeat;
+    background-size: 100%;
   }
 }
 

@@ -1,12 +1,14 @@
 @use "global" as *;
 .contact {
   padding: rem(80) 0 rem(100);
+  background-image: url(../images/top/fish-green.png);
+  background-repeat: no-repeat;
+  background-size: rem(109) rem(50);
+  background-position: right rem(15) top rem(54);
   @include mq(md) {
     padding: rem(140) 0 rem(160);
-    background-image: url(../images/fish-green.png);
-    background-repeat: no-repeat;
     background-size: rem(301) rem(138);
-    background-position: right rem(100) top rem(50);
+    background-position: right rem(50) top rem(100);
   }
 }
 
@@ -47,6 +49,9 @@
 .contact__logo {
   border-bottom: 1px solid $greenaccent;
   padding-bottom: rem(2);
+  @include mq(md) {
+    padding-bottom: rem(8);
+  }
 }
 
 .contact__logo img {

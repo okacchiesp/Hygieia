@@ -3,8 +3,8 @@
   padding: rem(80) 0;
   @include mq(md) {
     padding: rem(140) 0;
-    background-image: url(../images/voice-bg_1.png),
-      url(../images/voice-bg_2.png);
+    background-image: url(../images/top/voice-bg_1.png),
+      url(../images/top/voice-bg_2.png);
     background-repeat: no-repeat, no-repeat;
     background-position: left rem(100) top rem(20),
       right rem(180) bottom rem(73);

@@ -1,7 +1,6 @@
 @use "global" as *;
 .sp-nav {
   display: none;
-  gap: rem(8);
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -17,12 +16,13 @@
 
 .sp-nav__inner {
   display: flex;
+  gap: rem(7);
 }
 
 .sp-nav__item {
   font-weight: $bold;
   line-height: 1.125;
-  background-image: url(../images/seastar.png);
+  background-image: url(../images/top/seastar.png);
   background-position: top left;
   background-repeat: no-repeat;
   background-size: rem(18);

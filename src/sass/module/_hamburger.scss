@@ -1,6 +1,6 @@
 @use "global" as *;
 .hamburger {
-  width: rem(32);
+  width: rem(40);
   height: rem(24);
   position: relative;
   z-index: 999;
@@ -11,11 +11,11 @@
 
 .hamburger span {
   position: absolute;
-  width: inherit;
+  width: 80%;
   height: rem(1);
   background-color: #fff;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
+  right: 0;
 }
 
 .hamburger span:nth-child(1) {
@@ -31,8 +31,10 @@
   top: 100%;
 }
 .hamburger.is-active span:nth-child(1) {
-  top: 60%;
-  transform: rotate(45deg);
+  top: 50%;
+  transform: rotate(36.87deg);
+  width: 100%;
+  right: rem(-5);
 }
 
 .hamburger.is-active span:nth-child(2) {
@@ -41,6 +43,8 @@
 }
 
 .hamburger.is-active span:nth-child(3) {
-  top: 60%;
-  transform: rotate(-45deg);
+  top: 50%;
+  transform: rotate(-36.87deg);
+  width: 100%;
+  right: rem(-5);
 }
