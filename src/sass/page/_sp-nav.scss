@@ -12,11 +12,13 @@
   color: $white;
   padding-top: rem(104);
   padding-left: rem(15);
+  overflow: scroll;
 }
 
 .sp-nav__inner {
   display: flex;
   gap: rem(7);
+  justify-content: space-evenly;
 }
 
 .sp-nav__item {

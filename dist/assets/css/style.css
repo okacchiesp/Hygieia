@@ -1,6 +1,6 @@
 body {
 	color: #0d2936;
-	font-family: "Noto Sans JP";
+	font-family: "Noto Sans JP", sans-serif;
 }
 
 .u-desktop {
@@ -165,7 +165,7 @@ tr {
 
 .about__images {
 	margin: auto;
-	max-width: 23.4375rem;
+	max-width: 37.5rem;
 	position: relative;
 	width: 100%;
 }
@@ -173,17 +173,15 @@ tr {
 .about__image:nth-of-type(1) {
 	aspect-ratio: 128/194;
 	left: 0;
-	max-width: 8rem;
+	max-width: 37.1014%;
 	position: absolute;
 	top: -1.625rem;
-	width: 100%;
 }
 
 .about__image:nth-of-type(2) {
 	aspect-ratio: 281/186;
 	margin-left: auto;
-	max-width: 17.5625rem;
-	width: 100%;
+	max-width: 81.44%;
 }
 
 .about__image img {
@@ -191,9 +189,15 @@ tr {
 	width: 100%;
 }
 
+.about__content {
+	margin: auto;
+	max-width: 37.5rem;
+	width: 100%;
+}
+
 .about__title {
 	color: #408f95;
-	font-family: "Gotu";
+	font-family: "Gotu", sans-serif;
 	font-size: 2.5rem;
 	line-height: 1;
 	margin-top: 2.5rem;
@@ -225,10 +229,14 @@ tr {
 }
 
 .blog__items {
-	display: flex;
-	flex-direction: column;
 	gap: 2.5rem;
-	margin-top: 1.5rem;
+	margin: 1.5rem auto 0;
+	max-width: 37.5rem;
+	width: 100%;
+}
+
+.blog__item {
+	max-width: 20.833125rem;
 }
 
 .blog__btn {
@@ -240,14 +248,14 @@ tr {
 	padding: 2.5rem 0 5rem;
 }
 
-.campaign__slide {
-	overflow: visible;
-	position: relative;
-}
-
 .campaign__items {
 	margin-top: 1.5rem;
 	overflow: hidden;
+}
+
+.campaign__slide {
+	overflow: visible;
+	position: relative;
 }
 
 .campaign__btn {
@@ -262,6 +270,7 @@ tr {
 
 .campaign__item {
 	box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.25);
+	height: 100%;
 }
 
 .campaign__image {
@@ -343,6 +352,9 @@ tr {
 .contact__box {
 	display: flex;
 	flex-direction: column;
+	margin: auto;
+	max-width: 37.5rem;
+	width: 100%;
 }
 
 .contact__detail {
@@ -437,13 +449,17 @@ tr {
 	width: 1.5rem;
 }
 
+.footer__snslink:hover {
+	opacity: 0.8;
+}
+
 .footer-nav__lists {
 	grid-gap: 2.5rem 1rem;
 	display: grid;
 	gap: 2.5rem 1rem;
 	grid-auto-flow: column;
 	grid-template-rows: repeat(2, auto);
-	margin-top: 2.5rem;
+	margin: 2.5rem auto 0;
 	width: -moz-fit-content;
 	width: fit-content;
 }
@@ -456,6 +472,11 @@ tr {
 	font-weight: 700;
 	line-height: 1.125;
 	padding-left: 1.375rem;
+	transition: all 0.5s;
+}
+
+.footer-nav__item > a:hover {
+	opacity: 0.8;
 }
 
 .footer-nav__item + .footer-nav__item {
@@ -466,12 +487,17 @@ tr {
 	font-weight: 400;
 	line-height: 1.125;
 	margin-top: 1.5rem;
+	transition: all 0.5s;
 	width: -moz-fit-content;
 	width: fit-content;
 }
 
+.footer-nav__subitem > a:hover {
+	opacity: 0.8;
+}
+
 .footer__copyright {
-	font-family: "Gotu";
+	font-family: "Gotu", sans-serif;
 	font-size: 0.75rem;
 	line-height: 1.5;
 	margin-top: 2.5rem;
@@ -506,7 +532,10 @@ tr {
 }
 
 .information__content {
+	margin: auto;
 	margin-top: 1.5rem;
+	max-width: 37.5rem;
+	width: 100%;
 }
 
 .information__body {
@@ -514,7 +543,16 @@ tr {
 }
 
 .information__image {
+	aspect-ratio: 540/356;
+	overflow: hidden;
 	position: relative;
+}
+
+.information__image img {
+	-o-object-fit: cover;
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
 }
 
 .information__title {
@@ -564,6 +602,7 @@ tr {
 }
 
 .loading__image {
+	aspect-ratio: 1440/1536;
 	height: 100%;
 	position: relative;
 	width: 50%;
@@ -574,7 +613,9 @@ tr {
 }
 
 .loading__image img {
+	-o-object-fit: cover;
 	height: 100%;
+	object-fit: cover;
 	position: absolute;
 	top: 100vh;
 	width: 100%;
@@ -624,13 +665,17 @@ tr {
 }
 
 .pc-nav__item {
-	font-family: "Gotu";
+	font-family: "Gotu", sans-serif;
 	font-size: 1.125rem;
+	height: inherit;
 	text-align: center;
 }
 
 .pc-nav__link {
-	display: inline-block;
+	display: flex;
+	flex-direction: column;
+	height: inherit;
+	justify-content: center;
 	position: relative;
 }
 
@@ -664,6 +709,12 @@ tr {
 
 .price__inner {
 	position: relative;
+}
+
+.price__contents {
+	margin: auto;
+	max-width: 37.5rem;
+	width: 100%;
 }
 
 .price__image {
@@ -714,6 +765,10 @@ tr {
 	padding: 0;
 }
 
+.price__list td:first-child {
+	padding-right: 1rem;
+}
+
 .price__btn {
 	margin-top: 2.5rem;
 	text-align: center;
@@ -735,6 +790,7 @@ tr {
 	display: none;
 	height: 100vh;
 	left: 0;
+	overflow: scroll;
 	padding-left: 0.9375rem;
 	padding-top: 6.5rem;
 	position: fixed;
@@ -747,6 +803,7 @@ tr {
 .sp-nav__inner {
 	display: flex;
 	gap: 0.4375rem;
+	justify-content: space-evenly;
 }
 
 .sp-nav__item {
@@ -767,6 +824,10 @@ tr {
 	font-weight: 400;
 	line-height: 1.125;
 	margin-top: 1.5rem;
+}
+
+.swiper-slide {
+	height: auto;
 }
 
 .swiper__controller {
@@ -810,7 +871,9 @@ tr {
 	display: flex;
 	flex-direction: column;
 	gap: 2.5rem;
-	margin-top: 2.5rem;
+	margin: 2.5rem auto 0;
+	max-width: 37.5rem;
+	width: 100%;
 }
 
 .voice__item {
@@ -862,17 +925,32 @@ tr {
 .button {
 	background-color: #408f95;
 	border: 1px solid #408f95;
-	box-shadow: 3px 3px 0 0 #fff, 3px 3px 0 1px #408f95;
 	color: #fff;
 	display: inline-block;
-	font-family: "Gotu";
+	font-family: "Gotu", sans-serif;
 	font-size: 0.875rem;
 	height: 3.375rem;
 	line-height: 1.5714;
-	overflow: hidden;
+	overflow: visible;
 	padding: 1rem 0;
+	position: relative;
 	transition: all 0.5s;
 	width: 12.625rem;
+	z-index: 1;
+}
+
+.button::before {
+	border: solid 1px #408f95; /* 外枠のスタイル */
+	bottom: 4px;
+	content: "";
+	display: block;
+	height: 100%;
+	left: 4px;
+	position: absolute;
+	right: 4px;
+	top: 4px;
+	width: 100%;
+	z-index: -1;
 }
 
 .button span {
@@ -888,9 +966,26 @@ tr {
 	width: 2.5rem;
 }
 
-.button:hover {
+.button::after {
 	background-color: #fff;
+	content: "";
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	transform: scale(0, 1);
+	transform-origin: left top;
+	transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+	width: 100%;
+	z-index: -1;
+}
+
+.button:hover {
 	color: #408f95;
+}
+
+.button:hover::after {
+	transform: scale(1, 1);
 }
 
 .button:hover span {
@@ -902,15 +997,28 @@ tr {
 	background-color: #fff;
 	box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
 	padding: 1rem 1rem 1.5rem;
+	transition: all 0.5s;
 }
 
 .card__body {
 	margin-top: 1.5rem;
 }
 
+.card__image {
+	aspect-ratio: 301/201;
+	overflow: hidden;
+}
+
+.card__image img {
+	-o-object-fit: cover;
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
+}
+
 .card__date {
 	display: block;
-	font-family: "Gotu";
+	font-family: "Gotu", sans-serif;
 	font-size: 0.75rem;
 	line-height: 1.5;
 }
@@ -926,6 +1034,15 @@ tr {
 .card__text {
 	line-height: 1.5;
 	margin-top: 1rem;
+}
+
+.card:hover {
+	opacity: 0.9;
+}
+
+.cards {
+	display: flex;
+	flex-direction: column;
 }
 
 .category-tag {
@@ -1001,7 +1118,7 @@ tr {
 }
 
 .section-header__title {
-	font-family: "Gotu";
+	font-family: "Gotu", sans-serif;
 	font-size: 2rem;
 	font-weight: 400;
 	line-height: 1.25;
@@ -1048,7 +1165,7 @@ tr {
 }
 
 .title__sub {
-	font-family: "Gotu";
+	font-family: "Gotu", sans-serif;
 	font-size: 1.25rem;
 }
 
@@ -1136,6 +1253,7 @@ html {
 	gap: 2.5rem;
 	justify-content: space-between;
 	left: 0;
+	max-width: none;
 	padding-left: 12.5rem;
 	padding-right: 2.5rem;
 	position: absolute;
@@ -1173,6 +1291,9 @@ html {
 }
 
 .blog {
+	background: url(../images/top/blog-fish.png) no-repeat;
+	background-position: left 6.25rem top 1.5rem;
+	background-size: 27.3125rem 12.5625rem;
 	padding-top: 6.25rem;
 }
 
@@ -1197,8 +1318,8 @@ html {
 }
 
 .blog__items {
-	flex-direction: row;
 	margin-top: 5rem;
+	max-width: none;
 }
 
 .blog__btn {
@@ -1257,6 +1378,7 @@ html {
 	box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
 	flex-direction: row;
 	height: inherit;
+	max-width: none;
 	padding: 5rem 0;
 }
 
@@ -1266,7 +1388,7 @@ html {
 	margin-right: 5.125rem;
 	max-width: 27.5rem;
 	padding: 0;
-	width: 100%;
+	width: 52.96%;
 }
 
 .contact__logo {
@@ -1300,7 +1422,9 @@ html {
 	height: 100%;
 	justify-content: center;
 	margin-top: 0;
+	max-width: 24.75rem;
 	padding-left: 5.0625rem;
+	width: 47.04%;
 }
 
 .contact__map {
@@ -1361,6 +1485,7 @@ html {
 	align-items: center;
 	display: flex;
 	margin-top: 2.5rem;
+	max-width: none;
 }
 
 .information__body {
@@ -1384,6 +1509,7 @@ html {
 	display: block;
 	height: 100vh;
 	left: 0;
+	overflow: hidden;
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -1406,6 +1532,7 @@ html {
 	display: flex;
 	gap: 6rem;
 	margin-top: 2.5rem;
+	max-width: none;
 }
 
 .price__image {
@@ -1434,6 +1561,7 @@ html {
 	align-items: center;
 	border: 1px solid #408f95;
 	border-radius: 5rem;
+	cursor: pointer;
 	display: flex;
 	height: 5rem;
 	justify-content: center;
@@ -1450,10 +1578,13 @@ html {
 
 .voice__items {
 	flex-direction: row;
+	flex-wrap: wrap;
 	margin-top: 1.875rem;
+	max-width: none;
 }
 
 .voice__item {
+	max-width: 32.5rem;
 	padding: 1.5rem;
 }
 
@@ -1475,6 +1606,11 @@ html {
 
 .voice__text {
 	margin-top: 2.5rem;
+}
+
+.cards {
+	flex-direction: row;
+	flex-wrap: wrap;
 }
 
 .category-tag {

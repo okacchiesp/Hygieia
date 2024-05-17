@@ -11,6 +11,16 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     }
   });
 
+  $(document).ready(function () {
+    // ウィンドウのリサイズ時にメニューを閉じる
+    $(window).on('resize', function () {
+      if ($(window).width() >= 768) {
+        $(".js-hamburger").removeClass("is-active");
+        $('.js-sp-nav').css('display', 'none');
+      }
+    });
+  });
+
   // Swiper
   var swiper = new Swiper('.js-campaign-swiper', {
     slidesPerView: 'auto',

@@ -41,12 +41,15 @@
     width: rem(32);
   }
 }
+.footer__snslink:hover {
+  opacity: 0.8;
+}
 .footer-nav__lists {
   display: grid;
   grid-template-rows: repeat(2, auto);
   grid-auto-flow: column;
   gap: rem(40) rem(16);
-  margin-top: rem(40);
+  margin: rem(40) auto 0;
   width: fit-content;
   @include mq(md) {
     grid-template-rows: repeat(1, auto);
@@ -62,6 +65,10 @@
   background-repeat: no-repeat;
   background-size: rem(18);
   padding-left: rem(22);
+  transition: all 0.5s;
+}
+.footer-nav__item > a:hover {
+  opacity: 0.8;
 }
 .footer-nav__item + .footer-nav__item {
   margin-top: rem(40);
@@ -71,6 +78,10 @@
   line-height: 1.125;
   margin-top: rem(24);
   width: fit-content;
+  transition: all 0.5s;
+}
+.footer-nav__subitem > a:hover {
+  opacity: 0.8;
 }
 .footer__copyright {
   font-family: $english-font-family;

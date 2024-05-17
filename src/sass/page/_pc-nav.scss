@@ -17,10 +17,14 @@
   font-family: $english-font-family;
   font-size: rem(18);
   text-align: center;
+  height: inherit;
 }
 .pc-nav__link {
   position: relative;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  height: inherit;
+  flex-direction: column;
 }
 .pc-nav__link::after {
   content: "";

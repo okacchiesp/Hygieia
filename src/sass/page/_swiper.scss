@@ -1,5 +1,7 @@
 @use "global" as *;
-
+.swiper-slide {
+  height: auto;
+}
 .swiper__controller {
   display: flex;
   align-items: center;
@@ -18,6 +20,7 @@
     height: rem(80);
     border-radius: rem(80);
     border: 1px solid $greenaccent;
+    cursor: pointer;
   }
 }
 .swiper__prev::before {
