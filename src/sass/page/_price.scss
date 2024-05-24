@@ -2,12 +2,7 @@
 .price {
   padding: rem(80) 0;
   background-color: $green2;
-  @include mq(md) {
-    background: $green2 url(../images/top/fish-green.png) no-repeat;
-    background-position: left rem(100) bottom rem(60);
-    background-size: rem(437) rem(201);
-    padding: rem(100) 0;
-  }
+  position: relative;
 }
 
 .price__inner {
@@ -95,5 +90,18 @@
   margin-top: rem(40);
   @include mq(md) {
     margin-top: rem(80);
+  }
+}
+
+.price__icon {
+  display: none;
+  @include mq(md) {
+    width: rem(437);
+    height: rem(201);
+    position: absolute;
+    left: calc(50% - min(50vw, rem(640)));
+    bottom: rem(60);
+    z-index: 10;
+    display: inline-block;
   }
 }

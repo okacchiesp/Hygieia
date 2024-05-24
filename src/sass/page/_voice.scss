@@ -1,14 +1,9 @@
 @use "global" as *;
 .voice {
   padding: rem(80) 0;
+  position: relative;
   @include mq(md) {
     padding: rem(140) 0;
-    background-image: url(../images/top/voice-bg_1.png),
-      url(../images/top/voice-bg_2.png);
-    background-repeat: no-repeat, no-repeat;
-    background-position: left rem(100) top rem(20),
-      right rem(180) bottom rem(73);
-    background-size: rem(301) rem(138), rem(71) rem(162);
   }
 }
 
@@ -30,4 +25,26 @@
   @include mq(md) {
     max-width: rem(520);
   }
+}
+
+.voice__icon {
+  display: none;
+  @include mq(md) {
+    width: rem(301);
+    height: rem(138);
+    position: absolute;
+    left: calc(50% - min(50vw, rem(615)));
+    top: rem(20);
+    z-index: 10;
+    display: inline-block;
+  }
+}
+
+.voice__icon:last-child {
+  width: rem(71);
+  height: rem(162);
+  right: calc(50% - min(50vw, rem(540)));
+  bottom: rem(73);
+  top: auto;
+  left: auto;
 }

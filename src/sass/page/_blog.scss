@@ -4,9 +4,19 @@
   position: relative;
   @include mq(md) {
     padding-top: rem(100);
-    background: url(../images/top/blog-fish.png) no-repeat;
-    background-size: rem(437) rem(201);
-    background-position: left rem(100) top rem(24);
+  }
+}
+
+.blog__icon {
+  display: none;
+  @include mq(md) {
+    width: rem(437);
+    height: rem(201);
+    position: absolute;
+    left: calc(50% - min(50vw, rem(640)));
+    top: rem(24);
+    z-index: 10;
+    display: inline-block;
   }
 }
 

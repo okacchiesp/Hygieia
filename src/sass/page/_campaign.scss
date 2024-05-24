@@ -1,14 +1,14 @@
 @use "global" as *;
 .campaign {
   padding: rem(40) 0 rem(80);
+  overflow: hidden;
   @include mq(md) {
-    overflow: hidden;
     padding: rem(120) 0 rem(140);
   }
 }
 .campaign__items {
   margin-top: rem(24);
-  overflow: hidden;
+  overflow: visible;
   @include mq(md) {
     overflow: visible;
     margin-top: rem(40);
@@ -16,18 +16,17 @@
 }
 .campaign__slide {
   overflow: visible;
-  position: relative;
 }
 .campaign__btn {
   text-align: center;
+  margin-top: rem(40);
   @include mq(md) {
-    margin-top: rem(40);
+    margin-top: rem(80);
   }
 }
 .campaign__link {
   max-width: rem(280);
   width: 100%;
-  padding-bottom: rem(40);
   @include mq(md) {
     max-width: rem(333);
   }
@@ -35,11 +34,19 @@
 .campaign__item {
   box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.25);
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 0;
 }
 .campaign__image {
-  aspect-ratio: 333 / 223;
+  aspect-ratio: 280 / 188;
   max-width: rem(333);
   width: 100%;
+  @include mq(md) {
+    aspect-ratio: 333 / 223;
+  }
 }
 .campaign__image img {
   width: 100%;
@@ -48,6 +55,10 @@
 }
 .campaign__meta {
   padding: rem(16) rem(16) rem(24);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
   @include mq(md) {
     padding: rem(24) rem(16) rem(40);
   }

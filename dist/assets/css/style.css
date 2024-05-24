@@ -223,6 +223,10 @@ tr {
 	position: relative;
 }
 
+.blog__icon {
+	display: none;
+}
+
 .blog__inner {
 	margin: auto;
 	padding: 0 1.3125rem;
@@ -241,36 +245,41 @@ tr {
 }
 
 .campaign {
+	overflow: hidden;
 	padding: 2.5rem 0 5rem;
 }
 
 .campaign__items {
 	margin-top: 1.5rem;
-	overflow: hidden;
+	overflow: visible;
 }
 
 .campaign__slide {
 	overflow: visible;
-	position: relative;
 }
 
 .campaign__btn {
+	margin-top: 2.5rem;
 	text-align: center;
 }
 
 .campaign__link {
 	max-width: 17.5rem;
-	padding-bottom: 2.5rem;
 	width: 100%;
 }
 
 .campaign__item {
 	box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.25);
+	display: flex;
+	flex-direction: column;
 	height: 100%;
+	justify-content: space-between;
+	position: relative;
+	z-index: 0;
 }
 
 .campaign__image {
-	aspect-ratio: 333/223;
+	aspect-ratio: 280/188;
 	max-width: 20.8125rem;
 	width: 100%;
 }
@@ -283,6 +292,10 @@ tr {
 }
 
 .campaign__meta {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: space-between;
 	padding: 1rem 1rem 1.5rem;
 }
 
@@ -334,15 +347,16 @@ tr {
 }
 
 .contact {
-	background-image: url(../images/top/fish-green.png);
-	background-position: right 0.9375rem top 3.375rem;
-	background-repeat: no-repeat;
-	background-size: 6.8125rem 3.125rem;
 	padding: 5rem 0 6.25rem;
+	position: relative;
 }
 
 .contact__header-subtitle {
 	margin-top: -0.375rem;
+}
+
+.contact__inner {
+	position: relative;
 }
 
 .contact__box {
@@ -415,6 +429,16 @@ tr {
 	display: block;
 	height: 100%;
 	width: 100%;
+}
+
+.contact__icon {
+	display: inline-block;
+	height: 3.125rem;
+	position: absolute;
+	right: calc(50% - min(50vw, 20.3125rem) + 0.9375rem);
+	top: -1.625rem;
+	width: 6.8125rem;
+	z-index: 10;
 }
 
 .footer {
@@ -701,6 +725,7 @@ tr {
 .price {
 	background-color: #ddf0f1;
 	padding: 5rem 0;
+	position: relative;
 }
 
 .price__inner {
@@ -770,6 +795,10 @@ tr {
 	text-align: center;
 }
 
+.price__icon {
+	display: none;
+}
+
 .slidein {
 	background-color: #408f95;
 	height: 100%;
@@ -827,12 +856,7 @@ tr {
 }
 
 .swiper__controller {
-	align-items: center;
-	display: flex;
-	gap: 5rem;
-	position: absolute;
-	right: 0;
-	top: -6.5625rem;
+	display: none;
 }
 
 .swiper__prev::before {
@@ -857,6 +881,7 @@ tr {
 
 .voice {
 	padding: 5rem 0;
+	position: relative;
 }
 
 .voice__inner {
@@ -868,6 +893,19 @@ tr {
 	margin: 2.5rem auto 0;
 	max-width: 37.5rem;
 	width: 100%;
+}
+
+.voice__icon {
+	display: none;
+}
+
+.voice__icon:last-child {
+	bottom: 4.5625rem;
+	height: 10.125rem;
+	left: auto;
+	right: calc(50% - min(50vw, 33.75rem));
+	top: auto;
+	width: 4.4375rem;
 }
 
 .blog-card {
@@ -1280,16 +1318,23 @@ html {
 	display: inline-block;
 	height: 11.3125rem;
 	position: absolute;
-	right: 5.1875rem;
+	right: calc(50% - min(50vw, 39.75rem));
 	width: 12.125rem;
 	z-index: 10;
 }
 
 .blog {
-	background: url(../images/top/blog-fish.png) no-repeat;
-	background-position: left 6.25rem top 1.5rem;
-	background-size: 27.3125rem 12.5625rem;
 	padding-top: 6.25rem;
+}
+
+.blog__icon {
+	display: inline-block;
+	height: 12.5625rem;
+	left: calc(50% - min(50vw, 40rem));
+	position: absolute;
+	top: 1.5rem;
+	width: 27.3125rem;
+	z-index: 10;
 }
 
 .blog::before {
@@ -1322,7 +1367,6 @@ html {
 }
 
 .campaign {
-	overflow: hidden;
 	padding: 7.5rem 0 8.75rem;
 }
 
@@ -1332,11 +1376,15 @@ html {
 }
 
 .campaign__btn {
-	margin-top: 2.5rem;
+	margin-top: 5rem;
 }
 
 .campaign__link {
 	max-width: 20.8125rem;
+}
+
+.campaign__image {
+	aspect-ratio: 333/223;
 }
 
 .campaign__meta {
@@ -1359,8 +1407,6 @@ html {
 }
 
 .contact {
-	background-position: right 3.125rem top 6.25rem;
-	background-size: 18.8125rem 8.625rem;
 	padding: 8.75rem 0 10rem;
 }
 
@@ -1427,6 +1473,13 @@ html {
 	margin-top: 0;
 	max-width: 17.0625rem;
 	width: 100%;
+}
+
+.contact__icon {
+	height: 8.625rem;
+	right: calc(50% - min(50vw, 41.875rem));
+	top: 6.25rem;
+	width: 18.8125rem;
 }
 
 .footer {
@@ -1515,13 +1568,6 @@ html {
 	display: block;
 }
 
-.price {
-	background: #ddf0f1 url(../images/top/fish-green.png) no-repeat;
-	background-position: left 6.25rem bottom 3.75rem;
-	background-size: 27.3125rem 12.5625rem;
-	padding: 6.25rem 0;
-}
-
 .price__contents {
 	align-items: flex-start;
 	display: flex;
@@ -1551,6 +1597,25 @@ html {
 	margin-top: 5rem;
 }
 
+.price__icon {
+	bottom: 3.75rem;
+	display: inline-block;
+	height: 12.5625rem;
+	left: calc(50% - min(50vw, 40rem));
+	position: absolute;
+	width: 27.3125rem;
+	z-index: 10;
+}
+
+.swiper__controller {
+	align-items: center;
+	display: flex;
+	gap: 5rem;
+	position: absolute;
+	right: 0;
+	top: -6.5625rem;
+}
+
 .swiper__prev,
 .swiper__next {
 	align-items: center;
@@ -1564,10 +1629,6 @@ html {
 }
 
 .voice {
-	background-image: url(../images/top/voice-bg_1.png), url(../images/top/voice-bg_2.png);
-	background-position: left 6.25rem top 1.25rem, right 11.25rem bottom 4.5625rem;
-	background-repeat: no-repeat, no-repeat;
-	background-size: 18.8125rem 8.625rem, 4.4375rem 10.125rem;
 	padding: 8.75rem 0;
 }
 
@@ -1578,6 +1639,16 @@ html {
 
 .voice__item {
 	max-width: 32.5rem;
+}
+
+.voice__icon {
+	display: inline-block;
+	height: 8.625rem;
+	left: calc(50% - min(50vw, 38.4375rem));
+	position: absolute;
+	top: 1.25rem;
+	width: 18.8125rem;
+	z-index: 10;
 }
 
 .cards {
