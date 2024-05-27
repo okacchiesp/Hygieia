@@ -1,9 +1,5 @@
 @use "global" as *;
 .cards {
-  display: flex;
-  flex-direction: column;
-  @include mq(md) {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
 }

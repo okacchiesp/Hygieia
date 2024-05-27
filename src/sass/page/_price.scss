@@ -3,6 +3,9 @@
   padding: rem(80) 0;
   background-color: $green2;
   position: relative;
+  @include mq(md) {
+    padding: rem(100) 0;
+  }
 }
 
 .price__inner {

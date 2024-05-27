@@ -1,10 +1,6 @@
 @use "global" as *;
 .campaign {
-  padding: rem(40) 0 rem(80);
   overflow: hidden;
-  @include mq(md) {
-    padding: rem(120) 0 rem(140);
-  }
 }
 .campaign__items {
   margin-top: rem(24);
@@ -116,4 +112,9 @@
   height: rem(3);
   top: 50%;
   left: 0;
+}
+
+.campaign__btn {
+  position: relative;
+  bottom: rem(3);
 }

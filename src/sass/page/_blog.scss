@@ -1,6 +1,5 @@
 @use "global" as *;
 .blog {
-  padding-top: rem(80);
   position: relative;
   @include mq(md) {
     padding-top: rem(100);
@@ -37,7 +36,6 @@
 }
 
 .blog__inner {
-  padding: 0 rem(21);
   margin: auto;
   @include mq(md) {
     max-width: 1130px;
@@ -54,6 +52,7 @@
   @include mq(md) {
     margin-top: rem(80);
     max-width: none;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

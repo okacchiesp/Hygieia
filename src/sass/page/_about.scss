@@ -1,10 +1,6 @@
 @use "global" as *;
 .about {
-  padding-bottom: rem(73);
   position: relative;
-  @include mq(md) {
-    padding-bottom: rem(164);
-  }
 }
 
 .about__contents {
@@ -116,7 +112,7 @@
     height: rem(181);
     position: absolute;
     right: calc(50% - min(50vw, rem(636)));
-    bottom: rem(74);
+    bottom: rem(-90);
     z-index: 10;
     display: inline-block;
   }

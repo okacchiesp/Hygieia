@@ -5,10 +5,21 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     if ($(".js-hamburger").hasClass("is-active")) {
       $(this).removeClass("is-active");
       $(".js-sp-nav").fadeOut("500");
+      $(".header").css("background-color", "rgba(13, 41, 54, 0.68)");
     } else {
       $(this).addClass("is-active");
       $(".js-sp-nav").fadeIn("500");
+      $(".header").css("background-color", "#408f95");
     }
+    // 現在のbodyタグのoverflowスタイルを確認
+    if ($("body").css("overflow") === "hidden") {
+      // hiddenなら、bodyのスタイルを元に戻す
+      $("body").css({ height: "", overflow: "" });
+    } else {
+      // bodyにheight: 100%とoverflow: hiddenを設定し、スクロールを無効にする
+      $("body").css({ height: "100%", overflow: "hidden" });
+    }
+
   });
 
   $(document).ready(function () {
@@ -17,6 +28,8 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       if ($(window).width() >= 768) {
         $(".js-hamburger").removeClass("is-active");
         $('.js-sp-nav').css('display', 'none');
+        $("body").css({ height: "", overflow: "" });
+        $(".header").css("background-color", "rgba(13, 41, 54, 0.68)");
       }
     });
   });
