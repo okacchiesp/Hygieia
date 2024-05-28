@@ -701,7 +701,7 @@ tr {
 
 .pc-nav__link::after {
 	background: #fff;
-	bottom: 0;
+	bottom: 1.4375rem;
 	content: "";
 	height: 1px;
 	left: 0;
