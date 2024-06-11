@@ -3,7 +3,7 @@
 .to-top {
   position: fixed;
   right: rem(15);
-  z-index: 99;
+  z-index: 88;
   @include mq(md) {
     right: rem(20);
   }

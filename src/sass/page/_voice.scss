@@ -7,14 +7,10 @@
   position: relative;
 }
 .voice__items {
-  gap: rem(40);
   margin: rem(40) auto 0;
-  max-width: rem(600);
   width: 100%;
   @include mq(md) {
     margin-top: rem(30);
-    max-width: none;
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -30,7 +26,7 @@
     width: rem(301);
     height: rem(138);
     position: absolute;
-    left: calc(50% - min(50vw, rem(615)));
+    left: calc(50% - min(48vw, rem(615)));
     top: rem(-120);
     z-index: 10;
     display: inline-block;
@@ -40,7 +36,7 @@
 .voice__icon:last-child {
   width: rem(71);
   height: rem(162);
-  right: calc(50% - min(50vw, rem(540)));
+  right: calc(50% - min(48vw, rem(540)));
   bottom: rem(-67);
   top: auto;
   left: auto;

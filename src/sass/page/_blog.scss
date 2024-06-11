@@ -46,13 +46,10 @@
 
 .blog__items {
   margin: rem(24) auto 0;
-  max-width: rem(600);
   width: 100%;
   gap: rem(40);
   @include mq(md) {
     margin-top: rem(80);
-    max-width: none;
-    grid-template-columns: repeat(3, 1fr);
   }
 }
 

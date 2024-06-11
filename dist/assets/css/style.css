@@ -164,7 +164,6 @@ tr {
 
 .about__images {
 	margin: auto;
-	max-width: 37.5rem;
 	position: relative;
 	width: 100%;
 }
@@ -232,7 +231,6 @@ tr {
 .blog__items {
 	gap: 2.5rem;
 	margin: 1.5rem auto 0;
-	max-width: 37.5rem;
 	width: 100%;
 }
 
@@ -342,11 +340,6 @@ tr {
 	width: 100%;
 }
 
-.campaign__btn {
-	bottom: 0.1875rem;
-	position: relative;
-}
-
 .contact {
 	position: relative;
 }
@@ -363,7 +356,6 @@ tr {
 	display: flex;
 	flex-direction: column;
 	margin: auto;
-	max-width: 37.5rem;
 	width: 100%;
 }
 
@@ -435,7 +427,7 @@ tr {
 	display: inline-block;
 	height: 3.125rem;
 	position: absolute;
-	right: calc(50% - min(50vw, 20.3125rem) + 0.9375rem);
+	right: calc(50% - min(48vw, 20.3125rem) + 0.9375rem);
 	top: -1.625rem;
 	width: 6.8125rem;
 	z-index: 10;
@@ -554,7 +546,6 @@ tr {
 .information__content {
 	margin: auto;
 	margin-top: 1.5rem;
-	max-width: 37.5rem;
 	width: 100%;
 }
 
@@ -734,7 +725,6 @@ tr {
 
 .price__contents {
 	margin: auto;
-	max-width: 37.5rem;
 	width: 100%;
 }
 
@@ -828,6 +818,7 @@ tr {
 	display: flex;
 	gap: 0.4375rem;
 	justify-content: space-evenly;
+	padding-bottom: 1.5rem;
 }
 
 .sp-nav__item {
@@ -919,9 +910,7 @@ tr {
 }
 
 .voice__items {
-	gap: 2.5rem;
 	margin: 2.5rem auto 0;
-	max-width: 37.5rem;
 	width: 100%;
 }
 
@@ -933,7 +922,7 @@ tr {
 	bottom: -4.1875rem;
 	height: 10.125rem;
 	left: auto;
-	right: calc(50% - min(50vw, 33.75rem));
+	right: calc(50% - min(48vw, 33.75rem));
 	top: auto;
 	width: 4.4375rem;
 }
@@ -996,6 +985,7 @@ tr {
 	font-size: 0.875rem;
 	height: 3.375rem;
 	line-height: 1.5714;
+	margin-bottom: 0.25rem;
 	overflow: visible;
 	padding: 1rem 0;
 	position: relative;
@@ -1126,6 +1116,7 @@ tr {
 .inner {
 	margin-left: auto;
 	margin-right: auto;
+	max-width: 39.375rem;
 	padding-left: 15px;
 	padding-right: 15px;
 	width: 100%;
@@ -1190,7 +1181,7 @@ tr {
 .to-top {
 	position: fixed;
 	right: 0.9375rem;
-	z-index: 99;
+	z-index: 88;
 }
 
 .to-top a {
@@ -1271,6 +1262,13 @@ tr {
 	margin-top: 0.9375rem;
 }
 
+.voice-cards {
+	grid-gap: 2.5rem;
+	display: grid;
+	gap: 2.5rem;
+	grid-template-columns: repeat(1, 1fr);
+}
+
 @media screen and (min-width: 768px) {
 
 .u-desktop {
@@ -1288,10 +1286,6 @@ html {
 .about__contents {
 	margin-top: 7.5rem;
 	width: inherit;
-}
-
-.about__images {
-	max-width: 67.5rem;
 }
 
 .about__image:nth-of-type(1) {
@@ -1345,7 +1339,7 @@ html {
 	display: inline-block;
 	height: 11.3125rem;
 	position: absolute;
-	right: calc(50% - min(50vw, 39.75rem));
+	right: calc(50% - min(48vw, 39.875rem));
 	width: 12.125rem;
 	z-index: 10;
 }
@@ -1385,9 +1379,7 @@ html {
 }
 
 .blog__items {
-	grid-template-columns: repeat(3, 1fr);
 	margin-top: 5rem;
-	max-width: none;
 }
 
 .blog__btn {
@@ -1439,7 +1431,6 @@ html {
 	box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
 	flex-direction: row;
 	height: inherit;
-	max-width: none;
 	padding: 5rem 0;
 }
 
@@ -1497,7 +1488,7 @@ html {
 
 .contact__icon {
 	height: 8.625rem;
-	right: calc(50% - min(50vw, 41.875rem));
+	right: calc(50% - min(48vw, 41.875rem));
 	top: -2.5rem;
 	width: 18.8125rem;
 }
@@ -1553,7 +1544,6 @@ html {
 	align-items: center;
 	display: flex;
 	margin-top: 2.5rem;
-	max-width: none;
 }
 
 .information__body {
@@ -1597,7 +1587,6 @@ html {
 	display: flex;
 	gap: 6rem;
 	margin-top: 2.5rem;
-	max-width: none;
 }
 
 .price__image {
@@ -1625,7 +1614,7 @@ html {
 	bottom: 3.75rem;
 	display: inline-block;
 	height: 12.5625rem;
-	left: calc(50% - min(50vw, 40rem));
+	left: calc(50% - min(48vw, 40rem));
 	position: absolute;
 	width: 27.3125rem;
 	z-index: 10;
@@ -1685,9 +1674,7 @@ html {
 }
 
 .voice__items {
-	grid-template-columns: repeat(2, 1fr);
 	margin-top: 1.875rem;
-	max-width: none;
 }
 
 .voice__item {
@@ -1697,11 +1684,15 @@ html {
 .voice__icon {
 	display: inline-block;
 	height: 8.625rem;
-	left: calc(50% - min(50vw, 38.4375rem));
+	left: calc(50% - min(48vw, 38.4375rem));
 	position: absolute;
 	top: -7.5rem;
 	width: 18.8125rem;
 	z-index: 10;
+}
+
+.cards {
+	grid-template-columns: repeat(3, 1fr);
 }
 
 .category-tag {
@@ -1781,6 +1772,10 @@ html {
 
 .voice-card__text {
 	margin-top: 2.5rem;
+}
+
+.voice-cards {
+	grid-template-columns: repeat(2, 1fr);
 }
 
 }
