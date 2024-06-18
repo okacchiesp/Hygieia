@@ -6,19 +6,6 @@
   }
 }
 
-.blog__icon {
-  display: none;
-  @include mq(md) {
-    width: rem(437);
-    height: rem(201);
-    position: absolute;
-    left: calc(50% - min(50vw, rem(640)));
-    top: rem(24);
-    z-index: 10;
-    display: inline-block;
-  }
-}
-
 .blog::before {
   @include mq(md) {
     content: "";
@@ -35,6 +22,21 @@
   }
 }
 
+.blog::after {
+  display: none;
+  @include mq(md) {
+    content: "";
+    background: url(../images/top/blog-fish.png) no-repeat;
+    background-size: contain;
+    width: rem(437);
+    height: rem(201);
+    position: absolute;
+    left: calc(50% - min(50vw, rem(640)));
+    top: rem(24);
+    z-index: 10;
+    display: inline-block;
+  }
+}
 .blog__inner {
   margin: auto;
   @include mq(md) {

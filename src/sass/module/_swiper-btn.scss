@@ -1,8 +1,5 @@
 @use "global" as *;
-.swiper-slide {
-  height: auto;
-}
-.swiper__controller {
+.swiper-btn {
   display: none;
   @include mq(md) {
     display: flex;
@@ -13,8 +10,8 @@
     top: rem(-105);
   }
 }
-.swiper__prev,
-.swiper__next {
+.swiper-btn__prev,
+.swiper-btn__next {
   @include mq(md) {
     display: flex;
     justify-content: center;
@@ -26,7 +23,7 @@
     cursor: pointer;
   }
 }
-.swiper__prev::before {
+.swiper-btn__prev::before {
   display: inline-block;
   content: "";
   width: rem(40);
@@ -35,7 +32,7 @@
   border-left: 1px solid $greenaccent;
   transform: skew(-45deg);
 }
-.swiper__next::before {
+.swiper-btn__next::before {
   display: inline-block;
   content: "";
   width: rem(40);

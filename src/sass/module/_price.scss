@@ -8,6 +8,22 @@
   }
 }
 
+.price::after {
+  display: none;
+  @include mq(md) {
+    content: "";
+    background: url(../images/top/fish-green.png) no-repeat;
+    background-size: contain;
+    width: rem(437);
+    height: rem(201);
+    position: absolute;
+    left: calc(50% - min(48vw, rem(640)));
+    bottom: rem(60);
+    z-index: 10;
+    display: inline-block;
+  }
+}
+
 .price__inner {
   position: relative;
 }
@@ -91,18 +107,5 @@
   margin-top: rem(40);
   @include mq(md) {
     margin-top: rem(80);
-  }
-}
-
-.price__icon {
-  display: none;
-  @include mq(md) {
-    width: rem(437);
-    height: rem(201);
-    position: absolute;
-    left: calc(50% - min(48vw, rem(640)));
-    bottom: rem(60);
-    z-index: 10;
-    display: inline-block;
   }
 }

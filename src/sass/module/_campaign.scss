@@ -3,15 +3,13 @@
   overflow: hidden;
 }
 .campaign__items {
+}
+.campaign__slide {
   margin-top: rem(24);
   overflow: visible;
   @include mq(md) {
-    overflow: visible;
     margin-top: rem(40);
   }
-}
-.campaign__slide {
-  overflow: visible;
 }
 .campaign__btn {
   text-align: center;

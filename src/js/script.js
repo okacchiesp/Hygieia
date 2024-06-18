@@ -40,8 +40,8 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     spaceBetween: 24,
     grabCursor: true,
     navigation: {
-      nextEl: '.swiper__next',
-      prevEl: '.swiper__prev',
+      nextEl: '.js-campaign-next',
+      prevEl: '.js-campaign-prev',
     },
     breakpoints: {
       768: {
@@ -92,10 +92,10 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
   // loadingアニメーション
   $(document).ready(function () {
-    $('.js-loading__title').animate({
+    $('.js-loading-title').animate({
       opacity: '0'
     }, 2000, function () {
-      $('.js-loading__image').animate({
+      $('.js-loading-image').animate({
         top: '0'
       }, 1500, function () {
         $('.js-loading').animate({
