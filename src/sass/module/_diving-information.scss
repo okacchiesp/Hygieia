@@ -1,0 +1,7 @@
+@use "global" as *;
+.diving-information__contents {
+  margin-top: rem(16);
+  @include mq(md) {
+    margin-top: rem(24);
+  }
+}

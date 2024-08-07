@@ -1,0 +1,47 @@
+@use "global" as *;
+.tab {
+  background-color: $green2;
+  color: $greenaccent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: rem(14);
+  padding: rem(10) rem(16);
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  @include mq(md) {
+    font-size: rem(24);
+    padding: rem(13) rem(30);
+  }
+}
+
+.tab__icon,
+.tab__icon--active {
+  display: none;
+  @include mq(md) {
+    width: rem(64);
+    margin-right: rem(8);
+  }
+}
+
+.tab--active {
+  background-color: $greenaccent;
+  color: $white;
+}
+
+.tab--active .tab__icon {
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.tab--active .tab__icon--active {
+  @include mq(md) {
+    display: block;
+  }
+}
+
+.tab:not(.tab--active) .tab__icon {
+  @include mq(md) {
+    display: block;
+  }
+}

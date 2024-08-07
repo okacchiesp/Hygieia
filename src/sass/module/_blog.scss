@@ -62,3 +62,10 @@
     margin-top: rem(80);
   }
 }
+
+.blog--top-margin {
+  margin-top: rem(80);
+  @include mq(md) {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,40 @@
+@use "global" as *;
+.archive-date {
+  color: $greenaccent;
+  font-size: rem(24);
+  display: grid;
+  gap: rem(4);
+}
+
+.archive-date__year,
+.archive-date__month {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+}
+
+.archive-date__year::before {
+  display: inline-block;
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: rem(10) solid transparent; /* 左ボーダーを透明に */
+  border-right: rem(10) solid transparent; /* 右ボーダーを透明に */
+  border-top: rem(18) solid $greenaccent; /* 上ボーダーを黒に */
+}
+
+.archive-date__sub {
+  margin-left: rem(32);
+  display: grid;
+  gap: rem(4);
+}
+
+.archive-date__month::before {
+  display: inline-block;
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: rem(18) solid $greenaccent; /* 左ボーダーを透明に */
+  border-bottom: rem(10) solid transparent; /* 右ボーダーを透明に */
+  border-top: rem(10) solid transparent; /* 上ボーダーを黒に */
+}

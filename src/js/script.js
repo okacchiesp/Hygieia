@@ -149,4 +149,50 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     }, 500);//ページトップスクロールの速さ。数字が大きいほど遅くなる
     return false;//リンク自体の無効化
   });
+
+  $('.js-faq-question').on('click', function () {
+    var $answer = $(this).next('.faq-item__answer');
+    var $icon = $(this).find('.faq-item__icon');
+    var isOpen = $answer.is(':visible');
+
+    // すべての回答を非表示にし、アイコンをプラスにリセット
+    $('.faq-item__answer').slideUp();
+    $('.faq-item__icon').removeClass('open');
+
+    // クリックされた質問の回答を表示し、アイコンをマイナスに変更
+    if (!isOpen) {
+      $answer.slideDown();
+      $icon.addClass('open');
+    }
+  });
+  $('.modaal').modaal({
+    type: 'image',
+  });
 });
+
+// タブ切り替え
+document.addEventListener('DOMContentLoaded', function () {
+  const buttons = document.querySelectorAll('.js-tab');
+  const contents = document.querySelectorAll('.js-tab-content');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', function () {
+      const target = this.getAttribute('data-target');
+
+      // すべてのボタンからactiveクラスを削除
+      buttons.forEach(btn => {
+        btn.classList.remove('tab--active');
+      });
+
+      // クリックされたボタンにactiveクラスを追加
+      this.classList.add('tab--active');
+
+      contents.forEach(content => {
+        content.classList.remove('tab-content--active');
+      });
+
+      document.getElementById(target).classList.add('tab-content--active');
+    });
+  });
+});
+

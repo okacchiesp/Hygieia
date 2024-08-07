@@ -6,9 +6,6 @@
 .voice__items {
   margin: rem(40) auto 0;
   width: 100%;
-  @include mq(md) {
-    margin-top: rem(30);
-  }
 }
 
 .voice::before {

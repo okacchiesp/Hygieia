@@ -1,0 +1,26 @@
+@use "global" as *;
+.category-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: rem(16);
+  @include mq(md) {
+    gap: rem(32);
+    justify-content: flex-start;
+  }
+}
+
+.category-tags__item {
+  width: 100%;
+  max-width: rem(162);
+  padding: rem(6) 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-tags__item:hover {
+  background-color: $greenaccent;
+  color: $white;
+}

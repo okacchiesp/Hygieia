@@ -20,18 +20,18 @@
 }
 
 .about__contents {
-  margin-top: rem(50);
   position: relative;
   @include mq(md) {
     width: inherit;
-    margin-top: rem(120);
   }
 }
 
 .about__images {
   width: 100%;
-  margin: auto;
   position: relative;
+  @include mq(md) {
+    top: rem(80);
+  }
 }
 
 .about__image:nth-of-type(1) {
@@ -114,5 +114,18 @@
   text-align: center;
   @include mq(md) {
     margin-top: rem(40);
+  }
+}
+
+.about__gallery {
+  margin-top: rem(40);
+  @include mq(md) {
+    margin-top: rem(200);
+  }
+}
+
+.about--no-icon::after {
+  @include mq(md) {
+    display: none;
   }
 }

@@ -66,3 +66,30 @@
   border-bottom: 1px solid $greenaccent;
   border-right: 1px solid $greenaccent;
 }
+
+.button--white {
+  background-color: $white;
+  border-color: $white;
+  color: $greenaccent;
+}
+
+.button--white::before {
+  border-color: $white;
+}
+
+.button--white span {
+  border-color: $greenaccent;
+}
+
+.button--white:hover {
+  color: $white;
+}
+
+.button--white:hover::after {
+  background-color: $greenaccent;
+}
+
+.button--white:hover span {
+  border-bottom: 1px solid $white;
+  border-right: 1px solid $white;
+}

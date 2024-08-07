@@ -1,0 +1,7 @@
+@use "global" as *;
+.side-campaign-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(40);
+}

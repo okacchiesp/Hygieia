@@ -1,0 +1,5 @@
+@use "global" as *;
+.popular-cards {
+  display: grid;
+  gap: rem(24);
+}

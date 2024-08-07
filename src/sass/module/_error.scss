@@ -1,0 +1,30 @@
+@use "global" as *;
+.error {
+  text-align: center;
+  padding: rem(120) 0 rem(148);
+}
+
+.error__title {
+  font-size: rem(80);
+  font-family: "Lato", sans-serif;
+  font-weight: $bold;
+  letter-spacing: 0.5em;
+  text-indent: 0.5em;
+  @include mq(md) {
+    font-size: rem(160);
+  }
+}
+.error__text {
+  font-family: "Lato", sans-serif;
+  line-height: 1.5;
+  @include mq(md) {
+    margin-top: rem(24);
+  }
+}
+
+.error__btn {
+  margin-top: rem(40);
+  @include mq(md) {
+    margin-top: rem(80);
+  }
+}

@@ -1,0 +1,7 @@
+@use "global" as *;
+.blog-content::before,
+.blog-content::after {
+  @include mq(md) {
+    background: none;
+  }
+}

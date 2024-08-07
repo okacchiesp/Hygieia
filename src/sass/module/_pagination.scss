@@ -1,0 +1,46 @@
+@use "global" as *;
+.pagination {
+  display: flex;
+  font-family: "Lato";
+  justify-content: space-between;
+  @include mq(md) {
+    gap: rem(40);
+    justify-content: center;
+  }
+}
+
+.pagination a {
+  color: $greenaccent;
+  padding: rem(10) rem(14);
+  transition: background-color 0.5s;
+  border: 1px solid $greenaccent; /* 境界線を追加 */
+}
+
+.pagination a:hover {
+  background-color: $greenaccent;
+  color: $white;
+  border: 1px solid $greenaccent;
+}
+
+.pagination a.active {
+  background-color: $greenaccent;
+  color: $white;
+  border: 1px solid $greenaccent;
+}
+
+.pagination__inner {
+  display: flex;
+  gap: rem(12);
+}
+
+.pagination__inner a:nth-of-type(5),
+.pagination__inner a:nth-of-type(6) {
+  display: none;
+  @include mq(md) {
+    display: inline-block;
+  }
+}
+
+.pagination--top-margin {
+  margin-top: rem(80);
+}
