@@ -5,3 +5,27 @@
   align-items: center;
   gap: rem(40);
 }
+
+.side-campaign-cards__link {
+  width: 100%;
+}
+
+.side-campaign-cards__item .campaign-card__meta {
+  padding: rem(16) rem(24) rem(24);
+}
+
+.side-campaign-cards__item .campaign-card__price {
+  font-size: rem(32);
+}
+
+.side-campaign-cards__item .campaign-card__price span {
+  font-size: rem(20);
+}
+
+.side-campaign-cards__item .campaign-card__title {
+  margin-top: rem(0);
+}
+
+.side-campaign-cards__item .campaign-card__meta-body {
+  margin-top: rem(8);
+}

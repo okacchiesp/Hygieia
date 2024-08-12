@@ -6,6 +6,9 @@
 .legal__title {
   font-size: rem(24);
   font-weight: 500;
+  @include mq(md) {
+    font-size: rem(32);
+  }
 }
 .legal__text {
   line-height: 2;

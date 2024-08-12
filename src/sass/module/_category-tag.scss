@@ -5,12 +5,16 @@
   color: $greenaccent;
   line-height: 1.83333;
   border: 1px solid $greenaccent;
-  padding: rem(3) rem(11);
+  padding: 0 rem(12);
   font-weight: 400;
-  display: inline-block;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: rem(30);
+  align-self: flex-start;
   @include mq(md) {
-    padding: rem(5) rem(15);
+    padding: 0 rem(16);
+    height: rem(34);
   }
 }
 

@@ -18,6 +18,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: rem(14);
+  line-height: 1.5714;
+  height: rem(34);
 }
 
 .category-tags__item:hover {

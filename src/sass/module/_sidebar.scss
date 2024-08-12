@@ -1,6 +1,7 @@
 @use "global" as *;
 .sidebar {
-  display: grid;
-  gap: rem(80);
+  display: flex;
+  flex-direction: column;
+  gap: rem(84);
   max-width: rem(294);
 }

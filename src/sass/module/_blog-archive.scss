@@ -3,6 +3,7 @@
   font-family: $english-font-family;
   font-size: rem(14);
   line-height: 1.285;
+  vertical-align: top;
 }
 
 .blog-archive__title {
@@ -11,6 +12,9 @@
   line-height: 1.458;
   border-bottom: 1px solid $greenaccent;
   padding-bottom: rem(4);
+  @include mq(md) {
+    font-size: rem(32);
+  }
 }
 
 .blog-archive__body {
@@ -28,6 +32,10 @@
   line-height: 1.5;
 }
 
+.blog-archive__list {
+  display: grid;
+  gap: rem(4);
+}
 .blog-archive__item {
   background-image: url(../images/blog/seastar_green.png);
   line-height: 1.5;

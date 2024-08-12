@@ -12,10 +12,14 @@
   padding-bottom: rem(24);
   @include mq(md) {
     flex-direction: row;
+    padding-bottom: rem(40);
   }
 }
 .contact-form__group:not(:first-child) {
   padding-top: rem(24);
+  @include mq(md) {
+    padding-top: rem(40);
+  }
 }
 .contact-form__group:last-child {
   align-items: center;
@@ -31,6 +35,7 @@
   padding: rem(2) rem(16);
   font-size: rem(12);
   margin-left: rem(8);
+  letter-spacing: 0.4em;
 }
 .contact-form__group label {
   font-weight: $bold;
@@ -49,6 +54,9 @@
     max-width: rem(480);
     margin-top: 0;
   }
+}
+.contact-form__group input[type="text"] {
+  height: rem(40);
 }
 .contact-form__group input[type="text"].contact-form--validation {
   border-color: #c94800;
@@ -158,6 +166,9 @@
 }
 .contact-form__btn {
   margin-top: rem(24);
+  @include mq(md) {
+    margin-top: rem(40);
+  }
 }
 .contact-form__attention {
   color: #c94800;

@@ -7,6 +7,7 @@
   align-items: center;
   gap: rem(8);
   font-size: rem(14);
+  line-height: 1.4285;
 }
 
 .breadcrumbs__item + .breadcrumbs__item::before {
