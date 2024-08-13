@@ -17,7 +17,7 @@
   max-height: rem(188);
   @include mq(md) {
     aspect-ratio: 333 / 223;
-    max-height: none;
+    max-height: rem(347);
   }
 }
 .campaign-card__image img {
