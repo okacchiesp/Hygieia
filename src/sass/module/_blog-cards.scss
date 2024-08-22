@@ -5,6 +5,12 @@
   gap: rem(40);
   @include mq(md) {
     gap: rem(80) rem(40);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.blog-cards--2column {
+  @include mq(md) {
     grid-template-columns: repeat(2, 1fr);
   }
 }

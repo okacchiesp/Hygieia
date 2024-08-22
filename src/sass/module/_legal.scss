@@ -1,6 +1,5 @@
 @use "global" as *;
-.legal {
-  width: 100%;
+.legal__inner.inner {
   max-width: rem(800);
 }
 .legal__title {
@@ -21,4 +20,10 @@
 .legal__text ol {
   list-style: decimal;
   padding-left: rem(16);
+}
+.legal--top-margin {
+  margin: rem(52) auto 0;
+  @include mq(md) {
+    margin: rem(150) auto 0;
+  }
 }

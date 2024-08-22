@@ -173,41 +173,80 @@ jQuery(function ($) {
     var $answer = $(this).next('.faq-item__answer');
     var $icon = $(this).find('.faq-item__icon');
     var isOpen = $answer.is(':visible');
-
-    // すべての回答を非表示にし、アイコンをプラスにリセット
-    $('.faq-item__answer').slideUp();
-    $('.faq-item__icon').removeClass('open');
-
-    // クリックされた質問の回答を表示し、アイコンをマイナスに変更
     if (!isOpen) {
       $answer.slideDown();
       $icon.addClass('open');
+    } else {
+      $answer.slideUp();
+      $icon.removeClass("open");
     }
   });
+
+  // 初期状態では、サブメニューを非表示に設定
+  $('.archive-date__sub').hide();
+
+  // 年の部分をクリックしたときのイベント
+  $('.archive-date__year').click(function (e) {
+    e.preventDefault(); // aタグのデフォルトの動作を無効化
+    $(this).toggleClass("open");
+    // 次のサブメニューをスライドで開閉
+    $(this).next('.archive-date__sub').slideToggle();
+  });
   $('.modaal').modaal({
-    type: 'image'
+    type: 'image',
+    overlay_close: true,
+    // モーダル外クリックで閉じる
+    background: '#000',
+    // 背景色の設定
+    custom_class: 'modaal-custom',
+    // カスタムクラスを設定
+    after_open: function after_open() {
+      $('body').css('overflow', 'hidden'); // モーダルが開いたときにスクロールを無効にする
+    },
+
+    after_close: function after_close() {
+      $('body').css('overflow', 'auto'); // モーダルが閉じたときにスクロールを有効に戻す
+    }
   });
 });
 
-// タブ切り替え
-document.addEventListener('DOMContentLoaded', function () {
-  var buttons = document.querySelectorAll('.js-tab');
-  var contents = document.querySelectorAll('.js-tab-content');
-  buttons.forEach(function (button) {
-    button.addEventListener('click', function () {
-      var target = this.getAttribute('data-target');
+$(document).ready(function () {
+  // タブをクリックしたときの処理
+  $('.js-tab a').click(function (e) {
+    e.preventDefault();
+    var targetTab = $(this).attr('href'); // クリックされたタブのhref属性を取得
+    showTab(targetTab); // タブの切り替えを行う
 
-      // すべてのボタンからactiveクラスを削除
-      buttons.forEach(function (btn) {
-        btn.classList.remove('tab--active');
-      });
-
-      // クリックされたボタンにactiveクラスを追加
-      this.classList.add('tab--active');
-      contents.forEach(function (content) {
-        content.classList.remove('tab-content--active');
-      });
-      document.getElementById(target).classList.add('tab-content--active');
-    });
+    // ハッシュを更新せずに、履歴を置き換える
+    // window.location.hash = '';
   });
+
+  // ページ読み込み時にハッシュに基づいてタブを表示
+  function initializeTab() {
+    var hash = window.location.hash; // URLのハッシュ部分を取得
+
+    if (hash) {
+      showTab(hash); // ハッシュがある場合、そのタブを表示
+    }
+    // else {
+    //   showTab('#license'); // デフォルトで最初のタブを表示
+    // }
+  }
+
+  // タブを表示する関数
+  function showTab(tabId) {
+    // すべてのタブコンテンツを非表示にし、タブリンクのアクティブクラスを削除
+    $('.js-tab-content').removeClass('tab-content--active');
+    $('.js-tab').removeClass('tab--active');
+
+    // 対応するタブコンテンツを表示し、タブリンクにアクティブクラスを追加
+    $(tabId + '-content').addClass('tab-content--active');
+    $('a[href="' + tabId + '"]').parent(".js-tab").addClass('tab--active');
+
+    // URLのハッシュを更新
+    window.location.hash = tabId;
+  }
+
+  // 初期化処理
+  initializeTab();
 });

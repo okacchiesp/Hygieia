@@ -1,18 +1,18 @@
 @use "global" as *;
 .tab-content {
   display: none;
+  flex-direction: column;
   border: 1px solid $greenaccent;
   padding: rem(24);
-}
-
-.tab-content--active {
-  display: flex;
-  flex-direction: column;
   @include mq(md) {
     align-items: center;
     flex-direction: row;
     gap: rem(48);
   }
+}
+
+.tab-content.tab-content--active {
+  display: flex;
 }
 
 .tab-content__inner {

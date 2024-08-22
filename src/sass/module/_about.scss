@@ -129,3 +129,10 @@
     display: none;
   }
 }
+
+.about--top-margin {
+  margin: rem(52) auto 0;
+  @include mq(md) {
+    margin: rem(150) auto 0;
+  }
+}

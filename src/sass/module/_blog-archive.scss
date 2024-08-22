@@ -17,6 +17,13 @@
   }
 }
 
+.blog-archive__image {
+  margin-top: rem(24);
+  @include mq(md) {
+    margin-top: rem(40);
+  }
+}
+
 .blog-archive__body {
   margin-top: rem(24);
   display: grid;
@@ -27,19 +34,19 @@
   }
 }
 
-.blog-archive__text {
+.blog-archive__body p {
   font-size: rem(16);
   line-height: 1.5;
 }
 
-.blog-archive__list {
+.blog-archive__body ul {
   display: grid;
   gap: rem(4);
 }
-.blog-archive__item {
+.blog-archive__body li {
   background-image: url(../images/blog/seastar_green.png);
   line-height: 1.5;
-  background-position: center left;
+  background-position: top rem(3) left;
   background-repeat: no-repeat;
   background-size: rem(16);
   padding-left: rem(27);

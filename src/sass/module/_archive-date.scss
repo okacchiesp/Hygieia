@@ -19,9 +19,14 @@
   content: "";
   width: 0;
   height: 0;
-  border-left: rem(10) solid transparent; /* 左ボーダーを透明に */
-  border-right: rem(10) solid transparent; /* 右ボーダーを透明に */
-  border-top: rem(18) solid $greenaccent; /* 上ボーダーを黒に */
+  border-left: rem(18) solid $greenaccent; /* 左ボーダーを透明に */
+  border-bottom: rem(10) solid transparent; /* 右ボーダーを透明に */
+  border-top: rem(10) solid transparent; /* 上ボーダーを黒に */
+  transition: all 0.3s;
+}
+
+.archive-date__year.open::before {
+  transform: rotate(90deg);
 }
 
 .archive-date__sub {

@@ -15,7 +15,7 @@
   color: $greenaccent;
   width: rem(38);
   height: rem(38);
-  transition: background-color 0.5s;
+  transition: background-color 0.3s, color 0.3s;
   border: 1px solid $greenaccent;
 }
 
@@ -42,6 +42,10 @@
   width: rem(10);
   height: rem(10);
   position: relative;
+}
+
+.pagination__arrow:hover::before {
+  border-color: $white;
 }
 
 .pagination__arrow--prev:before {

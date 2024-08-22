@@ -1,9 +1,15 @@
 @use "global" as *;
-.price-lists {
+.price-lists__inner.inner {
   display: grid;
   gap: rem(40);
   @include mq(md) {
-    width: rem(700);
     gap: rem(80);
+    max-width: rem(750);
+  }
+}
+.price-lists--top-margin {
+  margin: rem(52) auto 0;
+  @include mq(md) {
+    margin: rem(150) auto 0;
   }
 }

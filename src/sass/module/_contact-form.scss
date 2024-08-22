@@ -1,7 +1,6 @@
 @use "global" as *;
-.contact-form {
-  width: 100%;
-  max-width: rem(700);
+.contact-form__inner.inner {
+  max-width: rem(750);
 }
 .contact-form__group {
   display: flex;
@@ -46,7 +45,6 @@
 .contact-form__group input[type="text"],
 .contact-form__group textarea {
   width: 100%;
-  // max-width: rem(400);
   padding: rem(8) rem(16);
   border: 1px solid $greenaccent;
   margin-top: rem(16);
@@ -183,5 +181,12 @@
 
   @include mq(md) {
     flex-direction: row;
+  }
+}
+
+.contact-form--top-margin {
+  margin: rem(52) auto 0;
+  @include mq(md) {
+    margin: rem(150) auto 0;
   }
 }

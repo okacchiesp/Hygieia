@@ -8,3 +8,9 @@
 .contact-thanks__text {
   margin-top: rem(40);
 }
+.contact-thanks--top-margin {
+  margin: rem(52) auto 0;
+  @include mq(md) {
+    margin: rem(150) auto 0;
+  }
+}

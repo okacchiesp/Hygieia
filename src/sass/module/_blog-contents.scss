@@ -1,5 +1,5 @@
 @use "global" as *;
-.blog-contents {
+.blog-contents__inner {
   @include mq(md) {
     display: flex;
     gap: rem(80);
@@ -21,6 +21,7 @@
   border: 1px solid $greenaccent; /* 境界線を追加 */
   width: rem(38);
   height: rem(38);
+  transition: all 0.3s;
 }
 
 .blog-contents__pagination a:hover {
@@ -64,5 +65,12 @@
   margin: rem(80) auto 0;
   @include mq(md) {
     margin: 0 auto;
+  }
+}
+
+.blog-contents--top-margin {
+  margin: rem(52) auto 0;
+  @include mq(md) {
+    margin: rem(150) auto 0;
   }
 }

@@ -1,0 +1,10 @@
+@use "global" as *;
+.modaal-custom .modaal-outer-wrapper,
+.modaal-custom .modaal-inner-wrapper {
+  display: block;
+}
+
+.modaal-custom .modaal-container,
+.modaal-custom .modaal-container * {
+  height: inherit;
+}
