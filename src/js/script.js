@@ -177,8 +177,6 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
   $('.modaal').modaal({
     type: 'image',
-    overlay_close: true, // モーダル外クリックで閉じる
-    background: '#000', // 背景色の設定
     custom_class: 'modaal-custom', // カスタムクラスを設定
     after_open: function () {
       $('body').css('overflow', 'hidden'); // モーダルが開いたときにスクロールを無効にする
@@ -229,4 +227,36 @@ $(document).ready(function () {
 
   // 初期化処理
   initializeTab();
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  // モーダル要素を取得
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-image');
+  const closeModal = document.querySelector('.gallery__close');
+
+  // 画像リンクをクリックしたときにモーダルを開く
+  document.querySelectorAll('.js-modal').forEach(function (element) {
+    element.addEventListener('click', function (event) {
+      event.preventDefault(); // デフォルトのリンク動作を無効化
+
+      const imgSrc = this.getAttribute('href'); // 画像のパスを取得
+      modal.style.display = 'flex'; // モーダルを表示
+      modalImg.src = imgSrc; // 画像をモーダルに設定
+      $('body').css('overflow', 'hidden'); // モーダルが開いたときにスクロールを無効にする
+    });
+  });
+
+  // モーダルの閉じるボタンをクリックしたときにモーダルを閉じる
+  closeModal.addEventListener('click', function () {
+    modal.style.display = 'none'; // モーダルを非表示に
+    $('body').css('overflow', 'auto'); // モーダルが閉じたときにスクロールを再有効化
+  });
+
+  // モーダル外をクリックしたときにもモーダルを閉じる
+  window.addEventListener('click', function (event) {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
 });

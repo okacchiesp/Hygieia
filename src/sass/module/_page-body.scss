@@ -12,12 +12,19 @@
   position: absolute;
   z-index: -1;
   left: calc(50% - min(48vw, rem(172)));
-  top: rem(56);
+  top: rem(-24);
   display: inline-block;
   @include mq(md) {
     width: rem(301);
     height: rem(138);
     left: calc(50% - min(48vw, rem(620)));
-    top: rem(108);
+    top: rem(-70);
+  }
+}
+
+.page-body--top-margin {
+  margin: rem(52) auto 0;
+  @include mq(md) {
+    margin: rem(150) auto 0;
   }
 }

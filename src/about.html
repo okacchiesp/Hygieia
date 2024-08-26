@@ -43,7 +43,7 @@
   <header class="header">
     <div class="header__inner">
       <h1 class="header__logo">
-        <a href="/" class="header__logolink"><img src="./assets/images/common/logo.png" alt="" /></a>
+        <a href="./" class="header__logolink"><img src="./assets/images/common/logo.png" alt="" /></a>
       </h1>
     </div>
     <div class="header__drawer hamburger js-hamburger">
@@ -133,16 +133,16 @@
         </picture>
       </div>
     </section>
-    <section class="page-body">
-      <nav class="breadcrumbs page-breadcrumbs">
-        <div class="breadcrumb__inner inner">
-          <ul class="breadcrumbs__list">
-            <li class="breadcrumbs__item"><a href="#">TOP</a></li>
-            <li class="breadcrumbs__item"><a href="#">私たちについて</a></li>
-          </ul>
-        </div>
-      </nav>
-      <section class="about about--no-icon about--top-margin">
+    <nav class="breadcrumbs page-breadcrumbs">
+      <div class="breadcrumb__inner inner">
+        <ul class="breadcrumbs__list">
+          <li class="breadcrumbs__item"><a href="#">TOP</a></li>
+          <li class="breadcrumbs__item"><a href="#">私たちについて</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section class="about about--no-icon about--top-margin">
+      <section class="about__body page-body">
         <div class="about__inner inner">
           <div class="about__contents about-pc">
             <div class="about__images">
@@ -184,18 +184,24 @@
             <h2 class="section-header__subtitle">フォト</h2>
           </div>
           <div class="gallery__images">
-            <a href="./assets/images/about/gallery1.jpg" class="gallery__image modaal"><img
+            <a href="./assets/images/about/gallery1.jpg" class="gallery__image js-modal"><img
                 src="./assets/images/about/gallery1.jpg" alt=""></a>
-            <a href="./assets/images/about/gallery2.jpg" class="gallery__image modaal"><img
+            <a href="./assets/images/about/gallery2.jpg" class="gallery__image js-modal"><img
                 src="./assets/images/about/gallery2.jpg" alt=""></a>
-            <a href="./assets/images/about/gallery3.jpg" class="gallery__image modaal"><img
+            <a href="./assets/images/about/gallery3.jpg" class="gallery__image js-modal"><img
                 src="./assets/images/about/gallery3.jpg" alt=""></a>
-            <a href="./assets/images/about/gallery4.jpg" class="gallery__image modaal"><img
+            <a href="./assets/images/about/gallery4.jpg" class="gallery__image js-modal"><img
                 src="./assets/images/about/gallery4.jpg" alt=""></a>
-            <a href="./assets/images/about/gallery5.jpg" class="gallery__image modaal"><img
+            <a href="./assets/images/about/gallery5.jpg" class="gallery__image js-modal"><img
                 src="./assets/images/about/gallery5.jpg" alt=""></a>
-            <a href="./assets/images/about/gallery6.jpg" class="gallery__image modaal"><img
+            <a href="./assets/images/about/gallery6.jpg" class="gallery__image js-modal"><img
                 src="./assets/images/about/gallery6.jpg" alt=""></a>
+            <div id="modal" class="gallery__modal">
+              <span class="gallery__close">&times;</span>
+              <div class="gallery__content">
+                <img id="modal-image" src="" alt="画像">
+              </div>
+            </div>
           </div>
         </div>
       </section>

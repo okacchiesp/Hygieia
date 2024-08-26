@@ -12,6 +12,7 @@
   display: flex;
   align-items: center;
   gap: rem(8);
+  cursor: pointer;
 }
 
 .archive-date__year::before {

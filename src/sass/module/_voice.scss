@@ -3,11 +3,6 @@
   position: relative;
 }
 
-.voice__items {
-  margin: rem(40) auto 0;
-  width: 100%;
-}
-
 .voice::before {
   display: none;
   @include mq(md) {

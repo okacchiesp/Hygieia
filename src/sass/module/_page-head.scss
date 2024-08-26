@@ -18,7 +18,12 @@
   }
 }
 .page-haed__image {
-  object-fit: cover;
   overflow: hidden;
   height: 100%;
+  width: 100%;
+}
+.page-haed__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

@@ -265,6 +265,7 @@ tr {
 .archive-date__year,
 .archive-date__month {
 	align-items: center;
+	cursor: pointer;
 	display: flex;
 	gap: 0.5rem;
 }
@@ -771,7 +772,7 @@ tr {
 	justify-items: center;
 }
 
-.campaign-section--top-margin {
+.campaign-section__content {
 	margin-top: 2.5rem;
 }
 
@@ -834,6 +835,7 @@ tr {
 	display: flex;
 	height: inherit;
 	justify-content: center;
+	padding: 0 0.75rem;
 	width: inherit;
 }
 
@@ -852,10 +854,6 @@ tr {
 	max-width: 10.125rem;
 	padding: 0.375rem 0;
 	width: 100%;
-}
-
-.category-tags--top-margin {
-	margin: 3.25rem auto 0;
 }
 
 .comment-card__age {
@@ -1260,7 +1258,7 @@ tr {
 	background-color: #fff;
 	border: 1px solid #408f95;
 	border-top: none;
-	display: none;
+	display: block;
 	padding: 10px;
 	padding: 1.5rem 1rem;
 }
@@ -1375,10 +1373,19 @@ tr {
 	margin-top: 2.5rem;
 }
 
+.gallery__image img {
+	-o-object-fit: cover;
+	height: 100%;
+	object-fit: cover;
+}
+
 .gallery__image:nth-of-type(6n + 1),
 .gallery__image:nth-of-type(6n + 6) {
 	aspect-ratio: 345/523;
 	grid-row: span 2;
+	height: 100%;
+	max-width: 100%;
+	overflow: hidden;
 }
 
 .gallery__image:nth-of-type(6n + 2),
@@ -1389,16 +1396,57 @@ tr {
 	grid-row: span 1;
 }
 
-.gallery__image {
+/* モーダル全体のスタイル */
+
+.gallery__modal {
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.8); /* 半透明の背景 */
+	display: none; /* デフォルトでは非表示 */
 	height: 100%;
+	justify-content: center;
+	left: 0;
+	overflow: auto;
+	position: fixed;
+	top: 0;
 	width: 100%;
+	z-index: 1000;
 }
 
-.gallery__image img {
-	-o-object-fit: cover;
-	height: 100%;
-	object-fit: cover;
-	width: 100%;
+/* モーダル内のコンテンツ */
+
+.gallery__content {
+	align-items: center;
+	display: flex;
+	height: 90%;
+	justify-content: center;
+	position: relative;
+	width: 90%;
+}
+
+/* 画像のスタイル */
+
+.gallery__content img {
+	-o-object-fit: contain;
+	max-height: 100%;
+	object-fit: contain;
+	width: auto;
+}
+
+/* モーダルの閉じるボタン */
+
+.gallery__close {
+	color: #fff;
+	cursor: pointer;
+	font-size: 40px;
+	font-weight: bold;
+	position: absolute;
+	right: 35px;
+	top: 20px;
+	transition: all 0.3s;
+}
+
+.gallery__close:hover {
+	color: #408f95;
 }
 
 .hamburger {
@@ -1600,16 +1648,6 @@ tr {
 	width: 100%;
 }
 
-.modaal-custom .modaal-outer-wrapper,
-.modaal-custom .modaal-inner-wrapper {
-	display: block;
-}
-
-.modaal-custom .modaal-container,
-.modaal-custom .modaal-container * {
-	height: inherit;
-}
-
 .mv {
 	height: 100vh;
 	position: relative;
@@ -1652,9 +1690,13 @@ tr {
 	height: 3.4375rem;
 	left: calc(50% - min(48vw, 10.75rem));
 	position: absolute;
-	top: 3.5rem;
+	top: -1.5rem;
 	width: 7.5rem;
 	z-index: -1;
+}
+
+.page-body--top-margin {
+	margin: 3.25rem auto 0;
 }
 
 .page-green {
@@ -1694,10 +1736,16 @@ tr {
 }
 
 .page-haed__image {
+	height: 100%;
+	overflow: hidden;
+	width: 100%;
+}
+
+.page-haed__image img {
 	-o-object-fit: cover;
 	height: 100%;
 	object-fit: cover;
-	overflow: hidden;
+	width: 100%;
 }
 
 .pagination {
@@ -2419,20 +2467,24 @@ tr {
 	margin-top: 0.9375rem;
 }
 
-.voice-cards__inner.inner {
+.voice-cards {
 	grid-gap: 2.5rem;
 	display: grid;
 	gap: 2.5rem;
 	grid-template-columns: repeat(1, 1fr);
 }
 
-.voice {
-	position: relative;
-}
-
-.voice__items {
+.voice-section__content {
 	margin: 2.5rem auto 0;
 	width: 100%;
+}
+
+.voice-section--top-margin {
+	margin: 3.25rem auto 0;
+}
+
+.voice {
+	position: relative;
 }
 
 .voice::before {
@@ -2744,16 +2796,15 @@ html {
 
 .category-tag {
 	height: 2.125rem;
+}
+
+.category-tag a {
 	padding: 0 1rem;
 }
 
 .category-tags__list {
 	gap: 1rem 2rem;
 	justify-content: flex-start;
-}
-
-.category-tags--top-margin {
-	margin: 9.375rem auto 0;
 }
 
 .contact-form__group {
@@ -3052,8 +3103,12 @@ html {
 .page-body::before {
 	height: 8.625rem;
 	left: calc(50% - min(48vw, 38.75rem));
-	top: 6.75rem;
+	top: -4.375rem;
 	width: 18.8125rem;
+}
+
+.page-body--top-margin {
+	margin: 9.375rem auto 0;
 }
 
 .page-green {
@@ -3313,13 +3368,17 @@ html {
 	margin-top: 2.5rem;
 }
 
-.voice-cards__inner.inner {
+.voice-cards {
 	gap: 5rem 2.5rem;
 	grid-template-columns: repeat(2, 1fr);
 }
 
 .voice-cards__item {
 	max-width: 32.5rem;
+}
+
+.voice-section--top-margin {
+	margin: 9.375rem auto 0;
 }
 
 .voice::before {
