@@ -138,61 +138,59 @@
         </ul>
       </div>
     </nav>
-    <div class="contact-form contact-form--top-margin">
-      <div class="contact-form__body page-body">
-        <div class="contact-form__inner inner">
-          <p class="contact-form__attention">※必須項目が入力されていません。<br class="u-mobile">入力してください。</p>
-          <form action="#" method="POST">
-            <div class="contact-form__group">
-              <label for="name">お名前<span class="contact-form__required">必須</span></label>
-              <input type="text" id="name" name="name" placeholder="沖縄 太郎" class="contact-form--validation" required>
+    <div class="contact-form contact-form--top-margin page-body">
+      <div class="contact-form__inner inner">
+        <p class="contact-form__attention">※必須項目が入力されていません。<br class="u-mobile">入力してください。</p>
+        <form action="#" method="POST">
+          <div class="contact-form__group">
+            <label for="name">お名前<span class="contact-form__required">必須</span></label>
+            <input type="text" id="name" name="name" placeholder="沖縄 太郎" class="contact-form--validation" required>
+          </div>
+          <div class="contact-form__group">
+            <label for="email">メールアドレス<span class="contact-form__required">必須</span></label>
+            <input type="text" id="email" name="email" placeholder="aaa000@ggmail.com" required>
+          </div>
+          <div class="contact-form__group">
+            <label for="phone">電話番号<span class="contact-form__required">必須</span></label>
+            <input type="text" id="phone" name="phone" placeholder="000-0000-0000" required>
+          </div>
+          <div class="contact-form__group">
+            <label>お問合せ項目<span class="contact-form__required">必須</span></label>
+            <div class="contact-form__checkbox">
+              <label><input type="checkbox" name="inquiry_item" value="lecture"><span
+                  class="contact-form__mark"></span>ダイビング講習について</label>
+              <label><input type="checkbox" name="inquiry_item" value="fun"><span
+                  class="contact-form__mark"></span>ファンデイビングについて</label>
+              <label><input type="checkbox" name="inquiry_item" value="experience"><span
+                  class="contact-form__mark"></span>体験ダイビングについて</label>
+              <label><input type="checkbox" name="inquiry_item" value="special"><span
+                  class="contact-form__mark"></span>スペシャルダイビングについて</label>
             </div>
-            <div class="contact-form__group">
-              <label for="email">メールアドレス<span class="contact-form__required">必須</span></label>
-              <input type="text" id="email" name="email" placeholder="aaa000@ggmail.com" required>
+          </div>
+          <div class="contact-form__group">
+            <label for="campaign">キャンペーン</label>
+            <div class="contact-form__select">
+              <select id="campaign" name="campaign">
+                <option value="">キャンペーン内容を選択</option>
+                <option value="campaign1">キャンペーン1</option>
+                <option value="campaign2">キャンペーン2</option>
+                <option value="campaign3">キャンペーン3</option>
+              </select>
             </div>
-            <div class="contact-form__group">
-              <label for="phone">電話番号<span class="contact-form__required">必須</span></label>
-              <input type="text" id="phone" name="phone" placeholder="000-0000-0000" required>
+          </div>
+          <div class="contact-form__group">
+            <label for="message">お問合せ内容<span class="contact-form__required">必須</span></label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <div class="contact-form__group">
+            <div class="contact-form__privacy">
+              <label><input type="checkbox" name="privacy" value="agree"><span
+                  class="contact-form__mark contact-form__mark--agree"></span>個人情報の取り扱いについて同意のうえ<br class="u-mobile">
+                送信します。</label>
             </div>
-            <div class="contact-form__group">
-              <label>お問合せ項目<span class="contact-form__required">必須</span></label>
-              <div class="contact-form__checkbox">
-                <label><input type="checkbox" name="inquiry_item" value="lecture"><span
-                    class="contact-form__mark"></span>ダイビング講習について</label>
-                <label><input type="checkbox" name="inquiry_item" value="fun"><span
-                    class="contact-form__mark"></span>ファンデイビングについて</label>
-                <label><input type="checkbox" name="inquiry_item" value="experience"><span
-                    class="contact-form__mark"></span>体験ダイビングについて</label>
-                <label><input type="checkbox" name="inquiry_item" value="special"><span
-                    class="contact-form__mark"></span>スペシャルダイビングについて</label>
-              </div>
-            </div>
-            <div class="contact-form__group">
-              <label for="campaign">キャンペーン</label>
-              <div class="contact-form__select">
-                <select id="campaign" name="campaign">
-                  <option value="">キャンペーン内容を選択</option>
-                  <option value="campaign1">キャンペーン1</option>
-                  <option value="campaign2">キャンペーン2</option>
-                  <option value="campaign3">キャンペーン3</option>
-                </select>
-              </div>
-            </div>
-            <div class="contact-form__group">
-              <label for="message">お問合せ内容<span class="contact-form__required">必須</span></label>
-              <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <div class="contact-form__group">
-              <div class="contact-form__privacy">
-                <label><input type="checkbox" name="privacy" value="agree"><span
-                    class="contact-form__mark contact-form__mark--agree"></span>個人情報の取り扱いについて同意のうえ<br class="u-mobile">
-                  送信します。</label>
-              </div>
-              <button type="submit" class="contact-form__btn button">Send<span></span></button>
-            </div>
-          </form>
-        </div>
+            <button type="submit" class="contact-form__btn button">Send<span></span></button>
+          </div>
+        </form>
       </div>
     </div>
   </main>
