@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName  "Restricted Page"
-Require valid-user
-AuthUserFile  /home/c9906452/.htpasswds/yoc-web.conohawing.com/codeups/.htpasswd
