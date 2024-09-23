@@ -1,0 +1,78 @@
+@use "global" as *;
+.tab {
+  background-color: $green2;
+  color: $greenaccent;
+  font-size: rem(14);
+  width: rem(102);
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s;
+  @include mq(md) {
+    width: rem(300);
+    font-size: rem(24);
+  }
+}
+
+.tab:hover {
+  background-color: $greenaccent;
+  color: $white;
+}
+
+.tab:hover > .tab__icon {
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.tab a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: rem(10) 0;
+  @include mq(md) {
+    padding: rem(13) 0;
+  }
+}
+
+.tab a:hover > .tab__icon--active {
+  @include mq(md) {
+    display: block;
+  }
+}
+
+.tab__icon,
+.tab__icon--active {
+  display: none;
+  @include mq(md) {
+    width: rem(64);
+    margin-right: rem(8);
+  }
+}
+
+.tab--active {
+  background-color: $greenaccent;
+  color: $white;
+}
+
+.tab--active .tab__icon {
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.tab--active .tab__icon--active {
+  @include mq(md) {
+    display: block;
+  }
+}
+
+.tab:not(.tab--active) .tab__icon {
+  @include mq(md) {
+    display: block;
+  }
+}
+
+.tab:not(.tab--active):hover .tab__icon {
+  @include mq(md) {
+    display: none;
+  }
+}

@@ -1,0 +1,77 @@
+@use "global" as *;
+.price-list {
+  display: flex;
+  flex-direction: column;
+  @include mq(md) {
+    flex-direction: row;
+  }
+}
+.price-list__header {
+  background-color: $greenaccent;
+  color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: rem(16);
+  line-height: 1.5;
+  font-weight: $bold;
+  padding: rem(8) 0;
+  @include mq(md) {
+    flex-direction: column-reverse;
+    width: 100%;
+    max-width: rem(200);
+  }
+}
+.price-list__header img {
+  width: rem(24);
+  height: rem(24);
+  margin-right: rem(8);
+  @include mq(md) {
+    width: rem(64);
+    height: rem(64);
+    margin-right: 0;
+  }
+}
+.price-list__table {
+  border-left: 1px solid $greenaccent;
+  border-right: 1px solid $greenaccent;
+  border-bottom: 1px solid $greenaccent;
+}
+.price-list__table tbody {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.price-list__table tr {
+  display: flex;
+  height: rem(60);
+  flex-grow: 1;
+}
+.price-list__table tr:first-child {
+  @include mq(md) {
+    border-top: 1px solid $greenaccent;
+  }
+}
+.price-list__table tr:not(:last-child) {
+  border-bottom: 1px solid $greenaccent;
+}
+.price-list__table td {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  @include mq(md) {
+    justify-content: flex-start;
+    padding-left: rem(16);
+  }
+}
+.price-list__table td:first-child {
+  border-right: 1px solid $greenaccent;
+  width: 68%;
+  text-align: center;
+}
+.price-list__table td:last-child {
+  width: 32%;
+  justify-content: flex-end;
+  padding-right: rem(16);
+}

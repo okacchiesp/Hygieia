@@ -1,0 +1,7 @@
+@use "global" as *;
+.wp-pagenavi {
+  display: flex;
+  font-family: "Lato";
+  justify-content: center;
+  gap: 0.75rem;
+}

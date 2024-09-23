@@ -1,0 +1,29 @@
+@use "global" as *;
+.legal__inner.inner {
+  max-width: rem(800);
+}
+.legal__title {
+  font-size: rem(24);
+  font-weight: 500;
+  @include mq(md) {
+    font-size: rem(32);
+  }
+}
+.legal__text {
+  line-height: 2;
+  margin-top: rem(40);
+}
+.legal__text p {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+.legal__text ol {
+  list-style: decimal;
+  padding-left: rem(16);
+}
+.legal--top-margin {
+  margin: rem(52) auto 0;
+  @include mq(md) {
+    margin: rem(150) auto 0;
+  }
+}
