@@ -44,16 +44,27 @@
 }
 
 .voice-card__image {
+<<<<<<< HEAD
+=======
+  aspect-ratio: 151 / 117;
+>>>>>>> 014020e7218aaa229fb84b53ca71032797df1a4d
   overflow: hidden;
   max-width: rem(151);
   width: 100%;
   position: relative;
+<<<<<<< HEAD
   @include mq(md) {
+=======
+
+  @include mq(md) {
+    aspect-ratio: 180 / 140;
+>>>>>>> 014020e7218aaa229fb84b53ca71032797df1a4d
     max-width: rem(180);
   }
 }
 
 .voice-card__image img {
+<<<<<<< HEAD
   aspect-ratio: 151 / 117;
   width: 100%;
   height: 100%;
@@ -61,6 +72,11 @@
   @include mq(md) {
     aspect-ratio: 180 / 140;
   }
+=======
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+>>>>>>> 014020e7218aaa229fb84b53ca71032797df1a4d
 }
 
 .voice-card__text {
