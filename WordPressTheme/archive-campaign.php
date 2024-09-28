@@ -38,18 +38,9 @@
         </ul>
       </div>
       <div class="campaign-section__content">
+        <?php if (have_posts()) : ?>
         <div class="campaign-section__cards campaign-cards">
-          <?php
-          $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-          $args = array(
-            'post_type' => 'campaign',
-            'paged' => $paged,
-            'posts_per_page' => 4,
-          );
-          $the_query = new WP_Query($args);
-          if ($the_query->have_posts()) :
-            while ($the_query->have_posts()) :
-              $the_query->the_post(); ?>
+          <?php while (have_posts()) : the_post(); ?>
           <section class="campaign-cards__item campaign-card campaign-card--big">
             <div class="campaign-card__image">
               <?php if (has_post_thumbnail()) : ?>
@@ -96,13 +87,12 @@
           <?php endwhile; ?>
         </div>
         <div class="pagination pagination--top-margin">
-          <?php
-            if (function_exists('wp_pagenavi')) {
-              wp_pagenavi(array('query' => $the_query));
-            }
-            wp_reset_postdata(); ?>
+          <?php wp_pagenavi(); ?>
         </div>
+        <?php else : ?>
+        <p>キャンペーンはありません。</p>
         <?php endif; ?>
+
       </div>
     </div>
     <?php get_footer(); ?>

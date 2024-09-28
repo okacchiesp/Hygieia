@@ -13,9 +13,9 @@
   <nav class="breadcrumbs breadcrumbs--top-margin">
     <div class="breadcrumb__inner inner">
       <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
-        <?php if(function_exists('bcn_display')) {
-            bcn_display();
-        }?>
+        <?php if (function_exists('bcn_display')) {
+          bcn_display();
+        } ?>
       </div>
     </div>
   </nav>
@@ -30,12 +30,12 @@
           <?php
           $current_term = get_queried_object();
           $terms = get_terms(array(
-              'taxonomy' => 'campaign_category',
-              'hide_empty' => false,
+            'taxonomy' => 'campaign_category',
+            'hide_empty' => false,
           ));
           foreach ($terms as $term) {
-              $active_class = ($current_term->term_id == $term->term_id) ? 'category-tag--active' : '';
-              echo '<li class="category-tags__item category-tag ' . $active_class . '"><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
+            $active_class = ($current_term->term_id == $term->term_id) ? 'category-tag--active' : '';
+            echo '<li class="category-tags__item category-tag ' . $active_class . '"><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
           }
           ?>
         </ul>
@@ -43,26 +43,12 @@
       <div class="campaign-section__content">
         <div class="campaign-section__cards campaign-cards">
           <?php
-          $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-          $args = array(
-                'post_type' => 'campaign',
-                'paged' => $paged,
-                'posts_per_page' => 4,
-                'tax_query' => array(
-                    array(
-                        'taxonomy' => 'campaign_category',
-                        'field' => 'slug',
-                        'terms' => $current_term->slug,
-                    ),
-                ),
-          );
-          $the_query = new WP_Query( $args );
-          if( $the_query->have_posts() ) :
-            while( $the_query->have_posts() ) :
-              $the_query->the_post(); ?>
+          if (have_posts()) :
+            while (have_posts()) :
+              the_post(); ?>
           <section class="campaign-cards__item campaign-card campaign-card--big">
             <div class="campaign-card__image">
-              <?php if ( has_post_thumbnail() ) : ?>
+              <?php if (has_post_thumbnail()) : ?>
               <?php the_post_thumbnail(); ?>
               <?php endif; ?>
             </div>
@@ -70,15 +56,15 @@
               <div class="campaign-card__meta-head">
                 <p class="campaign-card__category category-tag">
                   <?php
-                  $terms = get_the_terms(get_the_ID(), 'campaign_category');
-                  if ($terms && !is_wp_error($terms)) {
-                      $term_links = array();
-                      foreach ($terms as $term) {
+                      $terms = get_the_terms(get_the_ID(), 'campaign_category');
+                      if ($terms && !is_wp_error($terms)) {
+                        $term_links = array();
+                        foreach ($terms as $term) {
                           $term_links[] = '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
+                        }
+                        echo join(", ", $term_links);
                       }
-                      echo join(", ", $term_links);
-                  }
-                  ?>
+                      ?>
                 </p>
                 <h2 class="campaign-card__title"><?php the_title(); ?></h2>
               </div>
@@ -86,9 +72,9 @@
                 <p class="campaign-card__text">全部コミコミ(お一人様)</p>
                 <p class="campaign-card__price">
                   <?php
-                  $price = get_field('price');
-                  $c_price = get_field('campaign-price');
-                  ?>
+                      $price = get_field('price');
+                      $c_price = get_field('campaign-price');
+                      ?>
                   <span>¥<?php echo number_format($price); ?></span>¥<?php echo number_format($c_price); ?>
                 </p>
                 <div class="campaign-card__detail">
@@ -102,16 +88,14 @@
               </div>
             </div>
           </section>
-          <?php endwhile;?>
+          <?php endwhile; ?>
+          <?php endif; ?>
         </div>
         <div class="pagination pagination--top-margin">
           <?php
-          if ( function_exists( 'wp_pagenavi' ) ) {
-            wp_pagenavi( array( 'query' => $the_query ) );
-          }
-          wp_reset_postdata(); ?>
+          wp_pagenavi();
+          ?>
         </div>
-        <?php endif; ?>
       </div>
     </div>
   </section>

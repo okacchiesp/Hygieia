@@ -35,22 +35,15 @@ function add_preconnect($html, $handle)
     }
     return $html;
 }
+
+// アイキャッチ画像を有効にする
 function mytheme_setup()
 {
-    // アイキャッチ画像を有効にする
     add_theme_support('post-thumbnails');
 }
 add_action('after_setup_theme', 'mytheme_setup');
 
-// キャンペーンページの表示数
-function set_campaign_posts_per_page($query)
-{
-    if ($query->is_post_type_archive('campaign') && !is_admin() && $query->is_main_query()) {
-        $query->set('posts_per_page', 4);
-    }
-}
-add_action('pre_get_posts', 'set_campaign_posts_per_page');
-
+// 投稿ビュー数のカウント
 function setPostViews($postID)
 {
     $count_key = 'post_views_count';
@@ -116,6 +109,7 @@ function is_bot()
 
     return false;
 }
+
 // 最新のキャンペーン2件を取得
 function get_latest_archive_campaign_posts($number_of_posts = 2)
 {
@@ -127,14 +121,29 @@ function get_latest_archive_campaign_posts($number_of_posts = 2)
     );
     return new WP_Query($args);
 }
-// date.phpの表示件数
-function set_posts_per_page_for_archives($query)
+
+// 投稿数設定
+function custom_posts_per_page($query)
 {
-    if ($query->is_archive() && $query->is_main_query()) {
+    if (is_admin() || !$query->is_main_query())
+        return;
+    if ($query->is_date()) {
         $query->set('posts_per_page', 10);
     }
+    if ($query->is_post_type_archive('campaign')) {
+        $query->set('posts_per_page', 4);
+    }
+    if ($query->is_tax('campaign_category')) {
+        $query->set('posts_per_page', 4);
+    }
+    if ($query->is_post_type_archive('voice')) {
+        $query->set('posts_per_page', 6);
+    }
+    if ($query->is_tax('voice_category')) {
+        $query->set('posts_per_page', 6);
+    }
 }
-add_action('pre_get_posts', 'set_posts_per_page_for_archives');
+add_action('pre_get_posts', 'custom_posts_per_page');
 
 // Contact Form 7で自動挿入されるPタグ、brタグを削除
 add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');

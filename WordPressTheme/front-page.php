@@ -139,7 +139,7 @@
               ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
             </p>
             <div class="about__btn">
-              <a href="about.html" class="button">View more<span></span></a>
+              <a href="<?php echo esc_url(home_url('/about-us')); ?>" class="button">View more<span></span></a>
             </div>
           </div>
         </div>
@@ -163,7 +163,7 @@
             正規登録店として、安心安全に初めての方でも安心安全にライセンス取得をサポート致します。
           </p>
           <div class="information__btn">
-            <a href="information.html" class="button">View more<span></span></a>
+            <a href="<?php echo esc_url(home_url('/information')); ?>" class="button">View more<span></span></a>
           </div>
         </div>
       </div>
@@ -195,7 +195,7 @@
               datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date('Y.m/d'); ?></time>
             <h3 class="blog-card__title"><?php the_title(); ?></h3>
             <p class="blog-card__text">
-              <?php the_excerpt(); ?>
+              <?php echo wp_trim_words(get_the_excerpt(), 85, '...'); ?>
             </p>
           </div>
         </a>
@@ -253,7 +253,7 @@
             </div>
           </div>
           <p class="voice-card__text">
-            <?php the_excerpt(); ?>
+            <?php echo wp_trim_words(get_the_excerpt(), 171, '...'); ?>
           </p>
         </div>
         <?php endwhile;
@@ -364,7 +364,7 @@
         </div>
       </div>
       <div class="price__btn">
-        <a href="price.html" class="button">View more<span></span></a>
+        <a href="<?php echo esc_url(home_url('/price')); ?>" class="button">View more<span></span></a>
       </div>
     </div>
   </section>

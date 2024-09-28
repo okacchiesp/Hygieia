@@ -39,18 +39,9 @@
         </ul>
       </div>
       <div class="voice-section__content">
-        <div class="voice__items voice-cards">
-          <?php
-          $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-          $args = array(
-            'post_type' => 'voice',
-            'paged' => $paged,
-            'posts_per_page' => 6,
-          );
-          $the_query = new WP_Query($args);
-          if ($the_query->have_posts()) :
-            while ($the_query->have_posts()) :
-              $the_query->the_post(); ?>
+        <?php if (have_posts()) : ?>
+          <div class="voice__items voice-cards">
+            <?php while (have_posts()) : the_post(); ?>
               <section class="voice-cards__item voice-card">
                 <div class="voice-card__head">
                   <div class="voice-card__meta">
@@ -83,15 +74,11 @@
                 </p>
               </section>
             <?php endwhile; ?>
-        </div>
-        <div class="pagination pagination--top-margin">
-          <?php
-            if (function_exists('wp_pagenavi')) {
-              wp_pagenavi(array('query' => $the_query));
-            }
-            wp_reset_postdata(); ?>
-        </div>
-      <?php endif; ?>
+          </div>
+          <div class="pagination pagination--top-margin">
+            <?php wp_pagenavi(); ?>
+          </div>
+        <?php endif; ?>
       </div>
     </div>
   </div>

@@ -15,7 +15,7 @@
         <p class="error__text">申し訳ありません。<br>
           お探しのページが見つかりません。</p>
         <div class="error__btn">
-          <a href="" class="button button--white">Page TOP<span></span></a>
+          <a href="<?php echo esc_url(home_url('/')); ?>" class="button button--white">Page TOP<span></span></a>
         </div>
       </div>
     </div>

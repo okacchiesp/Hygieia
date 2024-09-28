@@ -43,30 +43,16 @@
       <div class="voice-section__content">
         <div class="voice__items voice-cards">
           <?php
-          $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-          $args = array(
-            'post_type' => 'voice',
-            'paged' => $paged,
-            'posts_per_page' => 6,
-            'tax_query' => array(
-              array(
-                'taxonomy' => 'voice_category',
-                'field' => 'slug',
-                'terms' => $current_term->slug,
-              ),
-            ),
-          );
-          $the_query = new WP_Query($args);
-          if ($the_query->have_posts()) :
-            while ($the_query->have_posts()) :
-              $the_query->the_post(); ?>
-          <section class="voice-cards__item voice-card">
-            <div class="voice-card__head">
-              <div class="voice-card__meta">
-                <div class="voice-card__metahead">
-                  <p class="voice-card__age"><?php the_field('age'); ?>代(<?php the_field('gender'); ?>)</p>
-                  <p class="voice-card__category category-tag">
-                    <?php
+          if (have_posts()) :
+            while (have_posts()) :
+              the_post(); ?>
+              <section class="voice-cards__item voice-card">
+                <div class="voice-card__head">
+                  <div class="voice-card__meta">
+                    <div class="voice-card__metahead">
+                      <p class="voice-card__age"><?php the_field('age'); ?>代(<?php the_field('gender'); ?>)</p>
+                      <p class="voice-card__category category-tag">
+                        <?php
                         $terms = get_the_terms(get_the_ID(), 'voice_category');
                         if ($terms && !is_wp_error($terms)) {
                           $term_links = array();
@@ -76,31 +62,28 @@
                           echo join(", ", $term_links);
                         }
                         ?></p>
+                    </div>
+                    <h2 class="voice-card__title">
+                      <?php the_title(); ?>
+                    </h2>
+                  </div>
+                  <div class="voice-card__image js-slidein">
+                    <?php if (has_post_thumbnail()) : ?>
+                      <?php the_post_thumbnail('full', ['alt' => get_the_title()]); ?>
+                    <?php endif; ?>
+                  </div>
                 </div>
-                <h2 class="voice-card__title">
-                  <?php the_title(); ?>
-                </h2>
-              </div>
-              <div class="voice-card__image js-slidein">
-                <?php if (has_post_thumbnail()) : ?>
-                <?php the_post_thumbnail('full', ['alt' => get_the_title()]); ?>
-                <?php endif; ?>
-              </div>
-            </div>
-            <p class="voice-card__text">
-              <?php the_content(); ?>
-            </p>
-          </section>
-          <?php endwhile; ?>
+                <p class="voice-card__text">
+                  <?php the_content(); ?>
+                </p>
+              </section>
+            <?php endwhile; ?>
         </div>
         <div class="pagination pagination--top-margin">
           <?php
-            if (function_exists('wp_pagenavi')) {
-              wp_pagenavi(array('query' => $the_query));
-            }
-            wp_reset_postdata(); ?>
+            wp_pagenavi(); ?>
         </div>
-        <?php endif; ?>
+      <?php endif; ?>
       </div>
     </div>
   </div>
