@@ -20,13 +20,9 @@
     padding-top: rem(40);
   }
 }
-.contact-form__group:last-child {
-  align-items: center;
-  border-bottom: none;
+.contact-form__group--none-border {
   padding-bottom: 0;
-  @include mq(md) {
-    flex-direction: column;
-  }
+  border-bottom: none;
 }
 .contact-form__required {
   background-color: #c94800;
@@ -43,11 +39,8 @@
   color: $green2;
 }
 .contact-form__group input[type="text"],
-<<<<<<< HEAD
 .contact-form__group input[type="email"],
 .contact-form__group input[type="tel"],
-=======
->>>>>>> 014020e7218aaa229fb84b53ca71032797df1a4d
 .contact-form__group textarea {
   width: 100%;
   padding: rem(8) rem(16);
@@ -61,7 +54,6 @@
 .contact-form__group input[type="text"] {
   height: rem(40);
 }
-<<<<<<< HEAD
 .contact-form__group input[type="text"].wpcf7-not-valid,
 .contact-form__group input[type="email"].wpcf7-not-valid,
 .contact-form__group input[type="tel"].wpcf7-not-valid,
@@ -83,21 +75,15 @@
 
 .contact-form__group .wpcf7-form-control-wrap[data-name="acceptance"] {
   max-width: none;
-  text-align: center;
+  font-size: rem(14);
+  @include mq(md) {
+    text-align: center;
+  }
 }
 
 .contact-form__group--center {
   text-align: center;
 }
-=======
-.contact-form__group input[type="text"].contact-form--validation {
-  border-color: #c94800;
-  background-color: rgba($color: #c94800, $alpha: 0.2);
-}
-.contact-form__group input[type="text"].contact-form--validation::placeholder {
-  color: $white;
-}
->>>>>>> 014020e7218aaa229fb84b53ca71032797df1a4d
 .contact-form__checkbox {
   display: flex;
   flex-direction: column;
@@ -138,7 +124,6 @@
 .contact-form__checkbox input:checked + .contact-form__mark::after {
   opacity: 1;
 }
-<<<<<<< HEAD
 .contact-form__group .wpcf7-checkbox {
   display: flex;
   flex-direction: column;
@@ -151,8 +136,6 @@
     margin-top: 0;
   }
 }
-=======
->>>>>>> 014020e7218aaa229fb84b53ca71032797df1a4d
 .contact-form__select {
   width: 100%;
   max-width: rem(400);
@@ -199,10 +182,6 @@
   align-items: flex-start;
   font-size: rem(14);
 }
-.contact-form__mark--agree {
-  width: rem(22);
-  height: rem(22);
-}
 .contact-form__mark--agree::after {
   left: rem(6);
   top: rem(2);
@@ -214,15 +193,11 @@
 }
 .contact-form__btn {
   margin-top: rem(24);
-<<<<<<< HEAD
   padding: 0;
-=======
->>>>>>> 014020e7218aaa229fb84b53ca71032797df1a4d
   @include mq(md) {
     margin-top: rem(40);
   }
 }
-<<<<<<< HEAD
 .contact-form__btn::before {
   border: solid 1px #408f95;
   bottom: 4px;
@@ -279,8 +254,6 @@
   display: none;
 }
 
-=======
->>>>>>> 014020e7218aaa229fb84b53ca71032797df1a4d
 .contact-form__attention {
   color: #c94800;
   font-size: rem(14);

@@ -1,10 +1,6 @@
 @use "global" as *;
 .breadcrumbs {
-<<<<<<< HEAD
   font-size: rem(14);
-=======
-  padding-top: rem(8);
->>>>>>> 014020e7218aaa229fb84b53ca71032797df1a4d
 }
 .breadcrumbs__list {
   display: flex;
@@ -18,10 +14,7 @@
   content: ">";
   margin-right: rem(8);
 }
-<<<<<<< HEAD
 
 .breadcrumbs--top-margin {
   margin-top: rem(8);
 }
-=======
->>>>>>> 014020e7218aaa229fb84b53ca71032797df1a4d

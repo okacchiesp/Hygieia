@@ -24,26 +24,26 @@
       <div class="blog-contents__content blog-content">
         <section class="blog-content__items blog-cards blog-cards--2column">
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-              <a href="<?php the_permalink(); ?>" class="blog-cards__item blog-card">
-                <div class="blog-card__image">
-                  <?php if (has_post_thumbnail()) : ?>
-                    <?php the_post_thumbnail(); ?>
-                  <?php else : ?>
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/no-image.png" alt="デフォルト画像" />
-                  <?php endif; ?>
-                </div>
-                <div class="blog-card__body">
-                  <time class="blog-card__date"
-                    datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date('Y.m/d'); ?></time>
-                  <h2 class="blog-card__title"><?php the_title(); ?></h2>
-                  <p class="blog-card__text">
-                    <?php echo wp_trim_words(get_the_excerpt(), 85, '...'); ?>
-                  </p>
-                </div>
-              </a>
-            <?php endwhile;
+          <a href="<?php the_permalink(); ?>" class="blog-cards__item blog-card">
+            <div class="blog-card__image">
+              <?php if (has_post_thumbnail()) : ?>
+              <?php the_post_thumbnail(); ?>
+              <?php else : ?>
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/no-image.png" alt="デフォルト画像" />
+              <?php endif; ?>
+            </div>
+            <div class="blog-card__body">
+              <time class="blog-card__date"
+                datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date('Y.m/d'); ?></time>
+              <h2 class="blog-card__title"><?php the_title(); ?></h2>
+              <p class="blog-card__text">
+                <?php echo wp_trim_words(get_the_content(), 85, '...'); ?>
+              </p>
+            </div>
+          </a>
+          <?php endwhile;
           else : ?>
-            <p>投稿が見つかりませんでした。</p>
+          <p>投稿が見つかりませんでした。</p>
           <?php endif; ?>
         </section>
         <div class="pagination pagination--top-margin">

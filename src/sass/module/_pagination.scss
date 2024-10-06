@@ -1,20 +1,10 @@
 @use "global" as *;
 .pagination {
-  display: flex;
   font-family: "Lato";
-  justify-content: space-between;
-  @include mq(md) {
-    gap: rem(40);
-    justify-content: center;
-  }
 }
 
-<<<<<<< HEAD
 .pagination a,
 .pagination span {
-=======
-.pagination a {
->>>>>>> 014020e7218aaa229fb84b53ca71032797df1a4d
   display: grid;
   place-items: center;
   color: $greenaccent;
@@ -24,7 +14,6 @@
   border: 1px solid $greenaccent;
 }
 
-<<<<<<< HEAD
 .pagination .current {
   background-color: #408f95;
   border: 1px solid #408f95;
@@ -39,8 +28,6 @@
   margin-right: 1.75rem;
 }
 
-=======
->>>>>>> 014020e7218aaa229fb84b53ca71032797df1a4d
 .pagination a:hover {
   background-color: $greenaccent;
   color: $white;

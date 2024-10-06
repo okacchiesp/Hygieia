@@ -34,20 +34,12 @@
 
 .tab-content__image {
   margin-top: rem(8);
-<<<<<<< HEAD
   @include mq(md) {
     margin-top: 0;
-=======
-  aspect-ratio: 297 / 189;
-  @include mq(md) {
-    margin-top: 0;
-    aspect-ratio: 492 / 313;
->>>>>>> 014020e7218aaa229fb84b53ca71032797df1a4d
   }
 }
 
 .tab-content__image img {
-<<<<<<< HEAD
   aspect-ratio: 297 / 189;
   width: 100%;
   height: 100%;
@@ -55,9 +47,4 @@
   @include mq(md) {
     aspect-ratio: 492 / 313;
   }
-=======
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
->>>>>>> 014020e7218aaa229fb84b53ca71032797df1a4d
 }

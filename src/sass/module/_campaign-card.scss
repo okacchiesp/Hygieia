@@ -13,20 +13,12 @@
   }
 }
 .campaign-card__image {
-<<<<<<< HEAD
   max-height: rem(188);
   @include mq(md) {
-=======
-  aspect-ratio: 280 / 188;
-  max-height: rem(188);
-  @include mq(md) {
-    aspect-ratio: 333 / 223;
->>>>>>> 014020e7218aaa229fb84b53ca71032797df1a4d
     max-height: rem(347);
   }
 }
 .campaign-card__image img {
-<<<<<<< HEAD
   aspect-ratio: 280 / 188;
   width: 100%;
   height: 100%;
@@ -34,11 +26,6 @@
   @include mq(md) {
     aspect-ratio: 333 / 223;
   }
-=======
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
->>>>>>> 014020e7218aaa229fb84b53ca71032797df1a4d
 }
 .campaign-card__meta {
   padding: rem(16) rem(16) rem(24);
@@ -55,12 +42,9 @@
   display: flex;
   flex-direction: column;
 }
-<<<<<<< HEAD
 .campaign-card__meta-head--center {
   align-self: center;
 }
-=======
->>>>>>> 014020e7218aaa229fb84b53ca71032797df1a4d
 .campaign-card__title {
   font-size: rem(16);
   line-height: 1.5;

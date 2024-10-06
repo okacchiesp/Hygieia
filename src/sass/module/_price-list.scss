@@ -37,7 +37,6 @@
   border-right: 1px solid $greenaccent;
   border-bottom: 1px solid $greenaccent;
 }
-<<<<<<< HEAD
 .price-list__table tbody {
   display: flex;
   flex-direction: column;
@@ -47,11 +46,6 @@
   display: flex;
   height: rem(60);
   flex-grow: 1;
-=======
-.price-list__table tr {
-  display: flex;
-  height: rem(60);
->>>>>>> 014020e7218aaa229fb84b53ca71032797df1a4d
 }
 .price-list__table tr:first-child {
   @include mq(md) {
@@ -65,11 +59,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-<<<<<<< HEAD
   flex-grow: 1;
-=======
-  height: inherit;
->>>>>>> 014020e7218aaa229fb84b53ca71032797df1a4d
   @include mq(md) {
     justify-content: flex-start;
     padding-left: rem(16);

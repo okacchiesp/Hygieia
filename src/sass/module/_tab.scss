@@ -28,6 +28,7 @@
   align-items: center;
   justify-content: center;
   padding: rem(10) 0;
+  text-align: center;
   @include mq(md) {
     padding: rem(13) 0;
   }
