@@ -10,15 +10,7 @@
       </picture>
     </div>
   </section>
-  <nav class="breadcrumbs breadcrumbs--top-margin">
-    <div class="breadcrumb__inner inner">
-      <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
-        <?php if (function_exists('bcn_display')) {
-          bcn_display();
-        } ?>
-      </div>
-    </div>
-  </nav>
+  <?php get_template_part('template/parts', 'breadcrumbs'); ?>
   <section class="campaign-section page-body page-body--top-margin">
     <div class="campaign-section__inner inner">
       <div class="campaign-section__tags category-tags">
@@ -57,14 +49,11 @@
                 <p class="campaign-card__category category-tag">
                   <?php
                       $terms = get_the_terms(get_the_ID(), 'campaign_category');
-                      if ($terms && !is_wp_error($terms)) {
-                        $term_links = array();
-                        foreach ($terms as $term) {
-                          $term_links[] = '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
-                        }
-                        echo join(", ", $term_links);
-                      }
-                      ?>
+                      if ($terms && !is_wp_error($terms)) :
+                        foreach ($terms as $term) : ?>
+                  <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
+                  <?php endforeach;
+                      endif; ?>
                 </p>
                 <h2 class="campaign-card__title"><?php the_title(); ?></h2>
               </div>
@@ -82,7 +71,7 @@
                   <p class="campaign-card__date"><?php the_field('startday'); ?>-<?php the_field('endday'); ?></p>
                   <p class="campaign-card__reserve">ご予約・お問い合わせはコチラ</p>
                   <div class="campaign-card__btn">
-                    <a href="<?php echo get_permalink(54); ?>" class="button">Contact us<span></span></a>
+                    <a href="<?php echo esc_url(home_url('/contact')); ?>" class="button">Contact us<span></span></a>
                   </div>
                 </div>
               </div>
@@ -91,11 +80,7 @@
           <?php endwhile; ?>
           <?php endif; ?>
         </div>
-        <div class="pagination pagination--top-margin">
-          <?php
-          wp_pagenavi();
-          ?>
-        </div>
+        <?php get_template_part('template/parts', 'wppagenavi'); ?>
       </div>
     </div>
   </section>

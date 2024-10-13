@@ -62,8 +62,8 @@
         <div class="swiper-wrapper">
           <?php
           $args = array(
-            'post_type' => 'campaign', // カスタム投稿タイプ名
-            'posts_per_page' => -1, // すべての投稿を取得
+            'post_type' => 'campaign',
+            'posts_per_page' => -1,
           );
           $campaigns = new WP_Query($args);
           if ($campaigns->have_posts()) :
@@ -80,14 +80,11 @@
                   <p class="campaign-card__category category-tag">
                     <?php
                         $terms = get_the_terms(get_the_ID(), 'campaign_category');
-                        if ($terms && !is_wp_error($terms)) {
-                          $term_links = array();
-                          foreach ($terms as $term) {
-                            $term_links[] = '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
-                          }
-                          echo join(", ", $term_links);
-                        }
-                        ?>
+                        if ($terms && !is_wp_error($terms)) :
+                          foreach ($terms as $term) : ?>
+                    <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
+                    <?php endforeach;
+                        endif; ?>
                   </p>
                   <h3 class="campaign-card__title"><?php the_title(); ?></h3>
                 </div>
@@ -232,14 +229,11 @@
                 <p class="voice-card__category category-tag">
                   <?php
                       $terms = get_the_terms(get_the_ID(), 'voice_category');
-                      if ($terms && !is_wp_error($terms)) {
-                        $term_links = array();
-                        foreach ($terms as $term) {
-                          $term_links[] = '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
-                        }
-                        echo join(", ", $term_links);
-                      }
-                      ?>
+                      if ($terms && !is_wp_error($terms)) :
+                        foreach ($terms as $term) : ?>
+                  <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
+                  <?php endforeach;
+                      endif; ?>
                 </p>
               </div>
               <h3 class="voice-card__title">
@@ -253,7 +247,7 @@
             </div>
           </div>
           <p class="voice-card__text">
-            <?php echo wp_trim_words(get_the_excerpt(), 171, '...'); ?>
+            <?php the_content(); ?>
           </p>
         </div>
         <?php endwhile;
@@ -281,86 +275,129 @@
           </picture>
         </div>
         <div class="price__lists">
+          <?php
+          $price_page_id = get_page_by_path('price')->ID;
+          $group = SCF::get('license', $price_page_id);
+          if (!empty($group) && is_array($group)):
+            $check = false;
+            foreach ($group as $item) {
+              if (!empty($item['license-course']) && !empty($item['license-price'])) {
+                $check = true;
+                break;
+              }
+            }
+          endif; ?>
+          <?php if ($check): ?>
           <table class="price__list">
             <tbody>
               <tr>
                 <th colspan="2">ライセンス講習</th>
               </tr>
-              <?php
-              $price_page_id = get_page_by_path('price')->ID;
-
-              $group = SCF::get('license', $price_page_id);
-              foreach ($group as $license):
-              ?>
+              <?php foreach ($group as $license):
+                ?>
               <tr>
                 <td><?php echo esc_html($license['license-course']); ?></td>
                 <td>¥<?php echo esc_html($license['license-price']); ?></td>
               </tr>
-              <?php
-              endforeach;
-              ?>
+              <?php endforeach;
+                ?>
             </tbody>
           </table>
+          <?php
+          endif;
+          ?>
+          <?php
+          $price_page_id = get_page_by_path('price')->ID;
+          $group = SCF::get('diving', $price_page_id);
+          if (!empty($group) && is_array($group)):
+            $check = false;
+            foreach ($group as $item) {
+              if (!empty($item['diving-course']) && !empty($item['diving-price'])) {
+                $check = true;
+                break;
+              }
+            }
+          endif; ?>
+          <?php if ($check): ?>
           <table class="price__list">
             <tbody>
               <tr>
                 <th colspan="2">体験ダイビング</th>
               </tr>
-              <?php
-              $price_page_id = get_page_by_path('price')->ID;
-
-              $group = SCF::get('diving', $price_page_id);
-              foreach ($group as $diving):
-              ?>
+              <?php foreach ($group as $diving):
+                ?>
               <tr>
                 <td><?php echo esc_html($diving['diving-course']); ?></td>
                 <td>¥<?php echo esc_html($diving['diving-price']); ?></td>
               </tr>
               <?php
-              endforeach;
-              ?>
+                endforeach;
+                ?>
             </tbody>
           </table>
+          <?php endif; ?>
+          <?php
+          $price_page_id = get_page_by_path('price')->ID;
+          $group = SCF::get('fun', $price_page_id);
+          if (!empty($group) && is_array($group)):
+            $check = false;
+            foreach ($group as $item) {
+              if (!empty($item['fun-course']) && !empty($item['fun-price'])) {
+                $check = true;
+                break;
+              }
+            }
+          endif; ?>
+          <?php if ($check): ?>
           <table class="price__list">
             <tbody>
               <tr>
                 <th colspan="2">ファンダイビング</th>
               </tr>
               <?php
-              $price_page_id = get_page_by_path('price')->ID;
-
-              $group = SCF::get('fun', $price_page_id);
-              foreach ($group as $fun):
-              ?>
+                foreach ($group as $fun):
+                ?>
               <tr>
                 <td><?php echo esc_html($fun['fun-course']); ?></td>
                 <td>¥<?php echo esc_html($fun['fun-price']); ?></td>
               </tr>
               <?php
-              endforeach;
-              ?>
+                endforeach;
+                ?>
             </tbody>
           </table>
+          <?php endif; ?>
+          <?php
+          $price_page_id = get_page_by_path('price')->ID;
+          $group = SCF::get('special', $price_page_id);
+          if (!empty($group) && is_array($group)):
+            $check = false;
+            foreach ($group as $item) {
+              if (!empty($item['special-course']) && !empty($item['special-price'])) {
+                $check = true;
+                break;
+              }
+            }
+          endif; ?>
+          <?php if ($check): ?>
           <table class="price__list">
             <tbody>
               <tr>
                 <th colspan="2">スペシャルダイビング</th>
               </tr>
               <?php
-              $price_page_id = get_page_by_path('price')->ID;
-
-              $group = SCF::get('special', $price_page_id);
-              foreach ($group as $special):
-              ?>
+                foreach ($group as $special):
+                ?>
               <tr>
                 <td><?php echo esc_html($special['special-course']); ?></td>
                 <td>¥<?php echo esc_html($special['special-price']); ?></td>
               </tr>
               <?php
-              endforeach;
-              ?>
+                endforeach;
+                ?>
             </tbody>
           </table>
+          <?php endif; ?>
         </div>
       </div>
       <div class="price__btn">

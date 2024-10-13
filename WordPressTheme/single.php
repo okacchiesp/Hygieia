@@ -13,15 +13,11 @@
       </picture>
     </div>
   </div>
-  <nav class="breadcrumbs breadcrumbs--top-margin">
-    <div class="breadcrumb__inner inner">
-      <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
-        <?php if (function_exists('bcn_display')) {
-          bcn_display();
-        } ?>
-      </div>
-    </div>
-  </nav>
+  <?php get_template_part('template/parts', 'breadcrumbs'); ?>
+  <?php
+  if (have_posts()) :
+    while (have_posts()) : the_post();
+  ?>
   <div class="blog-contents blog-contents--top-margin page-body">
     <div class="blog-contents__inner inner">
       <section class="blog-contents__content blog-content">
@@ -37,12 +33,7 @@
             <?php endif; ?>
           </div>
           <div class="blog-archive__body">
-            <?php
-            if (have_posts()) :
-              while (have_posts()) : the_post();
-                the_content();
-              endwhile;
-            endif; ?>
+            <?php the_content(); ?>
           </div>
         </div>
         <div class="blog-contents__pagination">
@@ -58,7 +49,12 @@
           <?php endif; ?>
         </div>
       </section>
-      <?php get_sidebar(); ?>
+      <div class="blog-contents__sidebar">
+        <?php get_sidebar(); ?>
+      </div>
     </div>
   </div>
+  <?php
+    endwhile;
+  endif; ?>
   <?php get_footer(); ?>

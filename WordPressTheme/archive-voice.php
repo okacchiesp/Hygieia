@@ -10,33 +10,29 @@
       </picture>
     </div>
   </section>
-  <nav class="breadcrumbs breadcrumbs--top-margin">
-    <div class="breadcrumb__inner inner">
-      <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
-        <?php if (function_exists('bcn_display')) {
-          bcn_display();
-        } ?>
-      </div>
-    </div>
-  </nav>
+  <?php get_template_part('template/parts', 'breadcrumbs'); ?>
   <div class="voice-section voice-section--top-margin page-body">
     <div class="voice-section__inner inner">
       <div class="voice-section__tags category-tags">
         <ul class="category-tags__list">
           <li
             class="category-tags__item category-tag <?php if (is_post_type_archive('voice')) echo 'category-tag--active'; ?>">
-            <a href="<?php echo get_post_type_archive_link('voice'); ?>">ALL</a>
+            <a href="<?php echo esc_url(get_post_type_archive_link('voice')); ?>">ALL</a>
           </li>
           <?php
           $terms = get_terms(array(
             'taxonomy' => 'voice_category',
             'hide_empty' => false,
           ));
-          foreach ($terms as $term) {
-            echo '<li class="category-tags__item category-tag"><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
-          }
-          ?>
+          if (!is_wp_error($terms) && !empty($terms)) :
+            foreach ($terms as $term) : ?>
+          <li class="category-tags__item category-tag">
+            <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
+          </li>
+          <?php endforeach;
+          endif; ?>
         </ul>
+
       </div>
       <div class="voice-section__content">
         <?php if (have_posts()) : ?>
@@ -50,14 +46,12 @@
                   <p class="voice-card__category category-tag">
                     <?php
                         $terms = get_the_terms(get_the_ID(), 'voice_category');
-                        if ($terms && !is_wp_error($terms)) {
-                          $term_links = array();
-                          foreach ($terms as $term) {
-                            $term_links[] = '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
-                          }
-                          echo join(", ", $term_links);
-                        }
-                        ?></p>
+                        if ($terms && !is_wp_error($terms)) :
+                          foreach ($terms as $term) : ?>
+                    <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
+                    <?php endforeach;
+                        endif; ?>
+                  </p>
                 </div>
                 <h2 class="voice-card__title">
                   <?php the_title(); ?>
@@ -70,14 +64,12 @@
               </div>
             </div>
             <p class="voice-card__text">
-              <?php echo wp_trim_words(get_the_content(), 171, '...'); ?>
+              <?php the_content(); ?>
             </p>
           </section>
           <?php endwhile; ?>
         </div>
-        <div class="pagination pagination--top-margin">
-          <?php wp_pagenavi(); ?>
-        </div>
+        <?php get_template_part('template/parts', 'wppagenavi'); ?>
         <?php endif; ?>
       </div>
     </div>

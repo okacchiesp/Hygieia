@@ -10,15 +10,7 @@
       </picture>
     </div>
   </section>
-  <nav class="breadcrumbs breadcrumbs--top-margin">
-    <div class="breadcrumb__inner inner">
-      <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
-        <?php if (function_exists('bcn_display')) {
-          bcn_display();
-        } ?>
-      </div>
-    </div>
-  </nav>
+  <?php get_template_part('template/parts', 'breadcrumbs'); ?>
   <div class="voice-section voice-section--top-margin page-body">
     <div class="voice-section__inner inner">
       <div class="voice-section__tags category-tags">
@@ -46,44 +38,39 @@
           if (have_posts()) :
             while (have_posts()) :
               the_post(); ?>
-              <section class="voice-cards__item voice-card">
-                <div class="voice-card__head">
-                  <div class="voice-card__meta">
-                    <div class="voice-card__metahead">
-                      <p class="voice-card__age"><?php the_field('age'); ?>代(<?php the_field('gender'); ?>)</p>
-                      <p class="voice-card__category category-tag">
-                        <?php
+          <section class="voice-cards__item voice-card">
+            <div class="voice-card__head">
+              <div class="voice-card__meta">
+                <div class="voice-card__metahead">
+                  <p class="voice-card__age"><?php the_field('age'); ?>代(<?php the_field('gender'); ?>)</p>
+                  <p class="voice-card__category category-tag">
+                    <?php
                         $terms = get_the_terms(get_the_ID(), 'voice_category');
-                        if ($terms && !is_wp_error($terms)) {
-                          $term_links = array();
-                          foreach ($terms as $term) {
-                            $term_links[] = '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
-                          }
-                          echo join(", ", $term_links);
-                        }
-                        ?></p>
-                    </div>
-                    <h2 class="voice-card__title">
-                      <?php the_title(); ?>
-                    </h2>
-                  </div>
-                  <div class="voice-card__image js-slidein">
-                    <?php if (has_post_thumbnail()) : ?>
-                      <?php the_post_thumbnail('full', ['alt' => get_the_title()]); ?>
-                    <?php endif; ?>
-                  </div>
+                        if ($terms && !is_wp_error($terms)) :
+                          foreach ($terms as $term) : ?>
+                    <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
+                    <?php endforeach;
+                        endif; ?>
+                  </p>
                 </div>
-                <p class="voice-card__text">
-                  <?php the_content(); ?>
-                </p>
-              </section>
-            <?php endwhile; ?>
+                <h2 class="voice-card__title">
+                  <?php the_title(); ?>
+                </h2>
+              </div>
+              <div class="voice-card__image js-slidein">
+                <?php if (has_post_thumbnail()) : ?>
+                <?php the_post_thumbnail('full', ['alt' => get_the_title()]); ?>
+                <?php endif; ?>
+              </div>
+            </div>
+            <p class="voice-card__text">
+              <?php the_content(); ?>
+            </p>
+          </section>
+          <?php endwhile; ?>
         </div>
-        <div class="pagination pagination--top-margin">
-          <?php
-            wp_pagenavi(); ?>
-        </div>
-      <?php endif; ?>
+        <?php get_template_part('template/parts', 'wppagenavi'); ?>
+        <?php endif; ?>
       </div>
     </div>
   </div>

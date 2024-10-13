@@ -1,3 +1,4 @@
+<?php if (!is_page('contact')) : ?>
 <section class="contact u-section-margin">
   <div class="contact__inner inner">
     <div class="contact__box">
@@ -40,6 +41,7 @@
     </div>
   </div>
 </section>
+<?php endif; ?>
 </main>
 <div class="to-top">
   <a href="#top"></a>

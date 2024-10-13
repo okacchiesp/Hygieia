@@ -28,9 +28,8 @@
 
 .about__images {
   width: 100%;
-  position: relative;
   @include mq(md) {
-    top: rem(80);
+    margin-top: rem(80);
   }
 }
 

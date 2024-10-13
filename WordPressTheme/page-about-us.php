@@ -10,15 +10,7 @@
       </picture>
     </div>
   </section>
-  <nav class="breadcrumbs breadcrumbs--top-margin">
-    <div class="breadcrumb__inner inner">
-      <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
-        <?php if (function_exists('bcn_display')) {
-          bcn_display();
-        } ?>
-      </div>
-    </div>
-  </nav>
+  <?php get_template_part('template/parts', 'breadcrumbs'); ?>
   <section class="about about--no-icon about--top-margin page-body">
     <div class="about__inner inner">
       <div class="about__contents about-pc">

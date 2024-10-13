@@ -1,14 +1,7 @@
 <?php get_header(); ?>
 <main>
   <div class="page-green">
-    <nav class="breadcrumbs breadcrumbs--top-margin">
-      <div class="breadcrumbs__inner inner">
-        <ul class="breadcrumbs__list">
-          <li class="breadcrumbs__item"><a href="<?php echo home_url(); ?>">TOP</a></li>
-          <li class="breadcrumbs__item"><a href="#">404</a></li>
-        </ul>
-      </div>
-    </nav>
+    <?php get_template_part('parts/parts', 'contact'); ?>
     <div class="error">
       <div class="error__inner inner">
         <p class="error__title">404</p>

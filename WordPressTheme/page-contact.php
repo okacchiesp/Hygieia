@@ -10,18 +10,12 @@
       </picture>
     </div>
   </section>
-  <nav class="breadcrumbs breadcrumbs--top-margin">
-    <div class="breadcrumb__inner inner">
-      <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
-        <?php if (function_exists('bcn_display')) {
-          bcn_display();
-        } ?>
-      </div>
-    </div>
-  </nav>
+  <?php get_template_part('template/parts', 'breadcrumbs'); ?>
   <div class="contact-form contact-form--top-margin page-body">
     <div class="contact-form__inner inner">
-      <?php the_content(); ?>
+      <?php
+      echo do_shortcode('[contact-form-7 id="097321a" title="お問い合わせ"]');
+      ?>
     </div>
   </div>
 </main>

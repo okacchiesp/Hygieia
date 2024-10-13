@@ -10,15 +10,7 @@
       </picture>
     </div>
   </section>
-  <nav class="breadcrumbs breadcrumbs--top-margin">
-    <div class="breadcrumb__inner inner">
-      <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
-        <?php if (function_exists('bcn_display')) {
-          bcn_display();
-        } ?>
-      </div>
-    </div>
-  </nav>
+  <?php get_template_part('template/parts', 'breadcrumbs'); ?>
   <div class="contact-thanks contact-thanks--top-margin page-body">
     <div class="contact-thanks__inner inner">
       <p class="contact-thanks__head">お問い合わせ内容を送信完了しました。</p>

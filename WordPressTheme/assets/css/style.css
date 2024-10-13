@@ -197,7 +197,6 @@ tr {
 }
 
 .about__images {
-	position: relative;
 	width: 100%;
 }
 
@@ -2742,7 +2741,7 @@ html {
 }
 
 .about__images {
-	top: 5rem;
+	margin-top: 5rem;
 }
 
 .about__image:nth-of-type(1) {

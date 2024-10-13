@@ -1,4 +1,4 @@
-<aside class="blog-contents__sidebar sidebar">
+<aside class="sidebar">
   <secrion class="sidebar__popular popular-article">
     <h2 class="popular-article__title sidebar-title"><img
         src="<?php echo get_theme_file_uri(); ?>/assets/images/blog/whale_black.png" alt=""

@@ -10,29 +10,21 @@
       </picture>
     </div>
   </section>
-  <nav class="breadcrumbs breadcrumbs--top-margin">
-    <div class="breadcrumb__inner inner">
-      <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
-        <?php if (function_exists('bcn_display')) {
-          bcn_display();
-        } ?>
-      </div>
-    </div>
-  </nav>
+  <?php get_template_part('template/parts', 'breadcrumbs'); ?>
   <div class="faq-list faq-list--top-margin page-body">
     <div class="faq-list__inner inner">
       <?php $group = SCF::get('faq');
       foreach ($group as $faq):
       ?>
-        <section class="faq-list__item faq-item">
-          <h2 class="faq-item__question js-faq-question">
-            <?php echo $faq['question']; ?>
-            <span class="faq-item__icon open"></span>
-          </h2>
-          <div class="faq-item__answer">
-            <?php echo $faq['answer']; ?>
-          </div>
-        </section>
+      <section class="faq-list__item faq-item">
+        <h2 class="faq-item__question js-faq-question">
+          <?php echo $faq['question']; ?>
+          <span class="faq-item__icon open"></span>
+        </h2>
+        <div class="faq-item__answer">
+          <?php echo $faq['answer']; ?>
+        </div>
+      </section>
       <?php
       endforeach;
       ?>
