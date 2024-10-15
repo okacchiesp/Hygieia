@@ -21,30 +21,50 @@
     </dvi>
     <div class="swiper js-mv-swiper mv__slide">
       <div class="swiper-wrapper">
+        <?php $image_id = get_post_meta(get_the_ID(), 'mv01', true);
+        if (get_field('mv01') && get_field('sp-mv01')) :
+          $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true); ?>
         <div class="mv__image swiper-slide">
           <picture>
-            <source srcset="<?php the_field('mv01'); ?>" alt="海亀の写真" media="(min-width: 768px)" />
-            <img src="<?php the_field('sp-mv01'); ?>" alt="">
+            <source srcset="<?php the_field('mv01'); ?>" alt="<?php echo esc_html($alt_text); ?>"
+              media="(min-width: 768px)" />
+            <img src="<?php the_field('sp-mv01'); ?>" alt="<?php echo esc_html($alt_text); ?>">
           </picture>
         </div>
+        <?php endif; ?>
+        <?php $image_id = get_post_meta(get_the_ID(), 'mv02', true);
+        if (get_field('mv02') && get_field('sp-mv02')) :
+          $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true); ?>
         <div class="mv__image swiper-slide">
           <picture>
-            <source srcset="<?php the_field('mv02'); ?>" alt="海亀の写真" media="(min-width: 768px)" />
-            <img src="<?php the_field('sp-mv02'); ?>" alt="">
+            <source srcset="<?php the_field('mv02'); ?>" alt="<?php echo esc_html($alt_text); ?>"
+              media="(min-width: 768px)" />
+            <img src="<?php the_field('sp-mv02'); ?>" alt="<?php echo esc_html($alt_text); ?>">
           </picture>
         </div>
+        <?php endif; ?>
+        <?php $image_id = get_post_meta(get_the_ID(), 'mv03', true);
+        if (get_field('mv03') && get_field('sp-mv03')) :
+          $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true); ?>
         <div class="mv__image swiper-slide">
           <picture>
-            <source srcset="<?php the_field('mv03'); ?>" alt="海亀の写真" media="(min-width: 768px)" />
-            <img src="<?php the_field('sp-mv03'); ?>" alt="">
+            <source srcset="<?php the_field('mv03'); ?>" alt="<?php echo esc_html($alt_text); ?>"
+              media="(min-width: 768px)" />
+            <img src="<?php the_field('sp-mv03'); ?>" alt="<?php echo esc_html($alt_text); ?>">
           </picture>
         </div>
+        <?php endif; ?>
+        <?php $image_id = get_post_meta(get_the_ID(), 'mv04', true);
+        if (get_field('mv04') && get_field('sp-mv04')) :
+          $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true); ?>
         <div class="mv__image swiper-slide">
           <picture>
-            <source srcset="<?php the_field('mv04'); ?>" alt="海亀の写真" media="(min-width: 768px)" />
-            <img src="<?php the_field('sp-mv04'); ?>" alt="">
+            <source srcset="<?php the_field('mv04'); ?>" alt="<?php echo esc_html($alt_text); ?>"
+              media="(min-width: 768px)" />
+            <img src="<?php the_field('sp-mv04'); ?>" alt="<?php echo esc_html($alt_text); ?>">
           </picture>
         </div>
+        <?php endif; ?>
       </div>
     </div>
   </section>
@@ -90,12 +110,11 @@
                 </div>
                 <?php
                     $price = get_field('price');
-                    $c_price = get_field('campaign-price');
                     ?>
                 <div class="campaign-card__meta-body">
                   <p class="campaign-card__text">全部コミコミ(お一人様)</p>
                   <p class="campaign-card__price">
-                    <span>¥<?php echo number_format($price); ?></span>¥<?php echo number_format($c_price); ?>
+                    <span>¥<?php echo number_format($price['normal-price']); ?></span>¥<?php echo number_format($price['campaign-price']); ?>
                   </p>
                 </div>
               </div>
@@ -294,13 +313,14 @@
                 <th colspan="2">ライセンス講習</th>
               </tr>
               <?php foreach ($group as $license):
-                ?>
+                  if (!empty($license['license-course']) && !empty($license['license-price'])): ?>
               <tr>
                 <td><?php echo esc_html($license['license-course']); ?></td>
                 <td>¥<?php echo esc_html($license['license-price']); ?></td>
               </tr>
-              <?php endforeach;
-                ?>
+              <?php endif;
+                endforeach; ?>
+
             </tbody>
           </table>
           <?php

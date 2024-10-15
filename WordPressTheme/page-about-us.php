@@ -45,6 +45,18 @@
         </div>
       </div>
     </div>
+    <?php
+    $gallery_images = SCF::get('gallery-images');
+    if (!empty($gallery_images) && is_array($gallery_images)):
+      $check = false;
+      foreach ($gallery_images as $item) {
+        if (!empty($item['gallery-image'])) {
+          $check = true;
+          break;
+        }
+      }
+    endif; ?>
+    <?php if ($check): ?>
     <section class="about__gallery gallery">
       <div class="about__gallery__inner inner">
         <div class="gallery__header section-header">
@@ -52,20 +64,17 @@
           <h2 class="section-header__subtitle">フォト</h2>
         </div>
         <div class="gallery__images">
-          <?php
-          $gallery_images = SCF::get('gallery-images');
-          if ($gallery_images && is_array($gallery_images)) :
-            foreach ($gallery_images as $image) :
+          <?php foreach ($gallery_images as $image) :
               $image_url = wp_get_attachment_image_url($image['gallery-image'], 'full');
+              $text = $image['image_description'];
               if ($image_url) :
-          ?>
+            ?>
           <a href="<?php echo esc_url($image_url); ?>" class="gallery__image js-modal">
-            <img src="<?php echo esc_url($image_url); ?>" alt=""></a>
+            <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo $text; ?>"></a>
           <?php
               endif;
             endforeach;
-          endif;
-          ?>
+            ?>
           <div id="modal" class="gallery__modal">
             <span class="gallery__close">&times;</span>
             <div class="gallery__content">
@@ -75,5 +84,6 @@
         </div>
       </div>
     </section>
+    <?php endif; ?>
   </section>
   <?php get_footer(); ?>

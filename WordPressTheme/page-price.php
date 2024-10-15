@@ -30,12 +30,13 @@
           ライセンス講習
         </h2>
         <table class="price-list__table">
-          <?php foreach ($group as $license): ?>
+          <?php foreach ($group as $license): if (!empty($license['license-course']) && !empty($license['license-price'])): ?>
           <tr>
             <td><?php echo $license['license-course']; ?></td>
             <td>¥<?php echo $license['license-price']; ?></td>
           </tr>
-          <?php endforeach ?>
+          <?php endif;
+            endforeach; ?>
         </table>
       </section>
       <?php endif;
@@ -57,12 +58,12 @@
           体験ダイビング
         </h2>
         <table class="price-list__table">
-          <?php foreach ($group as $diving): ?>
+          <?php foreach ($group as $diving): if (!empty($diving['diving-course']) && !empty($diving['diving-price'])): ?>
           <tr>
             <td><?php echo $diving['diving-course']; ?></td>
             <td>¥<?php echo $diving['diving-price']; ?></td>
           </tr>
-          <?php
+          <?php endif;
             endforeach;
             ?>
         </table>
@@ -85,13 +86,13 @@
           ファンダイビング
         </h2>
         <table class="price-list__table">
-          <?php foreach ($group as $fun): ?>
+          <?php foreach ($group as $fun): if (!empty($fun['fun-course']) && !empty($fun['fun-price'])): ?>
 
           <tr>
             <td><?php echo $fun['fun-course']; ?></td>
             <td>¥<?php echo $fun['fun-price']; ?></td>
           </tr>
-          <?php
+          <?php endif;
             endforeach;
             ?>
         </table>
@@ -114,12 +115,12 @@
           スペシャルダイビング
         </h2>
         <table class="price-list__table">
-          <?php foreach ($group as $special): ?>
+          <?php foreach ($group as $special): if (!empty($special['special-course']) && !empty($special['special-price'])): ?>
           <tr>
             <td><?php echo $special['special-course']; ?></td>
             <td>¥<?php echo $special['special-price']; ?></td>
           </tr>
-          <?php
+          <?php endif;
             endforeach;
             ?>
         </table>

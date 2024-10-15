@@ -11,11 +11,22 @@
     </div>
   </section>
   <?php get_template_part('template/parts', 'breadcrumbs'); ?>
+  <?php $group = SCF::get('faq');
+  if (!empty($group) && is_array($group)):
+    $check = false;
+    foreach ($group as $item) {
+      if (!empty($item['question']) && !empty($item['answer'])) {
+        $check = true;
+        break;
+      }
+    }
+  endif; ?>
+  <?php if ($check): ?>
   <div class="faq-list faq-list--top-margin page-body">
     <div class="faq-list__inner inner">
-      <?php $group = SCF::get('faq');
-      foreach ($group as $faq):
-      ?>
+      <?php
+        foreach ($group as $faq):
+          if (!empty($faq['question']) && !empty($faq['answer'])): ?>
       <section class="faq-list__item faq-item">
         <h2 class="faq-item__question js-faq-question">
           <?php echo $faq['question']; ?>
@@ -25,9 +36,10 @@
           <?php echo $faq['answer']; ?>
         </div>
       </section>
-      <?php
-      endforeach;
-      ?>
+      <?php endif;
+        endforeach;
+        ?>
     </div>
   </div>
+  <?php endif; ?>
   <?php get_footer(); ?>
