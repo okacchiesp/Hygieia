@@ -113,9 +113,13 @@
                     ?>
                 <div class="campaign-card__meta-body">
                   <p class="campaign-card__text">全部コミコミ(お一人様)</p>
+                  <?php if ($price['normal-price'] && $price['campaign-price']): ?>
                   <p class="campaign-card__price">
                     <span>¥<?php echo number_format($price['normal-price']); ?></span>¥<?php echo number_format($price['campaign-price']); ?>
                   </p>
+                  <?php else: ?>
+                  <p class="campaign-card__price">coming soon</p>
+                  <?php endif; ?>
                 </div>
               </div>
             </div>
