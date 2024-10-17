@@ -38,6 +38,9 @@
           if (have_posts()) :
             while (have_posts()) :
               the_post(); ?>
+          <?php $age = get_post_meta($post->ID, 'age', true);
+              $gender = get_post_meta($post->ID, 'gender', true);
+              if ($age && $gender) : ?>
           <section class="voice-cards__item voice-card">
             <div class="voice-card__head">
               <div class="voice-card__meta">
@@ -45,12 +48,12 @@
                   <p class="voice-card__age"><?php the_field('age'); ?>代(<?php the_field('gender'); ?>)</p>
                   <p class="voice-card__category category-tag">
                     <?php
-                        $terms = get_the_terms(get_the_ID(), 'voice_category');
-                        if ($terms && !is_wp_error($terms)) :
-                          foreach ($terms as $term) : ?>
+                          $terms = get_the_terms(get_the_ID(), 'voice_category');
+                          if ($terms && !is_wp_error($terms)) :
+                            foreach ($terms as $term) : ?>
                     <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
                     <?php endforeach;
-                        endif; ?>
+                          endif; ?>
                   </p>
                 </div>
                 <h2 class="voice-card__title">
@@ -67,6 +70,7 @@
               <?php the_content(); ?>
             </p>
           </section>
+          <?php endif; ?>
           <?php endwhile; ?>
         </div>
         <?php get_template_part('template/parts', 'wppagenavi'); ?>
