@@ -97,9 +97,8 @@
               <p class="campaign-card__price">
                 <?php
                     $price = get_field('price');
-                    $c_price = get_field('campaign-price');
                     ?>
-                <span>¥<?php echo number_format($price); ?></span>¥<?php echo number_format($c_price); ?>
+                <span>¥<?php echo number_format($price['normal-price']); ?></span>¥<?php echo number_format($price['campaign-price']); ?>
               </p>
             </div>
           </div>
