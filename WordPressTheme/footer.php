@@ -1,4 +1,4 @@
-<?php if (!is_page('contact')) : ?>
+<?php if (!is_page('contact') && !is_404()) : ?>
 <section class="contact u-section-margin">
   <div class="contact__inner inner">
     <div class="contact__box">
@@ -46,7 +46,7 @@
 <div class="to-top">
   <a href="#top"></a>
 </div>
-<footer class="footer footer--top-margin">
+<footer class="footer <?php if (!is_404()) echo 'footer--top-margin'; ?>">
   <div class="footer__inner inner">
     <div class="footer__head">
       <div class="footer__logo">

@@ -11,6 +11,7 @@
     </div>
   </section>
   <?php get_template_part('template/parts', 'breadcrumbs'); ?>
+  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
   <section class="legal legal--top-margin page-body">
     <div class="legal__inner inner">
       <h2 class="legal__title"><?php the_title(); ?></h2>
@@ -19,4 +20,6 @@
       </div>
     </div>
   </section>
+  <?php endwhile;
+  endif; ?>
   <?php get_footer(); ?>

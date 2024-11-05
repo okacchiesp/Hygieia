@@ -5,10 +5,8 @@
         class="sidebar-title__icon">人気記事</h2>
     <?php
     $popular_args = array(
-      'post_type'       => 'post',              // 投稿タイプを指定
       'meta_key'        => 'post_views_count',  // 閲覧数を指定
       'orderby'         => 'meta_value_num',    // ソートの基準を閲覧数に
-      'order'           => 'DESC',              // 降順（閲覧数が多い順）でソート
       'post_status'     => 'publish',           // 投稿ステータスは公開済み
       'posts_per_page'  => 3,                   // 投稿表示件数は5件
     );
@@ -20,7 +18,10 @@
       <a href="<?php the_permalink(); ?>" class="popular-cards__item popular-card">
         <div class="popular-card__image">
           <?php if (has_post_thumbnail()) : ?>
-          <img src="<?php echo esc_url(get_the_post_thumbnail_url($post, 'post-thumbnail')); ?>" alt="">
+          <img src="<?php echo get_the_post_thumbnail_url(); ?>"
+            alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?>">
+          <?php else : ?>
+          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/no-image.png" alt="デフォルト画像" />
           <?php endif; ?>
         </div>
         <div class="popular-card__inner">
@@ -45,8 +46,6 @@
       $args = array(
         'post_type' => 'voice',
         'posts_per_page' => 1,
-        'orderby' => 'date',
-        'order' => 'DESC'
       );
       $voice_query = new WP_Query($args);
       if ($voice_query->have_posts()) : while ($voice_query->have_posts()) : $voice_query->the_post();
@@ -54,9 +53,19 @@
       <div class="comment-cards__item comment-card">
         <div class="comment-card__image">
           <?php if (has_post_thumbnail()) : ?>
-          <?php the_post_thumbnail('full', ['alt' => get_the_title()]); ?>
-          <?php endif; ?></div>
-        <p class="comment-card__age"><?php the_field('age'); ?>代(<?php the_field('gender'); ?>)</p>
+          <img src="<?php echo get_the_post_thumbnail_url(); ?>"
+            alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?>">
+          <?php else : ?>
+          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/no-image.png" alt="デフォルト画像" />
+          <?php endif; ?>
+        </div>
+        <?php
+            $age = get_field('age');
+            $gender = get_field('gender');
+            if ($age && $gender):
+            ?>
+        <p class="voice-card__age"><?php echo esc_html($age); ?>代(<?php echo esc_html($gender); ?>)</p>
+        <?php endif; ?>
         <h3 class="comment-card__title"><?php the_title(); ?></h3>
       </div>
       <?php endwhile;
@@ -83,7 +92,8 @@
         <div class="side-campaign-cards__item campaign-card">
           <div class="campaign-card__image">
             <?php if (has_post_thumbnail()) : ?>
-            <?php the_post_thumbnail(); ?>
+            <img src="<?php echo get_the_post_thumbnail_url(); ?>"
+              alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?>">
             <?php else : ?>
             <img src="<?php echo get_theme_file_uri(); ?>/assets/images/no-image.png" alt="デフォルト画像" />
             <?php endif; ?>

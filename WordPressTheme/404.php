@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 <main>
   <div class="page-green">
-    <?php get_template_part('parts/parts', 'contact'); ?>
     <div class="error">
       <div class="error__inner inner">
         <p class="error__title">404</p>

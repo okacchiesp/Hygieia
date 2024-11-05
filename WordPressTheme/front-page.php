@@ -6,10 +6,10 @@
   </div>
   <div class="loading__images">
     <div class="loading__image js-loading-image">
-      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/loading_1.jpg" alt="" class="" />
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/loading_1.jpg" alt="" />
     </div>
     <div class="loading__image js-loading-image">
-      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/loading_2.jpg" alt="" class="" />
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/loading_2.jpg" alt="" />
     </div>
   </div>
 </div>
@@ -21,49 +21,49 @@
     </dvi>
     <div class="swiper js-mv-swiper mv__slide">
       <div class="swiper-wrapper">
-        <?php $image_id = get_post_meta(get_the_ID(), 'mv01', true);
-        if (get_field('mv01') && get_field('sp-mv01')) :
-          $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true); ?>
-          <div class="mv__image swiper-slide">
-            <picture>
-              <source srcset="<?php the_field('mv01'); ?>" alt="<?php echo esc_html($alt_text); ?>"
-                media="(min-width: 768px)" />
-              <img src="<?php the_field('sp-mv01'); ?>" alt="<?php echo esc_html($alt_text); ?>">
-            </picture>
-          </div>
+        <?php $image_id = get_field('mv01');
+        $image_id_sp = get_field('sp-mv01');
+        if ($image_id && $image_id_sp) : ?>
+        <div class="mv__image swiper-slide">
+          <picture>
+            <source srcset="<?php echo $image_id['url']; ?>" alt="<?php echo esc_attr($image_id['alt']); ?>"
+              media="(min-width: 768px)" />
+            <img src="<?php echo $image_id_sp['url']; ?>" alt="<?php echo esc_attr($image_id['alt']); ?>">
+          </picture>
+        </div>
         <?php endif; ?>
-        <?php $image_id = get_post_meta(get_the_ID(), 'mv02', true);
-        if (get_field('mv02') && get_field('sp-mv02')) :
-          $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true); ?>
-          <div class="mv__image swiper-slide">
-            <picture>
-              <source srcset="<?php the_field('mv02'); ?>" alt="<?php echo esc_html($alt_text); ?>"
-                media="(min-width: 768px)" />
-              <img src="<?php the_field('sp-mv02'); ?>" alt="<?php echo esc_html($alt_text); ?>">
-            </picture>
-          </div>
+        <?php $image_id02 = get_field('mv02');
+        $image_id_sp02 = get_field('sp-mv02');
+        if ($image_id02 && $image_id_sp02) : ?>
+        <div class="mv__image swiper-slide">
+          <picture>
+            <source srcset="<?php echo $image_id02['url']; ?>" alt="<?php echo esc_attr($image_id02['alt']); ?>"
+              media="(min-width: 768px)" />
+            <img src="<?php echo $image_id_sp02['url']; ?>" alt="<?php echo esc_attr($image_id02['alt']); ?>">
+          </picture>
+        </div>
         <?php endif; ?>
-        <?php $image_id = get_post_meta(get_the_ID(), 'mv03', true);
-        if (get_field('mv03') && get_field('sp-mv03')) :
-          $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true); ?>
-          <div class="mv__image swiper-slide">
-            <picture>
-              <source srcset="<?php the_field('mv03'); ?>" alt="<?php echo esc_html($alt_text); ?>"
-                media="(min-width: 768px)" />
-              <img src="<?php the_field('sp-mv03'); ?>" alt="<?php echo esc_html($alt_text); ?>">
-            </picture>
-          </div>
+        <?php $image_id03 = get_field('mv03');
+        $image_id_sp03 = get_field('sp-mv03');
+        if ($image_id03 && $image_id_sp03) : ?>
+        <div class="mv__image swiper-slide">
+          <picture>
+            <source srcset="<?php echo $image_id03['url']; ?>" alt="<?php echo esc_attr($image_id03['alt']); ?>"
+              media="(min-width: 768px)" />
+            <img src="<?php echo $image_id_sp03['url']; ?>" alt="<?php echo esc_attr($image_id03['alt']); ?>">
+          </picture>
+        </div>
         <?php endif; ?>
-        <?php $image_id = get_post_meta(get_the_ID(), 'mv04', true);
-        if (get_field('mv04') && get_field('sp-mv04')) :
-          $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true); ?>
-          <div class="mv__image swiper-slide">
-            <picture>
-              <source srcset="<?php the_field('mv04'); ?>" alt="<?php echo esc_html($alt_text); ?>"
-                media="(min-width: 768px)" />
-              <img src="<?php the_field('sp-mv04'); ?>" alt="<?php echo esc_html($alt_text); ?>">
-            </picture>
-          </div>
+        <?php $image_id04 = get_field('mv04');
+        $image_id_sp04 = get_field('sp-mv04');
+        if ($image_id04 && $image_id_sp04) : ?>
+        <div class="mv__image swiper-slide">
+          <picture>
+            <source srcset="<?php echo $image_id04['url']; ?>" alt="<?php echo esc_attr($image_id04['alt']); ?>"
+              media="(min-width: 768px)" />
+            <img src="<?php echo $image_id_sp04['url']; ?>" alt="<?php echo esc_attr($image_id04['alt']); ?>">
+          </picture>
+        </div>
         <?php endif; ?>
       </div>
     </div>
@@ -88,42 +88,45 @@
           $campaigns = new WP_Query($args);
           if ($campaigns->have_posts()) :
             while ($campaigns->have_posts()) : $campaigns->the_post(); ?>
-              <div class="swiper-slide campaign__link">
-                <div class="campaign__item campaign-card">
-                  <div class="campaign-card__image">
-                    <?php if (has_post_thumbnail()) {
-                      the_post_thumbnail();
-                    } ?>
-                  </div>
-                  <div class="campaign-card__meta">
-                    <div class="campaign-card__meta-head">
-                      <p class="campaign-card__category category-tag">
-                        <?php
+          <div class="swiper-slide campaign__link">
+            <div class="campaign__item campaign-card">
+              <div class="campaign-card__image">
+                <?php if (has_post_thumbnail()) : ?>
+                <img src="<?php echo get_the_post_thumbnail_url(); ?>"
+                  alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?>">
+                <?php else : ?>
+                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/no-image.png" alt="デフォルト画像" />
+                <?php endif; ?>
+              </div>
+              <div class="campaign-card__meta">
+                <div class="campaign-card__meta-head">
+                  <p class="campaign-card__category category-tag">
+                    <?php
                         $terms = get_the_terms(get_the_ID(), 'campaign_category');
                         if ($terms && !is_wp_error($terms)) :
                           foreach ($terms as $term) : ?>
-                            <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
-                        <?php endforeach;
+                    <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
+                    <?php endforeach;
                         endif; ?>
-                      </p>
-                      <h3 class="campaign-card__title"><?php the_title(); ?></h3>
-                    </div>
-                    <?php
+                  </p>
+                  <h3 class="campaign-card__title"><?php the_title(); ?></h3>
+                </div>
+                <?php
                     $price = get_field('price');
                     ?>
-                    <div class="campaign-card__meta-body">
-                      <p class="campaign-card__text">全部コミコミ(お一人様)</p>
-                      <?php if ($price['normal-price'] && $price['campaign-price']): ?>
-                        <p class="campaign-card__price">
-                          <span>¥<?php echo number_format($price['normal-price']); ?></span>¥<?php echo number_format($price['campaign-price']); ?>
-                        </p>
-                      <?php else: ?>
-                        <p class="campaign-card__price">coming soon</p>
-                      <?php endif; ?>
-                    </div>
-                  </div>
+                <div class="campaign-card__meta-body">
+                  <p class="campaign-card__text">全部コミコミ(お一人様)</p>
+                  <?php if ($price['normal-price'] && $price['campaign-price']): ?>
+                  <p class="campaign-card__price">
+                    <span>¥<?php echo number_format($price['normal-price']); ?></span>¥<?php echo number_format($price['campaign-price']); ?>
+                  </p>
+                  <?php else: ?>
+                  <p class="campaign-card__price">coming soon</p>
+                  <?php endif; ?>
                 </div>
               </div>
+            </div>
+          </div>
           <?php endwhile;
           endif;
           wp_reset_postdata();
@@ -198,27 +201,29 @@
       <div class="blog__items blog-cards">
         <?php
         $args = array(
-          'post_type' => 'post', // 通常の投稿タイプ
           'posts_per_page' => 3, // 最新3件を取得
         );
         $latest_posts = new WP_Query($args);
         if ($latest_posts->have_posts()) :
           while ($latest_posts->have_posts()) : $latest_posts->the_post(); ?>
-            <a href="<?php the_permalink(); ?>" class="blog-cards__item blog-card">
-              <div class="blog-card__image">
-                <?php if (has_post_thumbnail()) {
-                  the_post_thumbnail();
-                } ?>
-              </div>
-              <div class="blog-card__body">
-                <time class="blog-card__date"
-                  datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date('Y.m/d'); ?></time>
-                <h3 class="blog-card__title"><?php the_title(); ?></h3>
-                <p class="blog-card__text">
-                  <?php echo wp_trim_words(get_the_excerpt(), 85, '...'); ?>
-                </p>
-              </div>
-            </a>
+        <a href="<?php the_permalink(); ?>" class="blog-cards__item blog-card">
+          <div class="blog-card__image">
+            <?php if (has_post_thumbnail()) : ?>
+            <img src="<?php echo get_the_post_thumbnail_url(); ?>"
+              alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?>">
+            <?php else : ?>
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/no-image.png" alt="デフォルト画像" />
+            <?php endif; ?>
+          </div>
+          <div class="blog-card__body">
+            <time class="blog-card__date"
+              datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date('Y.m/d'); ?></time>
+            <h3 class="blog-card__title"><?php the_title(); ?></h3>
+            <p class="blog-card__text">
+              <?php echo wp_trim_words(get_the_excerpt(), 85, '...'); ?>
+            </p>
+          </div>
+        </a>
         <?php endwhile;
         endif;
         wp_reset_postdata();
@@ -244,35 +249,44 @@
         $voices = new WP_Query($args);
         if ($voices->have_posts()) :
           while ($voices->have_posts()) : $voices->the_post(); ?>
-            <div class="voice-cards__item voice-card">
-              <div class="voice-card__head">
-                <div class="voice-card__meta">
-                  <div class="voice-card__metahead">
-                    <p class="voice-card__age"><?php the_field('age'); ?>代(<?php the_field('gender'); ?>)</p>
-                    <p class="voice-card__category category-tag">
-                      <?php
+        <div class="voice-cards__item voice-card">
+          <div class="voice-card__head">
+            <div class="voice-card__meta">
+              <div class="voice-card__metahead">
+                <?php
+                    $age = get_field('age');
+                    $gender = get_field('gender');
+                    if ($age && $gender):
+                    ?>
+                <p class="voice-card__age"><?php echo esc_html($age); ?>代(<?php echo esc_html($gender); ?>)</p>
+                <?php endif; ?>
+                <p class="voice-card__category category-tag">
+                  <?php
                       $terms = get_the_terms(get_the_ID(), 'voice_category');
                       if ($terms && !is_wp_error($terms)) :
                         foreach ($terms as $term) : ?>
-                          <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
-                      <?php endforeach;
+                  <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
+                  <?php endforeach;
                       endif; ?>
-                    </p>
-                  </div>
-                  <h3 class="voice-card__title">
-                    <?php the_title(); ?>
-                  </h3>
-                </div>
-                <div class="voice-card__image js-slidein">
-                  <?php if (has_post_thumbnail()) {
-                    the_post_thumbnail();
-                  } ?>
-                </div>
+                </p>
               </div>
-              <p class="voice-card__text">
-                <?php the_content(); ?>
-              </p>
+              <h3 class="voice-card__title">
+                <?php the_title(); ?>
+              </h3>
             </div>
+            <div class="voice-card__image js-slidein">
+              <?php if (has_post_thumbnail()) : ?>
+              <img src="<?php echo get_the_post_thumbnail_url(); ?>"
+                alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?>">
+              <?php else : ?>
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/no-image.png" alt="デフォルト画像" />
+              <?php endif; ?>
+            </div>
+          </div>
+          <p class="voice-card__text">
+            <?php the_content(); ?>
+          </p>
+        </div>
         <?php endwhile;
         endif;
         wp_reset_postdata();
@@ -311,22 +325,22 @@
             }
           endif; ?>
           <?php if ($check): ?>
-            <table class="price__list">
-              <tbody>
-                <tr>
-                  <th colspan="2">ライセンス講習</th>
-                </tr>
-                <?php foreach ($group as $license):
+          <table class="price__list">
+            <tbody>
+              <tr>
+                <th colspan="2">ライセンス講習</th>
+              </tr>
+              <?php foreach ($group as $license):
                   if (!empty($license['license-course']) && !empty($license['license-price'])): ?>
-                    <tr>
-                      <td><?php echo esc_html($license['license-course']); ?></td>
-                      <td>¥<?php echo esc_html($license['license-price']); ?></td>
-                    </tr>
-                <?php endif;
+              <tr>
+                <td><?php echo esc_html($license['license-course']); ?></td>
+                <td>¥<?php echo esc_html($license['license-price']); ?></td>
+              </tr>
+              <?php endif;
                 endforeach; ?>
 
-              </tbody>
-            </table>
+            </tbody>
+          </table>
           <?php
           endif;
           ?>
@@ -343,22 +357,22 @@
             }
           endif; ?>
           <?php if ($check): ?>
-            <table class="price__list">
-              <tbody>
-                <tr>
-                  <th colspan="2">体験ダイビング</th>
-                </tr>
-                <?php foreach ($group as $diving):
+          <table class="price__list">
+            <tbody>
+              <tr>
+                <th colspan="2">体験ダイビング</th>
+              </tr>
+              <?php foreach ($group as $diving):
                   if (!empty($diving['diving-course']) && !empty($diving['diving-price'])): ?>
-                    <tr>
-                      <td><?php echo esc_html($diving['diving-course']); ?></td>
-                      <td>¥<?php echo esc_html($diving['diving-price']); ?></td>
-                    </tr>
-                <?php endif;
+              <tr>
+                <td><?php echo esc_html($diving['diving-course']); ?></td>
+                <td>¥<?php echo esc_html($diving['diving-price']); ?></td>
+              </tr>
+              <?php endif;
                 endforeach;
                 ?>
-              </tbody>
-            </table>
+            </tbody>
+          </table>
           <?php endif; ?>
           <?php
           $price_page_id = get_page_by_path('price')->ID;
@@ -373,22 +387,22 @@
             }
           endif; ?>
           <?php if ($check): ?>
-            <table class="price__list">
-              <tbody>
-                <tr>
-                  <th colspan="2">ファンダイビング</th>
-                </tr>
-                <?php foreach ($group as $fun):
+          <table class="price__list">
+            <tbody>
+              <tr>
+                <th colspan="2">ファンダイビング</th>
+              </tr>
+              <?php foreach ($group as $fun):
                   if (!empty($fun['fun-course']) && !empty($fun['fun-price'])): ?>
-                    <tr>
-                      <td><?php echo esc_html($fun['fun-course']); ?></td>
-                      <td>¥<?php echo esc_html($fun['fun-price']); ?></td>
-                    </tr>
-                <?php endif;
+              <tr>
+                <td><?php echo esc_html($fun['fun-course']); ?></td>
+                <td>¥<?php echo esc_html($fun['fun-price']); ?></td>
+              </tr>
+              <?php endif;
                 endforeach;
                 ?>
-              </tbody>
-            </table>
+            </tbody>
+          </table>
           <?php endif; ?>
           <?php
           $price_page_id = get_page_by_path('price')->ID;
@@ -403,22 +417,22 @@
             }
           endif; ?>
           <?php if ($check): ?>
-            <table class="price__list">
-              <tbody>
-                <tr>
-                  <th colspan="2">スペシャルダイビング</th>
-                </tr>
-                <?php foreach ($group as $special):
+          <table class="price__list">
+            <tbody>
+              <tr>
+                <th colspan="2">スペシャルダイビング</th>
+              </tr>
+              <?php foreach ($group as $special):
                   if (!empty($special['special-course']) && !empty($special['special-price'])): ?>
-                    <tr>
-                      <td><?php echo esc_html($special['special-course']); ?></td>
-                      <td>¥<?php echo esc_html($special['special-price']); ?></td>
-                    </tr>
-                <?php endif;
+              <tr>
+                <td><?php echo esc_html($special['special-course']); ?></td>
+                <td>¥<?php echo esc_html($special['special-price']); ?></td>
+              </tr>
+              <?php endif;
                 endforeach;
                 ?>
-              </tbody>
-            </table>
+            </tbody>
+          </table>
           <?php endif; ?>
         </div>
       </div>

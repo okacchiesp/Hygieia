@@ -26,9 +26,9 @@
           ));
           if (!is_wp_error($terms) && !empty($terms)) :
             foreach ($terms as $term) : ?>
-          <li class="category-tags__item category-tag">
-            <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
-          </li>
+              <li class="category-tags__item category-tag">
+                <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
+              </li>
           <?php endforeach;
           endif; ?>
         </ul>
@@ -36,44 +36,49 @@
       </div>
       <div class="voice-section__content">
         <?php if (have_posts()) : ?>
-        <div class="voice__items voice-cards">
-          <?php while (have_posts()) : the_post(); ?>
-          <?php $age = get_post_meta($post->ID, 'age', true);
-              $gender = get_post_meta($post->ID, 'gender', true);
-              if ($age && $gender) : ?>
-          <section class="voice-cards__item voice-card">
-            <div class="voice-card__head">
-              <div class="voice-card__meta">
-                <div class="voice-card__metahead">
-                  <p class="voice-card__age"><?php echo $age; ?>代(<?php echo $gender; ?>)</p>
-                  <p class="voice-card__category category-tag">
-                    <?php
-                          $terms = get_the_terms(get_the_ID(), 'voice_category');
-                          if ($terms && !is_wp_error($terms)) :
-                            foreach ($terms as $term) : ?>
-                    <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
-                    <?php endforeach;
-                          endif; ?>
-                  </p>
+          <div class="voice__items voice-cards">
+            <?php while (have_posts()) : the_post(); ?>
+              <section class="voice-cards__item voice-card">
+                <div class="voice-card__head">
+                  <div class="voice-card__meta">
+                    <div class="voice-card__metahead">
+                      <?php
+                      $age = get_field('age');
+                      $gender = get_field('gender');
+                      if ($age && $gender):
+                      ?>
+                        <p class="voice-card__age"><?php echo esc_html($age); ?>代(<?php echo esc_html($gender); ?>)</p>
+                      <?php endif; ?>
+                      <p class="voice-card__category category-tag">
+                        <?php
+                        $terms = get_the_terms(get_the_ID(), 'voice_category');
+                        if ($terms && !is_wp_error($terms)) :
+                          foreach ($terms as $term) : ?>
+                            <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
+                        <?php endforeach;
+                        endif; ?>
+                      </p>
+                    </div>
+                    <h2 class="voice-card__title">
+                      <?php the_title(); ?>
+                    </h2>
+                  </div>
+                  <div class="voice-card__image js-slidein">
+                    <?php if (has_post_thumbnail()) : ?>
+                      <img src="<?php echo get_the_post_thumbnail_url(); ?>"
+                        alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?>">
+                    <?php else : ?>
+                      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/no-image.png" alt="デフォルト画像" />
+                    <?php endif; ?>
+                  </div>
                 </div>
-                <h2 class="voice-card__title">
-                  <?php the_title(); ?>
-                </h2>
-              </div>
-              <div class="voice-card__image js-slidein">
-                <?php if (has_post_thumbnail()) : ?>
-                <?php the_post_thumbnail('full', ['alt' => get_the_title()]); ?>
-                <?php endif; ?>
-              </div>
-            </div>
-            <p class="voice-card__text">
-              <?php the_content(); ?>
-            </p>
-          </section>
-          <?php endif; ?>
-          <?php endwhile; ?>
-        </div>
-        <?php get_template_part('template/parts', 'wppagenavi'); ?>
+                <p class="voice-card__text">
+                  <?php the_content(); ?>
+                </p>
+              </section>
+            <?php endwhile; ?>
+          </div>
+          <?php get_template_part('template/parts', 'wppagenavi'); ?>
         <?php endif; ?>
       </div>
     </div>

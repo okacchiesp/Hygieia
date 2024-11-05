@@ -44,7 +44,10 @@
           <section class="campaign-cards__item campaign-card campaign-card--big">
             <div class="campaign-card__image">
               <?php if (has_post_thumbnail()) : ?>
-              <?php the_post_thumbnail(); ?>
+              <img src="<?php echo get_the_post_thumbnail_url(); ?>"
+                alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?>">
+              <?php else : ?>
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/no-image.png" alt="デフォルト画像" />
               <?php endif; ?>
             </div>
             <div class="campaign-card__meta">
