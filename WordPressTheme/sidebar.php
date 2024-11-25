@@ -64,7 +64,7 @@
             $gender = get_field('gender');
             if ($age && $gender):
             ?>
-        <p class="voice-card__age"><?php echo esc_html($age); ?>代(<?php echo esc_html($gender); ?>)</p>
+        <p class="voice-card__age"><?php echo esc_html($age); ?>(<?php echo esc_html($gender); ?>)</p>
         <?php endif; ?>
         <h3 class="comment-card__title"><?php the_title(); ?></h3>
       </div>

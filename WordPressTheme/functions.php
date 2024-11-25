@@ -1,4 +1,58 @@
 <?php
+function add_custom_dashboard_widget()
+{
+    wp_add_dashboard_widget(
+        'custom_page_edit_widget', // ウィジェットのID
+        '固定ページ編集画面へ',    // ウィジェットのタイトル
+        'custom_page_edit_widget_content' // ウィジェットのコンテンツを描画する関数
+    );
+}
+add_action('wp_dashboard_setup', 'add_custom_dashboard_widget');
+
+function custom_page_edit_widget_content()
+{
+    // 編集リンクを表示したい固定ページのIDリスト
+    $page_ids = array(61, 46, 50, 52); // 固定ページのIDを配列で指定
+
+    echo '<ul>';
+    foreach ($page_ids as $page_id) {
+        $edit_link = admin_url('post.php?post=' . $page_id . '&action=edit');
+        $page_title = get_the_title($page_id);
+
+        if ($page_title) {
+            echo '<li><a href="' . esc_url($edit_link) . '" target="_blank">' . esc_html($page_title) . ' ページ</a></li>';
+        }
+    }
+    echo '</ul>';
+}
+
+function add_custom_dashboard_widget2()
+{
+    wp_add_dashboard_widget(
+        'custom_campaign_list_widget', // ウィジェットのID
+        '各投稿ページ編集画面へ', // ウィジェットのタイトル
+        'custom_campaign_list_widget_content' // ウィジェットのコンテンツを描画する関数
+    );
+}
+add_action('wp_dashboard_setup', 'add_custom_dashboard_widget2');
+
+function custom_campaign_list_widget_content()
+{
+    // リンクを生成するカスタム投稿タイプのリスト
+    $custom_post_types = array(
+        'post' => 'ブログ', // 標準投稿
+        'campaign' => 'キャンペーン', // カスタム投稿タイプ 'campaign'
+        'voice' => 'お客様の声', // カスタム投稿タイプ 'voice'
+    );
+
+    echo '<ul>';
+    foreach ($custom_post_types as $post_type => $label) {
+        $list_link = admin_url('edit.php' . ($post_type !== 'post' ? '?post_type=' . $post_type : ''));
+        echo '<li><a href="' . esc_url($list_link) . '" target="_blank">' . esc_html($label) . ' ページ</a></li>';
+    }
+    echo '</ul>';
+}
+
 function enqueue_custom_scripts_and_styles()
 {
     // Googleフォント

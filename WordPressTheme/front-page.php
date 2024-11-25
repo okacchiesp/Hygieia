@@ -21,50 +21,30 @@
     </dvi>
     <div class="swiper js-mv-swiper mv__slide">
       <div class="swiper-wrapper">
-        <?php $image_id = get_field('mv01');
-        $image_id_sp = get_field('sp-mv01');
-        if ($image_id && $image_id_sp) : ?>
+        <?php
+        for ($i = 1; $i <= 4; $i++) {
+          $group_field = 'mv0' . $i;
+          $mv_img = get_field($group_field);
+
+          if ($mv_img) :
+            $pc_image_url = !empty($mv_img['pc']['url']) ? $mv_img['pc']['url'] : '';
+            $pc_alt_text = !empty($mv_img['pc']['alt']) ? $mv_img['pc']['alt'] : 'PC版画像';
+
+            $sp_image_url = !empty($mv_img['sp']['url']) ? $mv_img['sp']['url'] : '';
+            $sp_alt_text = !empty($mv_img['sp']['alt']) ? $mv_img['sp']['alt'] : 'SP版画像';
+        ?>
+        <?php if ($pc_image_url && $sp_image_url) : ?>
         <div class="mv__image swiper-slide">
           <picture>
-            <source srcset="<?php echo $image_id['url']; ?>" alt="<?php echo esc_attr($image_id['alt']); ?>"
-              media="(min-width: 768px)" />
-            <img src="<?php echo $image_id_sp['url']; ?>" alt="<?php echo esc_attr($image_id['alt']); ?>">
+            <source srcset="<?php echo esc_url($pc_image_url); ?>" media="(min-width: 768px)">
+            <img src="<?php echo esc_url($sp_image_url); ?>" alt="<?php echo esc_attr($sp_alt_text); ?>">
           </picture>
         </div>
         <?php endif; ?>
-        <?php $image_id02 = get_field('mv02');
-        $image_id_sp02 = get_field('sp-mv02');
-        if ($image_id02 && $image_id_sp02) : ?>
-        <div class="mv__image swiper-slide">
-          <picture>
-            <source srcset="<?php echo $image_id02['url']; ?>" alt="<?php echo esc_attr($image_id02['alt']); ?>"
-              media="(min-width: 768px)" />
-            <img src="<?php echo $image_id_sp02['url']; ?>" alt="<?php echo esc_attr($image_id02['alt']); ?>">
-          </picture>
-        </div>
         <?php endif; ?>
-        <?php $image_id03 = get_field('mv03');
-        $image_id_sp03 = get_field('sp-mv03');
-        if ($image_id03 && $image_id_sp03) : ?>
-        <div class="mv__image swiper-slide">
-          <picture>
-            <source srcset="<?php echo $image_id03['url']; ?>" alt="<?php echo esc_attr($image_id03['alt']); ?>"
-              media="(min-width: 768px)" />
-            <img src="<?php echo $image_id_sp03['url']; ?>" alt="<?php echo esc_attr($image_id03['alt']); ?>">
-          </picture>
-        </div>
-        <?php endif; ?>
-        <?php $image_id04 = get_field('mv04');
-        $image_id_sp04 = get_field('sp-mv04');
-        if ($image_id04 && $image_id_sp04) : ?>
-        <div class="mv__image swiper-slide">
-          <picture>
-            <source srcset="<?php echo $image_id04['url']; ?>" alt="<?php echo esc_attr($image_id04['alt']); ?>"
-              media="(min-width: 768px)" />
-            <img src="<?php echo $image_id_sp04['url']; ?>" alt="<?php echo esc_attr($image_id04['alt']); ?>">
-          </picture>
-        </div>
-        <?php endif; ?>
+        <?php
+        }
+        ?>
       </div>
     </div>
   </section>
@@ -258,7 +238,7 @@
                     $gender = get_field('gender');
                     if ($age && $gender):
                     ?>
-                <p class="voice-card__age"><?php echo esc_html($age); ?>代(<?php echo esc_html($gender); ?>)</p>
+                <p class="voice-card__age"><?php echo esc_html($age); ?>(<?php echo esc_html($gender); ?>)</p>
                 <?php endif; ?>
                 <p class="voice-card__category category-tag">
                   <?php
