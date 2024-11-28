@@ -1,8 +1,8 @@
 @use "global" as *;
 .faq-item__question {
-  background-color: $greenaccent;
+  background-color: $blue;
   padding: rem(16);
-  border: 1px solid $greenaccent;
+  border: 1px solid $blue;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -40,13 +40,13 @@
 .faq-item__answer {
   display: block;
   padding: 10px;
-  border: 1px solid $greenaccent;
+  border: 1px solid $blue;
   border-top: none;
   background-color: $white;
   padding: rem(24) rem(16);
   @include mq(md) {
     margin-top: rem(16);
     padding: rem(40);
-    border-top: 1px solid $greenaccent;
+    border-top: 1px solid $blue;
   }
 }

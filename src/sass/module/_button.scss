@@ -1,6 +1,6 @@
 @use "global" as *;
 .button {
-  background-color: $greenaccent;
+  background-color: $blue;
   color: $white;
   font-family: $english-font-family;
   font-size: rem(14);
@@ -10,7 +10,7 @@
   padding: rem(16) 0;
   display: inline-block;
   transition: all 0.5s;
-  border: 1px solid $greenaccent;
+  border: 1px solid $blue;
   overflow: visible;
   position: relative;
   z-index: 1;
@@ -26,7 +26,7 @@
   bottom: 4px;
   left: 4px;
   right: 4px;
-  border: solid 1px $greenaccent; /* 外枠のスタイル */
+  border: solid 1px $blue; /* 外枠のスタイル */
   z-index: -1;
 }
 
@@ -56,21 +56,21 @@
   z-index: -1;
 }
 .button:hover {
-  color: $greenaccent;
+  color: $blue;
 }
 .button:hover::after {
   transform: scale(1, 1);
 }
 
 .button:hover span {
-  border-bottom: 1px solid $greenaccent;
-  border-right: 1px solid $greenaccent;
+  border-bottom: 1px solid $blue;
+  border-right: 1px solid $blue;
 }
 
 .button--white {
   background-color: $white;
   border-color: $white;
-  color: $greenaccent;
+  color: $blue;
 }
 
 .button--white::before {
@@ -78,7 +78,7 @@
 }
 
 .button--white span {
-  border-color: $greenaccent;
+  border-color: $blue;
 }
 
 .button--white:hover {
@@ -86,7 +86,7 @@
 }
 
 .button--white:hover::after {
-  background-color: $greenaccent;
+  background-color: $blue;
 }
 
 .button--white:hover span {

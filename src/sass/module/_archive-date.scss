@@ -1,6 +1,6 @@
 @use "global" as *;
 .archive-date {
-  color: $greenaccent;
+  color: $blue;
   font-size: rem(24);
   display: grid;
   gap: rem(4);
@@ -20,7 +20,7 @@
   content: "";
   width: 0;
   height: 0;
-  border-left: rem(18) solid $greenaccent; /* 左ボーダーを透明に */
+  border-left: rem(18) solid $blue; /* 左ボーダーを透明に */
   border-bottom: rem(10) solid transparent; /* 右ボーダーを透明に */
   border-top: rem(10) solid transparent; /* 上ボーダーを黒に */
   transition: all 0.3s;
@@ -41,7 +41,7 @@
   content: "";
   width: 0;
   height: 0;
-  border-left: rem(18) solid $greenaccent; /* 左ボーダーを透明に */
+  border-left: rem(18) solid $blue; /* 左ボーダーを透明に */
   border-bottom: rem(10) solid transparent; /* 右ボーダーを透明に */
   border-top: rem(10) solid transparent; /* 上ボーダーを黒に */
 }

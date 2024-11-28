@@ -136,7 +136,6 @@ jQuery(function ($) {
         $(".to-top").addClass("DownMove"); // DownMoveというクラス名を追加して非表示
       }
     }
-
     var wH = window.innerHeight; //画面の高さを取得
     var footerPos = $(".footer").offset().top; //footerの位置を取得
     if (scroll + wH >= footerPos + 16) {
@@ -168,7 +167,6 @@ jQuery(function ($) {
     }, 500); //ページトップスクロールの速さ。数字が大きいほど遅くなる
     return false; //リンク自体の無効化
   });
-
   $(".js-faq-question").on("click", function () {
     var $answer = $(this).next(".faq-item__answer");
     var $icon = $(this).find(".faq-item__icon");

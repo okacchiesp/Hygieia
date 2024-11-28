@@ -47,15 +47,7 @@ const destWpPath = {
   img: `../${themeName}/assets/images/`,
 };
 
-const browsers = [
-  "last 2 versions",
-  "> 5%",
-  "ie = 11",
-  "not ie <= 10",
-  "ios >= 8",
-  "and_chr >= 5",
-  "Android >= 5",
-];
+const browsers = ["last 2 versions", "> 5%", "ie = 11", "not ie <= 10", "ios >= 8", "and_chr >= 5", "Android >= 5"];
 
 // HTMLファイルのコピー
 const htmlCopy = () => {
@@ -126,7 +118,7 @@ const imgImagemin = () => {
     .pipe(
       imagemin(
         [
-          imageminMozjpeg({ quality: 80 }), // JPEG画像の圧縮
+          imageminMozjpeg({ quality: 65 }), // JPEG画像の圧縮
           imageminPngquant(), // PNG画像の圧縮
           imageminSvgo({ plugins: [{ removeViewbox: false }] }), // SVG画像の圧縮
         ],
@@ -194,10 +186,7 @@ const watchFiles = () => {
 };
 
 // ブラウザシンク付きの開発用タスク
-exports.default = series(
-  series(cssSass, jsBabel, imgImagemin, htmlCopy),
-  parallel(watchFiles, browserSyncFunc)
-);
+exports.default = series(series(cssSass, jsBabel, imgImagemin, htmlCopy), parallel(watchFiles, browserSyncFunc));
 
 // 本番用タスク
 exports.build = series(clean, cssSass, jsBabel, imgImagemin, htmlCopy);

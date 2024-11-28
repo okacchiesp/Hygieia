@@ -17,7 +17,7 @@
   background-color: $white;
   transform: rotate(-90deg);
   position: relative;
-  border: 1px solid $greenaccent;
+  border: 1px solid $blue;
   @include mq(md) {
     width: rem(80);
     height: rem(80);
@@ -30,8 +30,8 @@
   content: "";
   width: rem(28);
   height: rem(6);
-  border-bottom: 1px solid $greenaccent;
-  border-right: 1px solid $greenaccent;
+  border-bottom: 1px solid $blue;
+  border-right: 1px solid $blue;
   transform: skew(45deg);
   top: rem(18);
   left: rem(8);

@@ -1,6 +1,6 @@
 @use "global" as *;
 .header {
-  background-color: rgba($color: $green, $alpha: 0.68);
+  background-color: $white;
   display: flex;
   align-items: center;
   justify-content: space-between;

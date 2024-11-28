@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="loading js-loading">
+<!-- <div class="loading js-loading">
   <div class="loading__title title title--green js-loading-title">
     <p class="title__main">DIVING</p>
     <small class="title__sub">into the ocean</small>
@@ -12,12 +12,11 @@
       <img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/loading_2.jpg" alt="" />
     </div>
   </div>
-</div>
+</div> -->
 <main class="top">
   <section class="mv">
     <dvi class="mv__title title">
-      <p class="title__main">DIVING</p>
-      <small class="title__sub">into the ocean</small>
+      <p class="title__main">食品製造の<span>未来を清潔に</span></p>
     </dvi>
     <div class="swiper js-mv-swiper mv__slide">
       <div class="swiper-wrapper">
@@ -33,90 +32,41 @@
             $sp_image_url = !empty($mv_img['sp']['url']) ? $mv_img['sp']['url'] : '';
             $sp_alt_text = !empty($mv_img['sp']['alt']) ? $mv_img['sp']['alt'] : 'SP版画像';
         ?>
-        <?php if ($pc_image_url && $sp_image_url) : ?>
-        <div class="mv__image swiper-slide">
-          <picture>
-            <source srcset="<?php echo esc_url($pc_image_url); ?>" media="(min-width: 768px)">
-            <img src="<?php echo esc_url($sp_image_url); ?>" alt="<?php echo esc_attr($sp_alt_text); ?>">
-          </picture>
-        </div>
-        <?php endif; ?>
-        <?php endif; ?>
+            <?php if ($pc_image_url && $sp_image_url) : ?>
+              <div class="mv__image swiper-slide">
+                <picture>
+                  <source srcset="<?php echo esc_url($pc_image_url); ?>" media="(min-width: 768px)">
+                  <img src="<?php echo esc_url($sp_image_url); ?>" alt="<?php echo esc_attr($sp_alt_text); ?>">
+                </picture>
+              </div>
+            <?php endif; ?>
+          <?php endif; ?>
         <?php
         }
         ?>
       </div>
     </div>
   </section>
-  <section class="campaign campaign--top-margin">
-    <div class="campaign__inner inner">
-      <div class="campaign__header section-header">
-        <p class="section-header__title">Campaign</p>
-        <h2 class="section-header__subtitle">キャンペーン</h2>
-      </div>
-      <div class="swiper js-campaign-swiper campaign__slide">
-        <div class="campaigncontroller swiper-btn">
-          <div class="swiper-btn__prev js-campaign-prev"></div>
-          <div class="swiper-btn__next js-campaign-next"></div>
+  <section class="news">
+    <div class="news__inner inner">
+      <div class="news__content">
+        <div class="news__header section-header">
+          <p class="section-header__title">News</p>
+          <h2 class="section-header__subtitle">お知らせ</h2>
         </div>
-        <div class="swiper-wrapper">
-          <?php
-          $args = array(
-            'post_type' => 'campaign',
-            'posts_per_page' => -1,
-          );
-          $campaigns = new WP_Query($args);
-          if ($campaigns->have_posts()) :
-            while ($campaigns->have_posts()) : $campaigns->the_post(); ?>
-          <div class="swiper-slide campaign__link">
-            <div class="campaign__item campaign-card">
-              <div class="campaign-card__image">
-                <?php if (has_post_thumbnail()) : ?>
-                <img src="<?php echo get_the_post_thumbnail_url(); ?>"
-                  alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?>">
-                <?php else : ?>
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/no-image.png" alt="デフォルト画像" />
-                <?php endif; ?>
-              </div>
-              <div class="campaign-card__meta">
-                <div class="campaign-card__meta-head">
-                  <p class="campaign-card__category category-tag">
-                    <?php
-                        $terms = get_the_terms(get_the_ID(), 'campaign_category');
-                        if ($terms && !is_wp_error($terms)) :
-                          foreach ($terms as $term) : ?>
-                    <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
-                    <?php endforeach;
-                        endif; ?>
-                  </p>
-                  <h3 class="campaign-card__title"><?php the_title(); ?></h3>
-                </div>
-                <?php
-                    $price = get_field('price');
-                    ?>
-                <div class="campaign-card__meta-body">
-                  <p class="campaign-card__text">全部コミコミ(お一人様)</p>
-                  <?php if ($price['normal-price'] && $price['campaign-price']): ?>
-                  <p class="campaign-card__price">
-                    <span>¥<?php echo number_format($price['normal-price']); ?></span>¥<?php echo number_format($price['campaign-price']); ?>
-                  </p>
-                  <?php else: ?>
-                  <p class="campaign-card__price">coming soon</p>
-                  <?php endif; ?>
-                </div>
-              </div>
-            </div>
-          </div>
-          <?php endwhile;
-          endif;
-          wp_reset_postdata();
-          ?>
-        </div>
+        <ul class="news__list">
+          <li class="news__item">
+            <div class="news__meta"><time>2024年11月16日</time><span class="news__tag tag">IR情報</span></div>サンプルテキストサンプルテキストサンプルテキスト
+          </li>
+          <li class="news__item">
+            <div class="news__meta"><time>2024年11月16日</time><span class="news__tag tag">IR情報</span></div>サンプルテキストサンプルテキストサンプルテキスト
+          </li>
+          <li class="news__item">
+            <div class="news__meta"><time>2024年11月16日</time><span class="news__tag tag">IR情報</span></div>サンプルテキストサンプルテキストサンプルテキスト
+          </li>
+        </ul>
       </div>
-
-      <div class="campaign__btn">
-        <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="button">View more<span></span></a>
-      </div>
+      <div class="news__link"><a href="">お知らせ一覧へ</a></div>
     </div>
   </section>
   <section class="about u-section-margin">
@@ -186,24 +136,24 @@
         $latest_posts = new WP_Query($args);
         if ($latest_posts->have_posts()) :
           while ($latest_posts->have_posts()) : $latest_posts->the_post(); ?>
-        <a href="<?php the_permalink(); ?>" class="blog-cards__item blog-card">
-          <div class="blog-card__image">
-            <?php if (has_post_thumbnail()) : ?>
-            <img src="<?php echo get_the_post_thumbnail_url(); ?>"
-              alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?>">
-            <?php else : ?>
-            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/no-image.png" alt="デフォルト画像" />
-            <?php endif; ?>
-          </div>
-          <div class="blog-card__body">
-            <time class="blog-card__date"
-              datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date('Y.m/d'); ?></time>
-            <h3 class="blog-card__title"><?php the_title(); ?></h3>
-            <p class="blog-card__text">
-              <?php echo wp_trim_words(get_the_excerpt(), 85, '...'); ?>
-            </p>
-          </div>
-        </a>
+            <a href="<?php the_permalink(); ?>" class="blog-cards__item blog-card">
+              <div class="blog-card__image">
+                <?php if (has_post_thumbnail()) : ?>
+                  <img src="<?php echo get_the_post_thumbnail_url(); ?>"
+                    alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?>">
+                <?php else : ?>
+                  <img src="<?php echo get_theme_file_uri(); ?>/assets/images/no-image.png" alt="デフォルト画像" />
+                <?php endif; ?>
+              </div>
+              <div class="blog-card__body">
+                <time class="blog-card__date"
+                  datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date('Y.m/d'); ?></time>
+                <h3 class="blog-card__title"><?php the_title(); ?></h3>
+                <p class="blog-card__text">
+                  <?php echo wp_trim_words(get_the_excerpt(), 85, '...'); ?>
+                </p>
+              </div>
+            </a>
         <?php endwhile;
         endif;
         wp_reset_postdata();
@@ -229,44 +179,44 @@
         $voices = new WP_Query($args);
         if ($voices->have_posts()) :
           while ($voices->have_posts()) : $voices->the_post(); ?>
-        <div class="voice-cards__item voice-card">
-          <div class="voice-card__head">
-            <div class="voice-card__meta">
-              <div class="voice-card__metahead">
-                <?php
+            <div class="voice-cards__item voice-card">
+              <div class="voice-card__head">
+                <div class="voice-card__meta">
+                  <div class="voice-card__metahead">
+                    <?php
                     $age = get_field('age');
                     $gender = get_field('gender');
                     if ($age && $gender):
                     ?>
-                <p class="voice-card__age"><?php echo esc_html($age); ?>(<?php echo esc_html($gender); ?>)</p>
-                <?php endif; ?>
-                <p class="voice-card__category category-tag">
-                  <?php
+                      <p class="voice-card__age"><?php echo esc_html($age); ?>(<?php echo esc_html($gender); ?>)</p>
+                    <?php endif; ?>
+                    <p class="voice-card__category category-tag">
+                      <?php
                       $terms = get_the_terms(get_the_ID(), 'voice_category');
                       if ($terms && !is_wp_error($terms)) :
                         foreach ($terms as $term) : ?>
-                  <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
-                  <?php endforeach;
+                          <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
+                      <?php endforeach;
                       endif; ?>
-                </p>
+                    </p>
+                  </div>
+                  <h3 class="voice-card__title">
+                    <?php the_title(); ?>
+                  </h3>
+                </div>
+                <div class="voice-card__image js-slidein">
+                  <?php if (has_post_thumbnail()) : ?>
+                    <img src="<?php echo get_the_post_thumbnail_url(); ?>"
+                      alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?>">
+                  <?php else : ?>
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/no-image.png" alt="デフォルト画像" />
+                  <?php endif; ?>
+                </div>
               </div>
-              <h3 class="voice-card__title">
-                <?php the_title(); ?>
-              </h3>
+              <p class="voice-card__text">
+                <?php the_content(); ?>
+              </p>
             </div>
-            <div class="voice-card__image js-slidein">
-              <?php if (has_post_thumbnail()) : ?>
-              <img src="<?php echo get_the_post_thumbnail_url(); ?>"
-                alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?>">
-              <?php else : ?>
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/no-image.png" alt="デフォルト画像" />
-              <?php endif; ?>
-            </div>
-          </div>
-          <p class="voice-card__text">
-            <?php the_content(); ?>
-          </p>
-        </div>
         <?php endwhile;
         endif;
         wp_reset_postdata();
@@ -305,22 +255,22 @@
             }
           endif; ?>
           <?php if ($check): ?>
-          <table class="price__list">
-            <tbody>
-              <tr>
-                <th colspan="2">ライセンス講習</th>
-              </tr>
-              <?php foreach ($group as $license):
+            <table class="price__list">
+              <tbody>
+                <tr>
+                  <th colspan="2">ライセンス講習</th>
+                </tr>
+                <?php foreach ($group as $license):
                   if (!empty($license['license-course']) && !empty($license['license-price'])): ?>
-              <tr>
-                <td><?php echo esc_html($license['license-course']); ?></td>
-                <td>¥<?php echo esc_html($license['license-price']); ?></td>
-              </tr>
-              <?php endif;
+                    <tr>
+                      <td><?php echo esc_html($license['license-course']); ?></td>
+                      <td>¥<?php echo esc_html($license['license-price']); ?></td>
+                    </tr>
+                <?php endif;
                 endforeach; ?>
 
-            </tbody>
-          </table>
+              </tbody>
+            </table>
           <?php
           endif;
           ?>
@@ -337,22 +287,22 @@
             }
           endif; ?>
           <?php if ($check): ?>
-          <table class="price__list">
-            <tbody>
-              <tr>
-                <th colspan="2">体験ダイビング</th>
-              </tr>
-              <?php foreach ($group as $diving):
+            <table class="price__list">
+              <tbody>
+                <tr>
+                  <th colspan="2">体験ダイビング</th>
+                </tr>
+                <?php foreach ($group as $diving):
                   if (!empty($diving['diving-course']) && !empty($diving['diving-price'])): ?>
-              <tr>
-                <td><?php echo esc_html($diving['diving-course']); ?></td>
-                <td>¥<?php echo esc_html($diving['diving-price']); ?></td>
-              </tr>
-              <?php endif;
+                    <tr>
+                      <td><?php echo esc_html($diving['diving-course']); ?></td>
+                      <td>¥<?php echo esc_html($diving['diving-price']); ?></td>
+                    </tr>
+                <?php endif;
                 endforeach;
                 ?>
-            </tbody>
-          </table>
+              </tbody>
+            </table>
           <?php endif; ?>
           <?php
           $price_page_id = get_page_by_path('price')->ID;
@@ -367,22 +317,22 @@
             }
           endif; ?>
           <?php if ($check): ?>
-          <table class="price__list">
-            <tbody>
-              <tr>
-                <th colspan="2">ファンダイビング</th>
-              </tr>
-              <?php foreach ($group as $fun):
+            <table class="price__list">
+              <tbody>
+                <tr>
+                  <th colspan="2">ファンダイビング</th>
+                </tr>
+                <?php foreach ($group as $fun):
                   if (!empty($fun['fun-course']) && !empty($fun['fun-price'])): ?>
-              <tr>
-                <td><?php echo esc_html($fun['fun-course']); ?></td>
-                <td>¥<?php echo esc_html($fun['fun-price']); ?></td>
-              </tr>
-              <?php endif;
+                    <tr>
+                      <td><?php echo esc_html($fun['fun-course']); ?></td>
+                      <td>¥<?php echo esc_html($fun['fun-price']); ?></td>
+                    </tr>
+                <?php endif;
                 endforeach;
                 ?>
-            </tbody>
-          </table>
+              </tbody>
+            </table>
           <?php endif; ?>
           <?php
           $price_page_id = get_page_by_path('price')->ID;
@@ -397,22 +347,22 @@
             }
           endif; ?>
           <?php if ($check): ?>
-          <table class="price__list">
-            <tbody>
-              <tr>
-                <th colspan="2">スペシャルダイビング</th>
-              </tr>
-              <?php foreach ($group as $special):
+            <table class="price__list">
+              <tbody>
+                <tr>
+                  <th colspan="2">スペシャルダイビング</th>
+                </tr>
+                <?php foreach ($group as $special):
                   if (!empty($special['special-course']) && !empty($special['special-price'])): ?>
-              <tr>
-                <td><?php echo esc_html($special['special-course']); ?></td>
-                <td>¥<?php echo esc_html($special['special-price']); ?></td>
-              </tr>
-              <?php endif;
+                    <tr>
+                      <td><?php echo esc_html($special['special-course']); ?></td>
+                      <td>¥<?php echo esc_html($special['special-price']); ?></td>
+                    </tr>
+                <?php endif;
                 endforeach;
                 ?>
-            </tbody>
-          </table>
+              </tbody>
+            </table>
           <?php endif; ?>
         </div>
       </div>

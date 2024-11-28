@@ -19,7 +19,7 @@
     width: rem(80);
     height: rem(80);
     border-radius: rem(80);
-    border: 1px solid $greenaccent;
+    border: 1px solid $blue;
     cursor: pointer;
   }
 }
@@ -28,8 +28,8 @@
   content: "";
   width: rem(40);
   height: rem(6);
-  border-bottom: 1px solid $greenaccent;
-  border-left: 1px solid $greenaccent;
+  border-bottom: 1px solid $blue;
+  border-left: 1px solid $blue;
   transform: skew(-45deg);
 }
 .swiper-btn__next::before {
@@ -37,7 +37,7 @@
   content: "";
   width: rem(40);
   height: rem(6);
-  border-bottom: 1px solid $greenaccent;
-  border-right: 1px solid $greenaccent;
+  border-bottom: 1px solid $blue;
+  border-right: 1px solid $blue;
   transform: skew(45deg);
 }

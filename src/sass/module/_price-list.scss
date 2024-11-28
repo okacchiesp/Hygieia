@@ -7,7 +7,7 @@
   }
 }
 .price-list__header {
-  background-color: $greenaccent;
+  background-color: $blue;
   color: $white;
   display: flex;
   align-items: center;
@@ -33,9 +33,9 @@
   }
 }
 .price-list__table {
-  border-left: 1px solid $greenaccent;
-  border-right: 1px solid $greenaccent;
-  border-bottom: 1px solid $greenaccent;
+  border-left: 1px solid $blue;
+  border-right: 1px solid $blue;
+  border-bottom: 1px solid $blue;
 }
 .price-list__table tbody {
   display: flex;
@@ -49,11 +49,11 @@
 }
 .price-list__table tr:first-child {
   @include mq(md) {
-    border-top: 1px solid $greenaccent;
+    border-top: 1px solid $blue;
   }
 }
 .price-list__table tr:not(:last-child) {
-  border-bottom: 1px solid $greenaccent;
+  border-bottom: 1px solid $blue;
 }
 .price-list__table td {
   display: flex;
@@ -66,7 +66,7 @@
   }
 }
 .price-list__table td:first-child {
-  border-right: 1px solid $greenaccent;
+  border-right: 1px solid $blue;
   width: 68%;
   text-align: center;
 }

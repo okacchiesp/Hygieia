@@ -60,7 +60,7 @@
 }
 
 .contact__logo {
-  border-bottom: 1px solid $greenaccent;
+  border-bottom: 1px solid $blue;
   padding-bottom: rem(2);
   @include mq(md) {
     padding-bottom: rem(8);
@@ -113,7 +113,7 @@
 .contact__link {
   margin-top: rem(40);
   @include mq(md) {
-    border-left: 1px solid $greenaccent;
+    border-left: 1px solid $blue;
     margin-top: 0;
     height: 100%;
     padding-left: rem(81);
@@ -126,7 +126,7 @@
 }
 
 .contact__text {
-  color: $greenaccent;
+  color: $blue;
   font-size: rem(14);
   margin-top: rem(8);
   line-height: 1.2857;

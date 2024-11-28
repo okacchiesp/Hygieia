@@ -7,11 +7,11 @@
 .pagination span {
   display: grid;
   place-items: center;
-  color: $greenaccent;
+  color: $blue;
   width: rem(38);
   height: rem(38);
   transition: background-color 0.3s, color 0.3s;
-  border: 1px solid $greenaccent;
+  border: 1px solid $blue;
 }
 
 .pagination .current {
@@ -29,15 +29,15 @@
 }
 
 .pagination a:hover {
-  background-color: $greenaccent;
+  background-color: $blue;
   color: $white;
-  border: 1px solid $greenaccent;
+  border: 1px solid $blue;
 }
 
 .pagination a.active {
-  background-color: $greenaccent;
+  background-color: $blue;
   color: $white;
-  border: 1px solid $greenaccent;
+  border: 1px solid $blue;
 }
 
 .pagination__arrow {
@@ -58,15 +58,15 @@
 }
 
 .pagination__arrow--prev:before {
-  border-left: 1px $greenaccent solid;
-  border-bottom: 1px $greenaccent solid;
+  border-left: 1px $blue solid;
+  border-bottom: 1px $blue solid;
   transform: rotate(45deg);
   left: rem(3);
 }
 
 .pagination__arrow--next:before {
-  border-right: 1px $greenaccent solid;
-  border-bottom: 1px $greenaccent solid;
+  border-right: 1px $blue solid;
+  border-bottom: 1px $blue solid;
   transform: rotate(-45deg);
   right: rem(3);
 }

@@ -2,7 +2,7 @@
 .tab-content {
   display: none;
   flex-direction: column;
-  border: 1px solid $greenaccent;
+  border: 1px solid $blue;
   padding: rem(24);
   @include mq(md) {
     align-items: center;
@@ -21,7 +21,7 @@
 
 .tab-content__title {
   padding-bottom: rem(8);
-  border-bottom: 1px solid $greenaccent;
+  border-bottom: 1px solid $blue;
   font-size: rem(24);
   font-weight: $bold;
   line-height: 1;

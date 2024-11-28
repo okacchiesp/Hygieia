@@ -2,10 +2,10 @@
 .category-tag {
   font-size: rem(12);
   font-weight: $regular;
-  color: $greenaccent;
+  color: $blue;
   background-color: $white;
   line-height: 1.83333;
-  border: 1px solid $greenaccent;
+  border: 1px solid $blue;
   font-weight: 400;
   display: flex;
   justify-content: center;
@@ -19,13 +19,13 @@
 }
 
 .category-tag:hover {
-  background-color: $greenaccent;
+  background-color: $blue;
   color: $white;
 }
 
 .category-tag.category-tag--active {
   color: $white;
-  background-color: $greenaccent;
+  background-color: $blue;
 }
 .category-tag a {
   display: flex;

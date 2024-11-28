@@ -60,7 +60,7 @@
 }
 
 .campaign-card__meta-body {
-  border-top: 1px solid $greenaccent;
+  border-top: 1px solid $blue;
   padding-top: rem(8);
   @include mq(md) {
     padding-top: rem(16);
@@ -80,7 +80,7 @@
   font-family: "Lato";
   font-weight: bold;
   font-size: rem(32);
-  color: $greenaccent;
+  color: $blue;
   text-align: center;
   line-height: 1;
   margin-top: rem(8);
@@ -89,7 +89,7 @@
   }
 }
 .campaign-card__price span {
-  color: $green;
+  color: $skyblue;
   font-size: rem(20);
   position: relative;
   display: inline-block;
@@ -124,7 +124,7 @@
 }
 
 .campaign-card__date {
-  color: $greenaccent;
+  color: $blue;
   text-align: center;
   margin-top: rem(32);
   font-family: "Lato";
@@ -133,7 +133,7 @@
 }
 
 .campaign-card__reserve {
-  color: $greenaccent;
+  color: $blue;
   font-size: rem(14);
   text-align: center;
   margin-top: rem(8);

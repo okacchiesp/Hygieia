@@ -7,11 +7,9 @@
   <meta name="format-detection" content="telephone=no" />
   <meta name="robots" content="noindex" />
   <!-- Googleフォント -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Gotu&family=Noto+Sans+JP:wght@500&family=Lato:wght@400;700&display=swap"
-    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
   <?php wp_head(); ?>
 </head>
 
@@ -32,26 +30,23 @@
     <nav class="header__pc-nav pc-nav">
       <ul class="pc-nav__items">
         <li class="pc-nav__item">
-          <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="pc-nav__link">Campaign<span>キャンペーン</span></a>
-        </li>
-        <li class="pc-nav__item">
-          <a href="<?php echo esc_url(home_url('/about')); ?>" class="pc-nav__link">About us<span>私たちについて</span></a>
+          <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="pc-nav__link">Company<span>会社案内</span></a>
         </li>
         <li class="pc-nav__item">
           <a href="<?php echo esc_url(home_url('/information')); ?>"
-            class="pc-nav__link">Information<span>ダイビング情報</span></a>
+            class="pc-nav__link">Product<span>製品情報</span></a>
         </li>
         <li class="pc-nav__item">
-          <a href="<?php echo esc_url(home_url('/blog')); ?>" class="pc-nav__link">Blog<span>ブログ</span></a>
+          <a href="<?php echo esc_url(home_url('/blog')); ?>" class="pc-nav__link">Works<span>実績</span></a>
         </li>
         <li class="pc-nav__item">
-          <a href="<?php echo esc_url(home_url('/voice')); ?>" class="pc-nav__link">Voice<span>お客様の声</span></a>
-        </li>
-        <li class="pc-nav__item">
-          <a href="<?php echo esc_url(home_url('/price')); ?>" class="pc-nav__link">Price<span>料金一覧</span></a>
+          <a href="<?php echo esc_url(home_url('/voice')); ?>" class="pc-nav__link">Recruit<span>採用情報</span></a>
         </li>
         <li class="pc-nav__item">
           <a href="<?php echo esc_url(home_url('/faq')); ?>" class="pc-nav__link">FAQ<span>よくある質問</span></a>
+        </li>
+        <li class="pc-nav__item">
+          <a href="<?php echo esc_url(home_url('/price')); ?>" class="pc-nav__link">Column<span>コラム</span></a>
         </li>
         <li class="pc-nav__item">
           <a href="<?php echo esc_url(home_url('/contact')); ?>" class="pc-nav__link">Contact<span>お問合せ</span></a>
@@ -64,7 +59,7 @@
     <div class="sp-nav__inner">
       <ul class="sp-nav__items">
         <li class="sp-nav__item">
-          <a href="<?php echo esc_url(home_url('/campaign')); ?>">キャンペーン</a>
+          <a href="<?php echo esc_url(home_url('/campaign')); ?>">会社案内</a>
           <ul class="sp-nav__sublist">
             <li class="sp-nav__subitem"><a href="<?php echo esc_url(home_url('/campaign#license')); ?>">ライセンス取得</a></li>
             <li class="sp-nav__subitem">
@@ -73,7 +68,7 @@
             <li class="sp-nav__subitem"><a href="<?php echo esc_url(home_url('/campaign#night')); ?>">ナイトダイビング</a></li>
           </ul>
         </li>
-        <li class="sp-nav__item"><a href="<?php echo esc_url(home_url('/about')); ?>">私たちについて</a></li>
+        <li class="sp-nav__item"><a href="<?php echo esc_url(home_url('/about')); ?>">製品情報</a></li>
         <li class="sp-nav__item">
           <a href="<?php echo esc_url(home_url('/information')); ?>">ダイビング情報</a>
           <ul class="sp-nav__sublist">
@@ -84,10 +79,10 @@
             <li class="sp-nav__subitem"><a href="<?php echo esc_url(home_url('/information#fun')); ?>">ファンダイビング</a></li>
           </ul>
         </li>
-        <li class="sp-nav__item"><a href="<?php echo esc_url(home_url('/blog')); ?>">ブログ</a></li>
+        <li class="sp-nav__item"><a href="<?php echo esc_url(home_url('/blog')); ?>">実績</a></li>
       </ul>
       <ul class="sp-nav__items">
-        <li class="sp-nav__item"><a href="<?php echo esc_url(home_url('/voice')); ?>">お客様の声</a></li>
+        <li class="sp-nav__item"><a href="<?php echo esc_url(home_url('/voice')); ?>">採用情報</a></li>
         <li class="sp-nav__item">
           <a href="<?php echo esc_url(home_url('/price')); ?>">料金一覧</a>
           <ul class="sp-nav__sublist">
@@ -98,9 +93,8 @@
         </li>
         <li class="sp-nav__item"><a href="<?php echo esc_url(home_url('/faq')); ?>">よくある質問</a></li>
         <li class="sp-nav__item">
-          <a href="<?php echo esc_url(home_url('/privacypolicy')); ?>">プライバシー<br class="u-mobile" />ポリシー</a>
+          <a href="<?php echo esc_url(home_url('/privacypolicy')); ?>">コラム</a>
         </li>
-        <li class="sp-nav__item"><a href="<?php echo esc_url(home_url('/terms-of-service')); ?>">利用規約</a></li>
         <li class="sp-nav__item"><a href="<?php echo esc_url(home_url('/contact')); ?>">お問合せ</a></li>
       </ul>
     </div>

@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  border-bottom: 1px dashed $greenaccent;
+  border-bottom: 1px dashed $blue;
   padding-bottom: rem(24);
   @include mq(md) {
     flex-direction: row;
@@ -36,7 +36,7 @@
   font-weight: $bold;
 }
 .contact-form__group input::placeholder {
-  color: $green2;
+  color: $skyblue;
 }
 .contact-form__group input[type="text"],
 .contact-form__group input[type="email"],
@@ -44,7 +44,7 @@
 .contact-form__group textarea {
   width: 100%;
   padding: rem(8) rem(16);
-  border: 1px solid $greenaccent;
+  border: 1px solid $blue;
   margin-top: rem(16);
   @include mq(md) {
     max-width: rem(480);
@@ -105,7 +105,7 @@
 .contact-form__mark {
   height: rem(14); /* 幅 */
   width: rem(14); /* 幅 */
-  border: 1px solid $greenaccent; /* 線 */
+  border: 1px solid $blue; /* 線 */
   margin-right: rem(8);
   position: relative;
 }
@@ -149,7 +149,7 @@
   height: rem(40);
   padding-left: rem(16);
   margin-top: rem(16);
-  border: 1px solid $greenaccent;
+  border: 1px solid $blue;
   background: #ffffff;
   font-size: rem(12);
   @include mq(md) {
@@ -165,7 +165,7 @@
   border-style: solid;
   border-right: 6px solid transparent;
   border-left: 6px solid transparent;
-  border-top: 10px solid $greenaccent;
+  border-top: 10px solid $blue;
   border-bottom: 0;
   top: rem(30);
   right: rem(8);

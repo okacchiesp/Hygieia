@@ -13,11 +13,11 @@
   }
 }
 .section-header__title::first-letter {
-  color: $greenaccent;
+  color: $blue;
 }
 .section-header__subtitle {
   font-size: rem(12);
-  color: $greenaccent;
+  color: $blue;
   line-height: 1.5;
   margin-top: rem(4);
   @include mq(md) {
@@ -26,7 +26,7 @@
 }
 .section-header__contact-subtitle {
   font-size: rem(12);
-  color: $greenaccent;
+  color: $blue;
   line-height: 1.5;
   margin-top: rem(-6);
 }

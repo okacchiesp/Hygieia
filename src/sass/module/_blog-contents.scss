@@ -16,9 +16,9 @@
   }
 }
 .blog-contents__pagination a {
-  color: $greenaccent;
+  color: $blue;
   transition: background-color 0.5s;
-  border: 1px solid $greenaccent; /* 境界線を追加 */
+  border: 1px solid $blue; /* 境界線を追加 */
   width: rem(38);
   height: rem(38);
   transition: all 0.3s;
@@ -26,16 +26,16 @@
 }
 
 .blog-contents__pagination a:hover {
-  background-color: $greenaccent;
+  background-color: $blue;
   color: $white;
-  border: 1px solid $greenaccent;
+  border: 1px solid $blue;
 }
 
 .blog-contents__prev span {
   content: "";
   display: block;
-  border-left: 1px solid $greenaccent;
-  border-bottom: 1px solid $greenaccent;
+  border-left: 1px solid $blue;
+  border-bottom: 1px solid $blue;
   width: rem(10);
   height: rem(10);
   transform: rotate(45deg);
@@ -47,8 +47,8 @@
 .blog-contents__next span {
   content: "";
   display: block;
-  border-right: 1px solid $greenaccent;
-  border-bottom: 1px solid $greenaccent;
+  border-right: 1px solid $blue;
+  border-bottom: 1px solid $blue;
   width: rem(10);
   height: rem(10);
   transform: rotate(-45deg);

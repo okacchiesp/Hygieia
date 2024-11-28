@@ -1,0 +1,8 @@
+@use "global" as *;
+.tag{
+    background-color: $yellow;
+    padding: rem(6) rem(8);
+    display: inline-block;
+    border-radius: rem(20);
+    font-size: rem(12);
+}
