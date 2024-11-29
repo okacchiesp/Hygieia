@@ -48,7 +48,7 @@
     </div>
   </section>
   <section class="news">
-    <div class="news__inner inner">
+    <div class="news__inner">
       <div class="news__content">
         <div class="news__header section-header">
           <p class="section-header__title">News</p>
@@ -66,7 +66,7 @@
           </li>
         </ul>
       </div>
-      <div class="news__link"><a href="">お知らせ一覧へ</a></div>
+      <div class="news__link"><a href="">お知らせ一覧へ<span class="arrow"></span></a></div>
     </div>
   </section>
   <section class="about u-section-margin">

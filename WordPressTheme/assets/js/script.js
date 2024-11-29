@@ -7,11 +7,9 @@ jQuery(function ($) {
     if ($(".js-hamburger").hasClass("is-active")) {
       $(this).removeClass("is-active");
       $(".js-sp-nav").fadeOut("500");
-      $(".header").css("background-color", "rgba(13, 41, 54, 0.68)");
     } else {
       $(this).addClass("is-active");
       $(".js-sp-nav").fadeIn("500");
-      $(".header").css("background-color", "#408f95");
     }
     // 現在のbodyタグのoverflowスタイルを確認
     if ($("body").css("overflow") === "hidden") {
@@ -38,7 +36,6 @@ jQuery(function ($) {
           height: "",
           overflow: ""
         });
-        $(".header").css("background-color", "rgba(13, 41, 54, 0.68)");
       }
     });
   });

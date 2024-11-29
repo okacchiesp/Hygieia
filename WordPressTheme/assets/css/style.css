@@ -1787,8 +1787,9 @@ tr {
 .news__inner {
 	background-color: #A8DADC;
 	margin: 0;
-	padding-bottom: 1.5rem;
-	padding-top: 1.5rem;
+	max-width: 67.5rem;
+	padding: 1.5rem 0.9375rem;
+	width: 100%;
 }
 
 .news__list {
@@ -1813,6 +1814,7 @@ tr {
 }
 
 .news__link {
+	font-size: 0.75rem;
 	margin-top: 1.5rem;
 	text-align: right;
 }
@@ -3355,13 +3357,20 @@ html {
 	transform: translate(0, -50%);
 }
 
+.news__inner {
+	padding: 1.5rem 1rem 1.5rem 11.25rem;
+}
+
 .news__content {
 	align-items: flex-start;
 	display: flex;
 	gap: 4.5rem;
-	margin-left: 11.25rem;
 	max-width: 67.5rem;
 	width: 100%;
+}
+
+.news__list {
+	margin-top: 0;
 }
 
 .news__item {
@@ -3373,7 +3382,7 @@ html {
 }
 
 .news__link {
-	margin-top: 4rem;
+	margin-top: 2.5rem;
 }
 
 .page-body::before {
