@@ -12,9 +12,6 @@
     line-height: 1;
   }
 }
-.section-header__title::first-letter {
-  color: $blue;
-}
 .section-header__subtitle {
   font-size: rem(12);
   color: $blue;
@@ -31,14 +28,7 @@
   margin-top: rem(-6);
 }
 .section-header--white {
-  @include mq(md) {
     color: $white;
-  }
-}
-.section-header--white::first-letter {
-  @include mq(md) {
-    color: #ddf0f1;
-  }
 }
 .section-header--big {
   font-size: rem(80);

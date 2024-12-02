@@ -66,59 +66,53 @@
           </li>
         </ul>
       </div>
-      <div class="news__link"><a href="">お知らせ一覧へ<span class="arrow"></span></a></div>
+      <div class="news__link"><a href="">お知らせ一覧へ<img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/arrow.png" alt=""></a></div>
     </div>
   </section>
-  <section class="about u-section-margin">
-    <div class="about__inner inner">
+  <section class="about about-margin">
+    <a href="" class="about__inner">
       <div class="about__header section-header">
-        <p class="section-header__title">About us</p>
-        <h2 class="section-header__subtitle">私たちについて</h2>
+        <p class="section-header__title section-header--white">About us</p>
+        <h2 class="section-header__subtitle section-header--white">会社案内</h2>
       </div>
-      <div class="about__contents">
-        <div class="about__images">
-          <div class="about__image">
-            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/about_2.jpg" alt="シーサーの写真" />
-          </div>
-          <div class="about__image">
-            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/about_1.jpg" alt="黄色と黒の魚の写真" />
-          </div>
-        </div>
-        <div class="about__content">
-          <p class="about__title">Dive into<br />the Ocean</p>
-          <div class="about__body">
-            <p class="about__text">
-              ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />
-              ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-            </p>
-            <div class="about__btn">
-              <a href="<?php echo esc_url(home_url('/about-us')); ?>" class="button">View more<span></span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      <p class="about__text">最新のテクノロジーを駆使して食品製造プロセスを改善し、食品の安全性と品質を確保します。<br>また、環境への配慮も重要な使命と考え、持続可能なソリューションを提供しています。</p>
+    </a>
   </section>
-  <section class="information u-section-margin">
-    <div class="information__inner inner">
-      <div class="information__header section-header">
-        <p class="section-header__title">Information</p>
-        <h2 class="section-header__subtitle">ダイビング情報</h2>
+  <section class="product product-margin">
+    <div class="product__inner inner">
+      <div class="product__header section-header">
+        <p class="section-header__title">Product</p>
+        <h2 class="section-header__subtitle">製品情報</h2>
       </div>
-      <div class="information__content">
-        <div class="information__image js-slidein">
-          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/information.jpg" alt="オレンジ色の魚の写真" />
-        </div>
-        <div class="information__body">
-          <h3 class="information__title">ライセンス講習</h3>
-          <p class="information__text">
-            当店はダイビングライセンス（Cカード）世界最大の教育機関PADIの「正規店」として店舗登録されています。<br />
-            正規登録店として、安心安全に初めての方でも安心安全にライセンス取得をサポート致します。
-          </p>
-          <div class="information__btn">
-            <a href="<?php echo esc_url(home_url('/information')); ?>" class="button">View more<span></span></a>
+      <div class="product__list product-cards">
+        <a href="" class="product-cards__item product-card">
+          <div class="product-card__body">
+            <h3 class="product-card__name">ライセンス取得</h3>
+            <p class="product-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+              ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
           </div>
-        </div>
+        </a>
+        <a href="" class="product-cards__item product-card">
+          <div class="product-card__body">
+            <h3 class="product-card__name">ライセンス取得</h3>
+            <p class="product-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+              ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
+          </div>
+        </a>
+        <a href="" class="product-cards__item product-card">
+          <div class="product-card__body">
+            <h3 class="product-card__name">ライセンス取得</h3>
+            <p class="product-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+              ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
+          </div>
+        </a>
+        <a href="" class="product-cards__item product-card">
+          <div class="product-card__body">
+            <h3 class="product-card__name">ライセンス取得</h3>
+            <p class="product-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+              ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
+          </div>
+        </a>
       </div>
     </div>
   </section>
