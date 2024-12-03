@@ -66,7 +66,7 @@
           </li>
         </ul>
       </div>
-      <div class="news__link"><a href="">お知らせ一覧へ<img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/arrow.png" alt=""></a></div>
+      <div class="news__link arrow-link"><a href="">お知らせ一覧へ<img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/arrow.png" alt=""></a></div>
     </div>
   </section>
   <section class="about about-margin">
@@ -116,108 +116,84 @@
       </div>
     </div>
   </section>
-  <section class="blog blog--top-margin">
-    <div class="blog__inner inner">
-      <div class="blog__header section-header">
-        <p class="section-header__title section-header--white">Blog</p>
-        <h2 class="section-header__subtitle section-header--white">ブログ</h2>
+  <section class="works works-margin">
+    <div class="works__inner inner">
+      <div class="works__header section-header">
+        <p class="section-header__title">Works</p>
+        <h2 class="section-header__subtitle">実績</h2>
       </div>
-      <div class="blog__items blog-cards">
-        <?php
-        $args = array(
-          'posts_per_page' => 3, // 最新3件を取得
-        );
-        $latest_posts = new WP_Query($args);
-        if ($latest_posts->have_posts()) :
-          while ($latest_posts->have_posts()) : $latest_posts->the_post(); ?>
-            <a href="<?php the_permalink(); ?>" class="blog-cards__item blog-card">
-              <div class="blog-card__image">
-                <?php if (has_post_thumbnail()) : ?>
-                  <img src="<?php echo get_the_post_thumbnail_url(); ?>"
-                    alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?>">
-                <?php else : ?>
-                  <img src="<?php echo get_theme_file_uri(); ?>/assets/images/no-image.png" alt="デフォルト画像" />
-                <?php endif; ?>
-              </div>
-              <div class="blog-card__body">
-                <time class="blog-card__date"
-                  datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date('Y.m/d'); ?></time>
-                <h3 class="blog-card__title"><?php the_title(); ?></h3>
-                <p class="blog-card__text">
-                  <?php echo wp_trim_words(get_the_excerpt(), 85, '...'); ?>
-                </p>
-              </div>
+      <div class="works__slider swiper js-works-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a href="" class="works__link">
+              <div class="works__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product01.jpg" alt=""></div>
+              <p class="works__text">株式会社〇〇様</p>
             </a>
-        <?php endwhile;
-        endif;
-        wp_reset_postdata();
-        ?>
+          </div>
+          <div class="swiper-slide">
+            <a href="" class="works__link">
+              <div class="works__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product01.jpg" alt=""></div>
+              <p class="works__text">株式会社〇〇様</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="" class="works__link">
+              <div class="works__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product02.jpg" alt=""></div>
+              <p class="works__text">株式会社〇〇様</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="" class="works__link">
+              <div class="works__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product03.jpg" alt=""></div>
+              <p class="works__text">株式会社〇〇様</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="" class="works__link">
+              <div class="works__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product04.jpg" alt=""></div>
+              <p class="works__text">株式会社〇〇様</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="" class="works__link">
+              <div class="works__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product01.jpg" alt=""></div>
+              <p class="works__text">株式会社〇〇様</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="" class="works__link">
+              <div class="works__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product02.jpg" alt=""></div>
+              <p class="works__text">株式会社〇〇様</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="" class="works__link">
+              <div class="works__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product03.jpg" alt=""></div>
+              <p class="works__text">株式会社〇〇様</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="" class="works__link">
+              <div class="works__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product04.jpg" alt=""></div>
+              <p class="works__text">株式会社〇〇様</p>
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="blog__btn">
-        <a href="<?php echo esc_url(home_url('/blog')); ?>" class="button">View more<span></span></a>
-      </div>
+      <div class="works__all arrow-link"><a href="">実績一覧へ<img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/arrow.png" alt=""></a></div>
     </div>
   </section>
-  <section class="voice u-section-margin">
-    <div class="voice__inner inner">
-      <div class="voice__header section-header">
-        <p class="section-header__title">Voice</p>
-        <h2 class="section-header__subtitle">お客様の声</h2>
+  <section class="recruit recruit-margin">
+    <div class="recruit__inner inner">
+      <div class="recruit__header section-header">
+        <p class="section-header__title">Recruit</p>
+        <h2 class="section-header__subtitle">採用情報</h2>
       </div>
-      <div class="voice__items voice-cards">
-        <?php
-        $args = array(
-          'post_type' => 'voice', // カスタム投稿タイプ名
-          'posts_per_page' => 2, // 最新2件を取得
-        );
-        $voices = new WP_Query($args);
-        if ($voices->have_posts()) :
-          while ($voices->have_posts()) : $voices->the_post(); ?>
-            <div class="voice-cards__item voice-card">
-              <div class="voice-card__head">
-                <div class="voice-card__meta">
-                  <div class="voice-card__metahead">
-                    <?php
-                    $age = get_field('age');
-                    $gender = get_field('gender');
-                    if ($age && $gender):
-                    ?>
-                      <p class="voice-card__age"><?php echo esc_html($age); ?>(<?php echo esc_html($gender); ?>)</p>
-                    <?php endif; ?>
-                    <p class="voice-card__category category-tag">
-                      <?php
-                      $terms = get_the_terms(get_the_ID(), 'voice_category');
-                      if ($terms && !is_wp_error($terms)) :
-                        foreach ($terms as $term) : ?>
-                          <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
-                      <?php endforeach;
-                      endif; ?>
-                    </p>
-                  </div>
-                  <h3 class="voice-card__title">
-                    <?php the_title(); ?>
-                  </h3>
-                </div>
-                <div class="voice-card__image js-slidein">
-                  <?php if (has_post_thumbnail()) : ?>
-                    <img src="<?php echo get_the_post_thumbnail_url(); ?>"
-                      alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?>">
-                  <?php else : ?>
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/no-image.png" alt="デフォルト画像" />
-                  <?php endif; ?>
-                </div>
-              </div>
-              <p class="voice-card__text">
-                <?php the_content(); ?>
-              </p>
-            </div>
-        <?php endwhile;
-        endif;
-        wp_reset_postdata();
-        ?>
-      </div>
-      <div class="voice__btn">
-        <a href="<?php echo esc_url(home_url('/voice')); ?>" class="button">View more<span></span></a>
+      <div class="recruit__contents">
+        <div class="recruit__content">
+          <div class="recruit__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/recruit01.jpg" alt=""></div>
+          <p class="recruit__text">サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+        </div>
       </div>
     </div>
   </section>
