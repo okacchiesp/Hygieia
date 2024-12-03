@@ -31,35 +31,26 @@ jQuery(function ($) {
   });
 
   // Swiper
-  var swiper = new Swiper(".js-campaign-swiper", {
-    slidesPerView: "auto",
-    spaceBetween: 24,
-    grabCursor: true,
-    navigation: {
-      nextEl: ".js-campaign-next",
-      prevEl: ".js-campaign-prev",
+  const slideLength = document.querySelectorAll(".js-works-swiper .swiper-slide").length;
+  var mvswiper = new Swiper(".js-works-swiper", {
+    spaceBetween: 16,
+    slidesPerView: "auto", // スライド幅を自動調整
+    loop: true, // 無限ループを有効化
+    loopedSlides: slideLength,
+    speed: 8000, // アニメーション速度（ms）
+    autoplay: {
+      delay: 0, // 遅延なしでスライド
+      disableOnInteraction: false, // ユーザー操作後もスライド継続
     },
-    breakpoints: {
-      768: {
-        spaceBetween: 40,
+    on: {
+      touchEnd: (swiper) => {
+        swiper.slideTo(swiper.activeIndex + 1);
       },
     },
   });
 
-  var mvswiper = new Swiper(".js-mv-swiper", {
-    slidesPerView: 1,
-    effect: "fade",
-    fadeEffect: {
-      crossFade: true,
-    },
-    loop: true,
-    speed: 1000,
-    autoplay: {
-      // 自動再生させる
-      delay: 3000, // 次のスライドに切り替わるまでの時間（ミリ秒）
-      disableOnInteraction: false, // ユーザーが操作しても自動再生を止めない
-      waitForTransition: false, // アニメーションの間も自動再生を止めない（最初のスライドの表示時間を揃えたいときに）
-    },
+  window.addEventListener("load", function () {
+    initSwiper(); // ページ読み込み後に初期化
   });
 
   // Slidein
