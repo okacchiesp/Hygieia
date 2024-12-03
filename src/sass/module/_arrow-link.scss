@@ -1,0 +1,19 @@
+@use "global" as *;
+.arrow-link{
+    text-align: right;
+    font-size: rem(12);
+}
+
+.arrow-link a{
+    position: relative;
+}
+
+.arrow-link img{
+    position: absolute;
+    right: rem(-8);
+    bottom: rem(-6);
+    width: rem(40);
+    @include mq(md) {
+        right: rem(-16);
+    }
+}
