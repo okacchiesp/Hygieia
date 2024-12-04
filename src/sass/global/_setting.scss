@@ -18,8 +18,8 @@ $english-font-family: "Crimson Text", sans-serif;
 // ※検証ツールでしっかり反映されているか確認する
 
 body {
-  font-family: $japan-font-family;
-  color: #2C3E50;
+    font-family: $japan-font-family;
+    color: #2c3e50;
 }
 
 // フォントウェイト
@@ -32,7 +32,8 @@ $bold: 700;
 ////////////////////
 
 //色指定（共通性のあるものは出来る限り指定すると良い）
-$blue: #457B9D;
-$skyblue: #A8DADC;
-$yellow: #FFE8A1;
+$blue: #457b9d;
+$skyblue: #a8dadc;
+$yellow: #ffe8a1;
 $white: #fff;
+$text: #2c3e50;

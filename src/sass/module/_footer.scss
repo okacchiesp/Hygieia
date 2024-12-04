@@ -1,102 +1,25 @@
 @use "global" as *;
 .footer {
-  background-color: $blue;
-  color: $white;
-  padding-top: rem(48);
-  padding-bottom: rem(56);
-  @include mq(md) {
-    padding: rem(80) 0;
-  }
-}
-.footer__head {
-  @include mq(md) {
-    display: flex;
-    align-items: flex-end;
-  }
-}
-.footer__logo {
-  max-width: rem(120);
-  width: 100%;
-  aspect-ratio: 120 / 45;
-  @include mq(md) {
-    max-width: rem(200);
-    aspect-ratio: 200 / 75;
-  }
-}
-.footer__logo img {
-  width: 100%;
-  height: 100%;
+    background-color: $blue;
+    color: $white;
+    padding-top: rem(48);
+    padding-bottom: rem(56);
+    @include mq(md) {
+        padding: rem(80) 0;
+    }
 }
 .footer__sns {
-  display: flex;
-  gap: rem(16);
-  margin-top: rem(16);
-  @include mq(md) {
-    margin-left: rem(40);
-  }
+    display: flex;
+    justify-content: center;
+    gap: rem(40);
+    margin-top: rem(40);
 }
 .footer__snslink {
-  width: rem(24);
-  @include mq(md) {
-    width: rem(32);
-  }
+    width: rem(24);
+    @include mq(md) {
+        width: rem(32);
+    }
 }
 .footer__snslink:hover {
-  opacity: 0.8;
-}
-.footer-nav__lists {
-  display: grid;
-  grid-template-rows: repeat(2, auto);
-  grid-auto-flow: column;
-  gap: rem(40) rem(16);
-  margin: rem(40) auto 0;
-  width: fit-content;
-  @include mq(md) {
-    grid-template-rows: repeat(1, auto);
-    margin-top: rem(24);
-    gap: rem(120);
-  }
-}
-.footer-nav__item {
-  font-weight: $bold;
-  line-height: 1.125;
-  background-image: url(../images/top/seastar.png);
-  background-position: top left;
-  background-repeat: no-repeat;
-  background-size: rem(18);
-  padding-left: rem(22);
-  transition: all 0.5s;
-}
-.footer-nav__item > a:hover {
-  opacity: 0.8;
-}
-.footer-nav__item + .footer-nav__item {
-  margin-top: rem(40);
-}
-.footer-nav__subitem {
-  font-weight: $regular;
-  line-height: 1.125;
-  margin-top: rem(24);
-  width: fit-content;
-  transition: all 0.5s;
-}
-.footer-nav__subitem > a:hover {
-  opacity: 0.8;
-}
-.footer__copyright {
-  font-family: $english-font-family;
-  text-align: center;
-  margin-top: rem(40);
-  line-height: 1.5;
-  font-size: rem(12);
-  @include mq(md) {
-    margin-top: rem(80);
-    font-size: rem(14);
-  }
-}
-.footer--top-margin {
-  margin-top: rem(100);
-  @include mq(md) {
-    margin-top: rem(160);
-  }
+    opacity: 0.8;
 }

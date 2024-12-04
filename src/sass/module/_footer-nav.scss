@@ -1,0 +1,31 @@
+@use "global" as *;
+.footer-nav__list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(40);
+    align-items: center;
+    justify-content: center;
+    @include mq(md) {
+        flex-direction: row;
+    }
+}
+.footer-nav__list:nth-of-type(2) {
+    margin-top: rem(40);
+}
+.footer-nav__item > a:hover {
+    opacity: 0.8;
+}
+.footer-nav__subitem > a:hover {
+    opacity: 0.8;
+}
+.footer__copyright {
+    font-family: $english-font-family;
+    text-align: center;
+    margin-top: rem(40);
+    line-height: 1.5;
+    font-size: rem(12);
+    @include mq(md) {
+        margin-top: rem(80);
+        font-size: rem(14);
+    }
+}
