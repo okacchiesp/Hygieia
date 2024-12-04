@@ -1,29 +1,33 @@
 @use "global" as *;
-.recruit__inner {
-}
-.recruit__header {
-}
-.recruit__contents {
-}
 .recruit__content {
     display: flex;
     align-items: center;
+    flex-direction: column;
+    @include mq(md) {
+        flex-direction: row;
+    }
 }
 .recruit__content:nth-of-type(2) .recruit__image {
-    order: 2;
+    @include mq(md) {
+        order: 2;
+    }
 }
 .recruit__content:nth-of-type(2) .recruit__body {
-    padding-left: 0;
-    padding-right: rem(40);
+    @include mq(md) {
+        padding-right: rem(40);
+    }
 }
 
 .recruit__image {
-    width: 50%;
+    width: 100%;
     height: rem(352);
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    @include mq(md) {
+        width: 50%;
+    }
 }
 .recruit__image img {
     aspect-ratio: 400 / 266;
@@ -44,8 +48,11 @@
     z-index: -1;
 }
 .recruit__body {
-    width: 50%;
-    padding-left: rem(40);
+    width: 100%;
+    @include mq(md) {
+        width: 50%;
+        padding-left: rem(40);
+    }
 }
 .recruit__link {
     margin-top: rem(24);

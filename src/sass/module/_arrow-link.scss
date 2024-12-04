@@ -1,19 +1,20 @@
 @use "global" as *;
-.arrow-link{
+.arrow-link {
     text-align: right;
     font-size: rem(12);
 }
 
-.arrow-link a{
+.arrow-link a {
     position: relative;
+    padding-right: rem(10);
 }
 
-.arrow-link img{
+.arrow-link img {
     position: absolute;
-    right: rem(-8);
+    right: rem(0);
     bottom: rem(-6);
     width: rem(40);
     @include mq(md) {
-        right: rem(-16);
+        right: rem(0);
     }
 }
