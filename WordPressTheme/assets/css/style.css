@@ -1623,27 +1623,6 @@ tr {
 	margin-top: 1.5rem;
 }
 
-.page-body {
-	position: relative;
-}
-
-.page-body::before {
-	background: url(../images/common/green-fish.png) no-repeat;
-	background-size: contain;
-	content: "";
-	display: inline-block;
-	height: 3.4375rem;
-	left: calc(50% - min(48vw, 10.75rem));
-	position: absolute;
-	top: -1.5rem;
-	width: 7.5rem;
-	z-index: -1;
-}
-
-.page-body--top-margin {
-	margin: 3.25rem auto 0;
-}
-
 .page-green {
 	background-color: #457b9d;
 	color: #fff;
@@ -1674,16 +1653,14 @@ tr {
 
 .page-head__title {
 	color: #fff;
-	font-family: "Lato", sans-serif;
+	font-family: "Crimson Text", sans-serif;
 	font-size: 2.5rem;
 	font-weight: 400;
 	position: absolute;
 }
 
 .page-head__image {
-	height: 100%;
 	overflow: hidden;
-	width: 100%;
 }
 
 .page-head__image img {
@@ -3240,17 +3217,6 @@ html {
 
 .news__link {
 	margin-top: 2.5rem;
-}
-
-.page-body::before {
-	height: 8.625rem;
-	left: calc(50% - min(48vw, 38.75rem));
-	top: -4.375rem;
-	width: 18.8125rem;
-}
-
-.page-body--top-margin {
-	margin: 9.375rem auto 0;
 }
 
 .page-green {
