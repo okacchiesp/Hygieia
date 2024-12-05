@@ -1120,7 +1120,6 @@ tr {
 }
 
 .contact__text {
-	font-size: 0.75rem;
 	margin-top: 2.5rem;
 }
 
@@ -1388,7 +1387,7 @@ tr {
 }
 
 .hamburger span {
-	background-color: #fff;
+	background-color: #457b9d;
 	height: 0.0625rem;
 	position: absolute;
 	right: 0;
@@ -2127,6 +2126,13 @@ tr {
 	margin-top: 2.5rem;
 }
 
+.recruit__contents {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	margin-top: 2.5rem;
+}
+
 .recruit__content {
 	align-items: center;
 	display: flex;
@@ -2324,7 +2330,7 @@ tr {
 	height: 100vh;
 	left: 0;
 	overflow: scroll;
-	padding-top: 6.5rem;
+	padding-top: 5rem;
 	position: fixed;
 	right: 0;
 	top: 0;
@@ -2332,25 +2338,14 @@ tr {
 	z-index: 90;
 }
 
-.sp-nav__inner {
+.sp-nav__items {
+	align-items: center;
 	display: flex;
-	gap: 0.4375rem;
-	justify-content: space-evenly;
+	flex-direction: column;
+	gap: 2.5rem;
+	height: 100%;
+	justify-content: center;
 	padding-bottom: 1.5rem;
-}
-
-.sp-nav__item {
-	background-image: url(../images/top/seastar.png);
-	background-position: top left;
-	background-repeat: no-repeat;
-	background-size: 1.125rem;
-	font-weight: 700;
-	line-height: 1.125;
-	padding-left: 1.375rem;
-}
-
-.sp-nav__item + .sp-nav__item {
-	margin-top: 2.5rem;
 }
 
 .sp-nav__subitem {
@@ -3407,6 +3402,10 @@ html {
 	right: -7.125rem;
 	width: 29.25rem;
 	z-index: -1;
+}
+
+.recruit__contents {
+	gap: 0;
 }
 
 .recruit__content {
