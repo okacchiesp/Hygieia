@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 @use "global" as *;
 .works-margin{
     margin-top: rem(80);
     @include mq(md) {
         margin-top: rem(140);
     }
+=======
+@use "global" as *;
+.works-margin{
+    margin-top: rem(80);
+    @include mq(md) {
+        margin-top: rem(140);
+    }
+>>>>>>> 471f06b631ac9081b71bf99b3ceb1f6d7b101447
 }

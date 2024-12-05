@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 .vscode
 _gulp
 .DS_Store
 dist
 assets
 *_wpvivid-*.zip
+=======
+.vscode/
+_gulp/node_modules/
+_gulp/package-lock.json/
+.DS_Store
+dist
+assets
+>>>>>>> 471f06b631ac9081b71bf99b3ceb1f6d7b101447

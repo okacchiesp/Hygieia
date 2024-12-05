@@ -10,6 +10,7 @@
   background-color: $blue;
   z-index: 90;
   color: $white;
+<<<<<<< HEAD
   padding-top: rem(80);
   overflow: scroll;
 }
@@ -22,6 +23,31 @@
   justify-content: center;
   padding-bottom: rem(24);
   height: 100%;
+=======
+  padding-top: rem(104);
+  overflow: scroll;
+}
+
+.sp-nav__inner {
+  display: flex;
+  gap: rem(7);
+  justify-content: space-evenly;
+  padding-bottom: rem(24);
+}
+
+.sp-nav__item {
+  font-weight: $bold;
+  line-height: 1.125;
+  background-image: url(../images/top/seastar.png);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: rem(18);
+  padding-left: rem(22);
+}
+
+.sp-nav__item + .sp-nav__item {
+  margin-top: rem(40);
+>>>>>>> 471f06b631ac9081b71bf99b3ceb1f6d7b101447
 }
 
 .sp-nav__subitem {
