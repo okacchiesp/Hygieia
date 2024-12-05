@@ -1,0 +1,28 @@
+@use "global" as *;
+.title {
+  color: $white;
+}
+
+.title--green {
+  color: $blue;
+}
+
+.title__main {
+  font-size: rem(40);
+  line-height: 1.5;
+  letter-spacing: 0.54em;
+  writing-mode: vertical-rl;
+  @include mq(md) {
+    // font-size: rem(56);
+  }
+}
+
+.title__main span{
+  display: block;
+  text-indent: 2em;
+}
+
+.title__sub {
+  font-size: rem(20);
+  font-family: $english-font-family;
+}

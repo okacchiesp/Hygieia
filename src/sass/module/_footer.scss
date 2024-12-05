@@ -1,0 +1,25 @@
+@use "global" as *;
+.footer {
+    background-color: $blue;
+    color: $white;
+    padding-top: rem(48);
+    padding-bottom: rem(56);
+    @include mq(md) {
+        padding: rem(80) 0;
+    }
+}
+.footer__sns {
+    display: flex;
+    justify-content: center;
+    gap: rem(40);
+    margin-top: rem(40);
+}
+.footer__snslink {
+    width: rem(24);
+    @include mq(md) {
+        width: rem(32);
+    }
+}
+.footer__snslink:hover {
+    opacity: 0.8;
+}

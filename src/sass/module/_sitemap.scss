@@ -1,0 +1,39 @@
+@use "global" as *;
+.sitemap__lists {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  grid-auto-flow: column;
+  gap: rem(40) 0;
+  justify-content: space-between;
+  @include mq(md) {
+    grid-template-rows: repeat(1, auto);
+    gap: rem(120);
+  }
+}
+.sitemap__list {
+  display: grid;
+  gap: rem(40);
+}
+.sitemap__item {
+  display: grid;
+  gap: rem(24);
+  font-weight: $bold;
+  line-height: 1.125;
+  background-image: url(../images/sitemap/seastar.png);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: rem(18);
+  padding-left: rem(22);
+  transition: all 0.5s;
+}
+.sitemap__sublist {
+  display: grid;
+  gap: rem(24);
+  font-weight: normal;
+}
+.sitemap--top-margin {
+  margin: rem(52) auto 0;
+  @include mq(md) {
+    margin: rem(150) auto 0;
+  }
+}

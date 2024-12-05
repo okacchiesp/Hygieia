@@ -1,0 +1,29 @@
+@use "global" as *;
+.header {
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 rem(15);
+  height: rem(80);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  @include mq(md) {
+    height: rem(90);
+    padding: 0 rem(40);
+  }
+}
+.header__logo {
+  width: rem(102);
+  height: rem(38);
+  position: relative;
+  z-index: 999;
+  @include mq(md) {
+    width: rem(133);
+    height: rem(50);
+  }
+}

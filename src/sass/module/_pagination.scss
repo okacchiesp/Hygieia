@@ -1,0 +1,89 @@
+@use "global" as *;
+.pagination {
+  font-family: "Lato";
+}
+
+.pagination a,
+.pagination span {
+  display: grid;
+  place-items: center;
+  color: $blue;
+  width: rem(38);
+  height: rem(38);
+  transition: background-color 0.3s, color 0.3s;
+  border: 1px solid $blue;
+}
+
+.pagination .current {
+  background-color: #408f95;
+  border: 1px solid #408f95;
+  color: #fff;
+}
+
+.pagination .nextpostslink {
+  margin-left: 1.75rem;
+}
+
+.pagination .previouspostslink {
+  margin-right: 1.75rem;
+}
+
+.pagination a:hover {
+  background-color: $blue;
+  color: $white;
+  border: 1px solid $blue;
+}
+
+.pagination a.active {
+  background-color: $blue;
+  color: $white;
+  border: 1px solid $blue;
+}
+
+.pagination__arrow {
+  display: grid;
+  place-items: center;
+}
+
+.pagination__arrow::before {
+  content: "";
+  display: inline-block;
+  width: rem(10);
+  height: rem(10);
+  position: relative;
+}
+
+.pagination__arrow:hover::before {
+  border-color: $white;
+}
+
+.pagination__arrow--prev:before {
+  border-left: 1px $blue solid;
+  border-bottom: 1px $blue solid;
+  transform: rotate(45deg);
+  left: rem(3);
+}
+
+.pagination__arrow--next:before {
+  border-right: 1px $blue solid;
+  border-bottom: 1px $blue solid;
+  transform: rotate(-45deg);
+  right: rem(3);
+}
+
+.pagination__inner {
+  display: flex;
+  gap: rem(12);
+}
+
+.pagination__inner a:nth-of-type(5),
+.pagination__inner a:nth-of-type(6) {
+  display: none;
+  @include mq(md) {
+    display: grid;
+  }
+}
+
+.pagination--top-margin {
+  margin-top: rem(80);
+}

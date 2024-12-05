@@ -1,0 +1,14 @@
+@use "global" as *;
+.product-cards{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: rem(24);
+    @include mq(md) {
+        flex-direction: row;
+        gap: 0;
+    }
+}
+.product-cards__item {
+    height: rem(330);
+}

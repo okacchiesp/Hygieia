@@ -1,0 +1,6 @@
+.vscode
+_gulp
+.DS_Store
+dist
+assets
+*_wpvivid-*.zip

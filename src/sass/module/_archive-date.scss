@@ -1,0 +1,47 @@
+@use "global" as *;
+.archive-date {
+  color: $blue;
+  font-size: rem(24);
+  display: grid;
+  gap: rem(4);
+  line-height: 1.4583;
+}
+
+.archive-date__year,
+.archive-date__month {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  cursor: pointer;
+}
+
+.archive-date__year::before {
+  display: inline-block;
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: rem(18) solid $blue; /* 左ボーダーを透明に */
+  border-bottom: rem(10) solid transparent; /* 右ボーダーを透明に */
+  border-top: rem(10) solid transparent; /* 上ボーダーを黒に */
+  transition: all 0.3s;
+}
+
+.archive-date__year.open::before {
+  transform: rotate(90deg);
+}
+
+.archive-date__sub {
+  margin-left: rem(32);
+  display: grid;
+  gap: rem(4);
+}
+
+.archive-date__month::before {
+  display: inline-block;
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: rem(18) solid $blue; /* 左ボーダーを透明に */
+  border-bottom: rem(10) solid transparent; /* 右ボーダーを透明に */
+  border-top: rem(10) solid transparent; /* 上ボーダーを黒に */
+}

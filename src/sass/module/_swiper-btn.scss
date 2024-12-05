@@ -1,0 +1,43 @@
+@use "global" as *;
+.swiper-btn {
+  display: none;
+  @include mq(md) {
+    display: flex;
+    align-items: center;
+    gap: rem(80);
+    position: absolute;
+    right: 0;
+    top: rem(-105);
+  }
+}
+.swiper-btn__prev,
+.swiper-btn__next {
+  @include mq(md) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(80);
+    height: rem(80);
+    border-radius: rem(80);
+    border: 1px solid $blue;
+    cursor: pointer;
+  }
+}
+.swiper-btn__prev::before {
+  display: inline-block;
+  content: "";
+  width: rem(40);
+  height: rem(6);
+  border-bottom: 1px solid $blue;
+  border-left: 1px solid $blue;
+  transform: skew(-45deg);
+}
+.swiper-btn__next::before {
+  display: inline-block;
+  content: "";
+  width: rem(40);
+  height: rem(6);
+  border-bottom: 1px solid $blue;
+  border-right: 1px solid $blue;
+  transform: skew(45deg);
+}

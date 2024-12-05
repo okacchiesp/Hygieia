@@ -1,0 +1,28 @@
+@use "global" as *;
+.page-green {
+  background-color: $blue;
+  color: $white;
+  position: relative;
+  padding-top: rem(80);
+  margin-bottom: rem(-1);
+  @include mq(md) {
+    padding-top: rem(90);
+  }
+}
+.page-green::after {
+  content: "";
+  background: url(../images/404/whale.png) no-repeat;
+  background-size: contain;
+  width: rem(345);
+  height: rem(345);
+  position: absolute;
+  left: calc(50% - min(48vw, rem(172)));
+  top: rem(80);
+  display: inline-block;
+  @include mq(md) {
+    width: rem(698);
+    height: rem(698);
+    left: calc(50% - min(48vw, rem(540)));
+    top: rem(90);
+  }
+}

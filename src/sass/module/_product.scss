@@ -1,0 +1,39 @@
+@use "global" as *;
+.product {
+  position: relative;
+  overflow: hidden;
+}
+.product::before{
+  display: none;
+  @include mq(md) {
+    display: block;
+    content: '';
+    width: rem(468);
+    height: rem(351);
+    background-image: url(../images/top/background.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: rem(-140);
+    left: rem(-16);
+    background-size: cover;
+   }
+}
+.product::after{
+  display: none;
+  @include mq(md) {
+    display: block;
+    content: '';
+    width: rem(468);
+    height: rem(351);
+    background-image: url(../images/top/background.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: rem(-72);
+    right: rem(-114);
+    background-size: cover;
+    z-index: -1;
+   }
+}
+.product__list {
+  margin-top: rem(40);
+}

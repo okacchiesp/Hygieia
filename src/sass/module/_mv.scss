@@ -1,0 +1,44 @@
+@use "global" as *;
+.mv {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.mv::after{
+  display: inline-block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: rgba($color: #000000, $alpha: 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.mv__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  @include mq(md) {
+    left: auto;
+    right: rem(148);
+    transform: translate(0, -50%);
+  }
+}
+
+.mv__slide {
+  height: inherit;
+}
+.mv__image {
+  height: inherit;
+}
+.mv__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

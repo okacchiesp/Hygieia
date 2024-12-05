@@ -1,0 +1,49 @@
+@use "global" as *;
+.contact {
+    background-color: $skyblue;
+    padding: rem(64) 0;
+}
+
+.contact__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contact__text {
+    margin-top: rem(40);
+}
+.contact__tel {
+    font-size: rem(20);
+    display: flex;
+    flex-direction: column;
+    margin-top: rem(16);
+    gap: rem(8);
+    @include mq(md) {
+        flex-direction: row;
+        margin-top: rem(40);
+        gap: rem(40);
+    }
+}
+.contact__time {
+    display: flex;
+    flex-direction: column;
+    margin-top: rem(16);
+    align-items: center;
+    gap: rem(58);
+    font-size: rem(14);
+    @include mq(md) {
+        flex-direction: row;
+    }
+}
+.contact__btn {
+    margin-top: rem(40);
+    position: relative;
+}
+.contact__btn img {
+    width: rem(16);
+    height: rem(12);
+    position: absolute;
+    left: rem(40);
+}
+.button {
+}
