@@ -47,15 +47,7 @@ const destWpPath = {
   img: `../${themeName}/assets/images/`,
 };
 
-const browsers = [
-  "last 2 versions",
-  "> 5%",
-  "ie = 11",
-  "not ie <= 10",
-  "ios >= 8",
-  "and_chr >= 5",
-  "Android >= 5",
-];
+const browsers = ["last 2 versions", "> 5%", "ie = 11", "not ie <= 10", "ios >= 8", "and_chr >= 5", "Android >= 5"];
 
 // HTMLファイルのコピー
 const htmlCopy = () => {
@@ -170,7 +162,7 @@ const browserSyncOption = {
   notify: false,
   // server: "../dist/", // ローカルサーバーのルートディレクトリ
   //WordPressの場合は↓を有効にする。その場合、↑(server)はコメントアウトする。
-  proxy: "hygieia.local/", // ローカルサーバーのURL（WordPress）
+  proxy: "portfolio.local/", // ローカルサーバーのURL（WordPress）
 };
 const browserSyncFunc = () => {
   browserSync.init(browserSyncOption);
@@ -194,10 +186,7 @@ const watchFiles = () => {
 };
 
 // ブラウザシンク付きの開発用タスク
-exports.default = series(
-  series(cssSass, jsBabel, imgImagemin, htmlCopy),
-  parallel(watchFiles, browserSyncFunc)
-);
+exports.default = series(series(cssSass, jsBabel, imgImagemin, htmlCopy), parallel(watchFiles, browserSyncFunc));
 
 // 本番用タスク
 exports.build = series(clean, cssSass, jsBabel, imgImagemin, htmlCopy);

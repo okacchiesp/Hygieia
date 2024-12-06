@@ -2,20 +2,6 @@
 .gallery {
   position: relative;
 }
-.gallery::after {
-  @include mq(md) {
-    content: "";
-    background: url(../images/top/fish-green.png) no-repeat;
-    background-size: contain;
-    position: absolute;
-    z-index: 10;
-    display: inline-block;
-    width: rem(301);
-    height: rem(138);
-    right: calc(50% - min(48vw, rem(640)));
-    top: rem(-80);
-  }
-}
 .gallery__images {
   display: grid;
   gap: rem(8);
