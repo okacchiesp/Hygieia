@@ -1,0 +1,53 @@
+@use "global" as *;
+.column-archive__date {
+    font-family: $english-font-family;
+    font-size: rem(14);
+    line-height: 1.285;
+    vertical-align: top;
+}
+
+.column-archive__title {
+    font-size: rem(24);
+    font-weight: 500;
+    line-height: 1.458;
+    border-bottom: 1px solid $blue;
+    padding-bottom: rem(4);
+    @include mq(md) {
+        font-size: rem(32);
+    }
+}
+
+.column-archive__image {
+    margin-top: rem(24);
+    @include mq(md) {
+        margin-top: rem(40);
+    }
+}
+
+.column-archive__body {
+    margin-top: rem(24);
+    display: grid;
+    gap: rem(24);
+    @include mq(md) {
+        margin-top: rem(40);
+        gap: rem(40);
+    }
+}
+
+.column-archive__body p {
+    font-size: rem(16);
+    line-height: 1.5;
+}
+
+.column-archive__body ul {
+    display: grid;
+    gap: rem(4);
+}
+.column-archive__body li {
+    background-image: url(../images/blog/seastar_green.png);
+    line-height: 1.5;
+    background-position: top rem(3) left;
+    background-repeat: no-repeat;
+    background-size: rem(16);
+    padding-left: rem(27);
+}

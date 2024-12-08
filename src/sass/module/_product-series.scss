@@ -1,0 +1,13 @@
+@use "global" as *;
+.product-series--top-margin {
+    margin: rem(52) auto 0;
+    @include mq(md) {
+        margin: rem(150) auto 0;
+    }
+}
+.product-series__contents {
+    margin-top: rem(16);
+    @include mq(md) {
+        margin-top: rem(24);
+    }
+}

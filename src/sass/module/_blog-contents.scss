@@ -1,0 +1,77 @@
+@use "global" as *;
+.column-contents__inner {
+    @include mq(md) {
+        display: flex;
+        gap: rem(80);
+    }
+}
+
+.column-contents__pagination {
+    display: flex;
+    gap: rem(80);
+    justify-content: center;
+    margin-top: rem(40);
+    @include mq(md) {
+        margin-top: rem(80);
+    }
+}
+.column-contents__pagination a {
+    color: $blue;
+    transition: background-color 0.5s;
+    border: 1px solid $blue; /* 境界線を追加 */
+    width: rem(38);
+    height: rem(38);
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.column-contents__pagination a:hover {
+    background-color: $blue;
+    color: $white;
+    border: 1px solid $blue;
+}
+
+.column-contents__prev span {
+    content: "";
+    display: block;
+    border-left: 1px solid $blue;
+    border-bottom: 1px solid $blue;
+    width: rem(10);
+    height: rem(10);
+    transform: rotate(45deg);
+    position: relative;
+    top: rem(13);
+    left: rem(15);
+}
+
+.column-contents__next span {
+    content: "";
+    display: block;
+    border-right: 1px solid $blue;
+    border-bottom: 1px solid $blue;
+    width: rem(10);
+    height: rem(10);
+    transform: rotate(-45deg);
+    position: relative;
+    top: rem(13);
+    left: rem(10);
+}
+
+.column-contents__prev:hover span,
+.column-contents__next:hover span {
+    border-color: $white;
+}
+
+.column-contents__sidebar {
+    margin: rem(80) auto 0;
+    @include mq(md) {
+        margin: 0 auto;
+    }
+}
+
+.column-contents--top-margin {
+    margin: rem(52) auto 0;
+    @include mq(md) {
+        margin: rem(150) auto 0;
+    }
+}

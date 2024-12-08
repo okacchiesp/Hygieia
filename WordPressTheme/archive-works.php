@@ -1,27 +1,27 @@
 <?php get_header(); ?>
 <main>
   <section class="page-head">
-    <h1 class="page-head__title">Voice</h1>
+    <h1 class="page-head__title">Works</h1>
     <div class="page-head__image">
       <picture>
-        <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/voice/voice-img.jpg" alt="ダイビングの写真"
+        <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/works-img.jpg" alt="ダイビングの写真"
           media="(min-width: 768px)" />
-        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/voice/voice-img_sp.jpg" alt="" />
+        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/works/works-img_sp.jpg" alt="" />
       </picture>
     </div>
   </section>
   <?php get_template_part('template/parts', 'breadcrumbs'); ?>
-  <div class="voice-section voice-section--top-margin page-body">
-    <div class="voice-section__inner inner">
-      <div class="voice-section__tags category-tags">
+  <div class="works-section works-section--top-margin page-body">
+    <div class="works-section__inner inner">
+      <div class="works-section__tags category-tags">
         <ul class="category-tags__list">
           <li
-            class="category-tags__item category-tag <?php if (is_post_type_archive('voice')) echo 'category-tag--active'; ?>">
-            <a href="<?php echo esc_url(get_post_type_archive_link('voice')); ?>">ALL</a>
+            class="category-tags__item category-tag <?php if (is_post_type_archive('works')) echo 'category-tag--active'; ?>">
+            <a href="<?php echo esc_url(get_post_type_archive_link('works')); ?>">ALL</a>
           </li>
           <?php
           $terms = get_terms(array(
-            'taxonomy' => 'voice_category',
+            'taxonomy' => 'works_category',
             'hide_empty' => false,
           ));
           if (!is_wp_error($terms) && !empty($terms)) :
@@ -34,24 +34,24 @@
         </ul>
 
       </div>
-      <div class="voice-section__content">
+      <div class="works-section__content">
         <?php if (have_posts()) : ?>
-        <div class="voice__items voice-cards">
+        <div class="works__items works-cards">
           <?php while (have_posts()) : the_post(); ?>
-          <section class="voice-cards__item voice-card">
-            <div class="voice-card__head">
-              <div class="voice-card__meta">
-                <div class="voice-card__metahead">
+          <section class="works-cards__item works-card">
+            <div class="works-card__head">
+              <div class="works-card__meta">
+                <div class="works-card__metahead">
                   <?php
                       $age = get_field('age');
                       $gender = get_field('gender');
                       if ($age && $gender):
                       ?>
-                  <p class="voice-card__age"><?php echo esc_html($age); ?>(<?php echo esc_html($gender); ?>)</p>
+                  <p class="works-card__age"><?php echo esc_html($age); ?>(<?php echo esc_html($gender); ?>)</p>
                   <?php endif; ?>
-                  <p class="voice-card__category category-tag">
+                  <p class="works-card__category category-tag">
                     <?php
-                        $terms = get_the_terms(get_the_ID(), 'voice_category');
+                        $terms = get_the_terms(get_the_ID(), 'works_category');
                         if ($terms && !is_wp_error($terms)) :
                           foreach ($terms as $term) : ?>
                     <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
@@ -59,11 +59,11 @@
                         endif; ?>
                   </p>
                 </div>
-                <h2 class="voice-card__title">
+                <h2 class="works-card__title">
                   <?php the_title(); ?>
                 </h2>
               </div>
-              <div class="voice-card__image js-slidein">
+              <div class="works-card__image js-slidein">
                 <?php if (has_post_thumbnail()) : ?>
                 <img src="<?php echo get_the_post_thumbnail_url(); ?>"
                   alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?>">
@@ -72,7 +72,7 @@
                 <?php endif; ?>
               </div>
             </div>
-            <p class="voice-card__text">
+            <p class="works-card__text">
               <?php the_content(); ?>
             </p>
           </section>

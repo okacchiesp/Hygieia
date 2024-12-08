@@ -1,6 +1,11 @@
 @use "global" as *;
 .tabs {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: grid;
+    gap: rem(16) rem(32);
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    @include mq(md) {
+        grid-template-columns: rem(300) rem(300);
+        gap: rem(16) rem(80);
+    }
 }

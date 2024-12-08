@@ -218,7 +218,7 @@ jQuery(function ($) {
     // モーダル要素を取得
     var modal = document.getElementById("modal");
     var modalImg = document.getElementById("modal-image");
-    var closeModal = document.querySelector(".gallery__close");
+    var closeModal = document.querySelector(".company-gallery__close");
 
     // デバッグ用
     console.log(modal, modalImg, closeModal); // 要素が正しく取得できているか確認
