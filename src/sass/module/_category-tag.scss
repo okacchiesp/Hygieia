@@ -1,40 +1,42 @@
 @use "global" as *;
 .category-tag {
-  font-size: rem(12);
-  font-weight: $regular;
-  color: $blue;
-  background-color: $white;
-  line-height: 1.83333;
-  border: 1px solid $blue;
-  font-weight: 400;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: rem(30);
-  align-self: flex-start;
-  transition: background-color 0.3s, color 0.3s;
-  @include mq(md) {
-    height: rem(34);
-  }
+    font-size: rem(12);
+    font-weight: $regular;
+    color: $blue;
+    background-color: $white;
+    line-height: 1.83333;
+    border: 1px solid $blue;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: rem(30);
+    align-self: flex-start;
+    transition: background-color 0.3s, color 0.3s;
+    @include mq(md) {
+        height: rem(34);
+    }
 }
 
 .category-tag:hover {
-  background-color: $blue;
-  color: $white;
+    color: $text;
+    background-color: $yellow;
+    border-color: $yellow;
 }
 
 .category-tag.category-tag--active {
-  color: $white;
-  background-color: $blue;
+    color: $text;
+    background-color: $yellow;
+    border-color: $yellow;
 }
 .category-tag a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: inherit;
-  height: inherit;
-  padding: 0 rem(12);
-  @include mq(md) {
-    padding: 0 rem(16);
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+    height: inherit;
+    padding: 0 rem(12);
+    @include mq(md) {
+        padding: 0 rem(16);
+    }
 }

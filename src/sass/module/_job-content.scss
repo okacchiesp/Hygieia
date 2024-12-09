@@ -1,0 +1,44 @@
+@use "global" as *;
+.job-content {
+    display: none;
+    flex-direction: column;
+    border: 1px solid $blue;
+    padding: rem(24);
+    @include mq(md) {
+        align-items: center;
+        flex-direction: row;
+        gap: rem(48);
+    }
+}
+
+.job-content.job-content--active {
+    display: flex;
+}
+
+.job-content__inner {
+    max-width: rem(492);
+}
+
+.job-content__title {
+    padding-bottom: rem(8);
+    border-bottom: 1px solid $blue;
+    font-size: rem(24);
+    font-weight: $bold;
+    line-height: 1;
+}
+
+.job-content__text {
+    margin-top: rem(8);
+    line-height: 1.5;
+}
+
+.job-content__image {
+    overflow: hidden;
+}
+
+.job-content__image img {
+    aspect-ratio: 400 / 250;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

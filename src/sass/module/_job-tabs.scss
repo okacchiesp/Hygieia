@@ -1,0 +1,8 @@
+@use "global" as *;
+.job-tabs {
+    display: flex;
+    align-items: center;
+}
+.job-tabs__button {
+    flex: 1;
+}
