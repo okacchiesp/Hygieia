@@ -18,51 +18,7 @@
 .works__slider .swiper-slide{
     width: rem(400);
 }
-.works__link{
-    position: relative;
-}
-.works__link::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 5;
-    background-color: rgba($color: #000, $alpha: 0.4);
-    transition: all .3s;
-    @include mq(md) {
-        background-color: rgba($color: #fff, $alpha: 0.2);
-    }
-}
-.works__link:hover::before{
-    @include mq(md) {
-        background-color: rgba($color: #000, $alpha: 0.4);
-    }
-}
-.works__text{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-    color: $white;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-.works__image{
-    overflow: hidden;
-}
-.works__image img{
-    aspect-ratio: 400 / 250;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+
 .works__all{
     margin-top: rem(80);
 }

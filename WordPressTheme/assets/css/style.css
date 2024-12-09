@@ -185,6 +185,10 @@ tr {
 	margin-top: 5rem;
 }
 
+.works-page-margin {
+	margin-top: 5rem;
+}
+
 .about-pc {
 	display: none;
 }
@@ -2512,6 +2516,72 @@ tr {
 	position: relative;
 }
 
+.works-card {
+	cursor: pointer;
+	position: relative;
+}
+
+.works-card::before {
+	background-color: rgba(0, 0, 0, 0.4);
+	bottom: 0;
+	content: "";
+	height: 100%;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	transition: all 0.3s;
+	width: 100%;
+	z-index: 5;
+}
+
+.works-card__meta {
+	align-items: center;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+}
+
+.works-card__category {
+	align-self: center;
+	background: none;
+	border: none;
+	color: #fff;
+	font-size: 0.875rem;
+}
+
+.works-card__category:hover {
+	background: none;
+}
+
+.works-card__image {
+	overflow: hidden;
+}
+
+.works-card__image img {
+	-o-object-fit: cover;
+	aspect-ratio: 400/250;
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
+}
+
+.works-cards {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+}
+
+.works-page__items {
+	margin-top: 5rem;
+}
+
 .works {
 	background-color: #a8dadc;
 	overflow: hidden;
@@ -2534,49 +2604,6 @@ tr {
 
 .works__slider .swiper-slide {
 	width: 25rem;
-}
-
-.works__link {
-	position: relative;
-}
-
-.works__link::before {
-	background-color: rgba(0, 0, 0, 0.4);
-	bottom: 0;
-	content: "";
-	height: 100%;
-	left: 0;
-	position: absolute;
-	right: 0;
-	top: 0;
-	transition: all 0.3s;
-	width: 100%;
-	z-index: 5;
-}
-
-.works__text {
-	align-items: center;
-	color: #fff;
-	display: flex;
-	height: 100%;
-	justify-content: center;
-	left: 0;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	z-index: 10;
-}
-
-.works__image {
-	overflow: hidden;
-}
-
-.works__image img {
-	-o-object-fit: cover;
-	aspect-ratio: 400/250;
-	height: 100%;
-	object-fit: cover;
-	width: 100%;
 }
 
 .works__all {
@@ -3357,12 +3384,16 @@ html {
 	width: 2.5rem;
 }
 
-.works__link::before {
+.works-card::before {
 	background-color: rgba(255, 255, 255, 0.2);
 }
 
-.works__link:hover::before {
+.works-card:hover::before {
 	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.works-cards {
+	grid-template-columns: repeat(3, 1fr);
 }
 
 .u-section-margin {

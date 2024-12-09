@@ -1,0 +1,58 @@
+@use "global" as *;
+.works-card{
+    position: relative;
+    cursor: pointer;
+}
+.works-card::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background-color: rgba($color: #000, $alpha: 0.4);
+    transition: all .3s;
+    @include mq(md) {
+        background-color: rgba($color: #fff, $alpha: 0.2);
+    }
+}
+.works-card:hover::before{
+    @include mq(md) {
+        background-color: rgba($color: #000, $alpha: 0.4);
+    }
+}
+.works-card__meta{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+    color: $white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.works-card__category{
+    align-self: center;
+    border: none;
+    color: $white;
+    background: none;
+    font-size: rem(14);
+}
+.works-card__category:hover{
+    background: none;
+}
+.works-card__image{
+    overflow: hidden;
+}
+.works-card__image img{
+    aspect-ratio: 400 / 250;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

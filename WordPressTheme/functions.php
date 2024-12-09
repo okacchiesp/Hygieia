@@ -42,7 +42,7 @@ function custom_campaign_list_widget_content()
     $custom_post_types = array(
         'post' => 'ブログ', // 標準投稿
         'campaign' => 'キャンペーン', // カスタム投稿タイプ 'campaign'
-        'voice' => 'お客様の声', // カスタム投稿タイプ 'voice'
+        'works' => '実績', // カスタム投稿タイプ 'voice'
     );
 
     echo '<ul>';
@@ -91,11 +91,7 @@ function add_preconnect($html, $handle)
 }
 
 // アイキャッチ画像を有効にする
-function mytheme_setup()
-{
-    add_theme_support('post-thumbnails');
-}
-add_action('after_setup_theme', 'mytheme_setup');
+add_theme_support('post-thumbnails');
 
 // 投稿ビュー数のカウント
 function setPostViews($postID)
@@ -190,10 +186,10 @@ function custom_posts_per_page($query)
     if ($query->is_tax('campaign_category')) {
         $query->set('posts_per_page', 4);
     }
-    if ($query->is_post_type_archive('voice')) {
+    if ($query->is_post_type_archive('works')) {
         $query->set('posts_per_page', 6);
     }
-    if ($query->is_tax('voice_category')) {
+    if ($query->is_tax('works_category')) {
         $query->set('posts_per_page', 6);
     }
 }

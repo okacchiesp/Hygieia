@@ -1,0 +1,8 @@
+@use "global" as *;
+.works-cards{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    @include mq(md) {
+        grid-template-columns: repeat(3,1fr);
+    }
+}

@@ -129,66 +129,66 @@
       <div class="works__slider swiper js-works-swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <a href="" class="works__link">
-              <div class="works__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product01.jpg"
+            <a href="" class="works__link works-card">
+              <div class="works-card__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product01.jpg"
                   alt=""></div>
-              <p class="works__text">株式会社〇〇様</p>
+              <p class="works-card__text">株式会社〇〇様</p>
             </a>
           </div>
           <div class="swiper-slide">
-            <a href="" class="works__link">
-              <div class="works__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product01.jpg"
+            <a href="" class="works__link works-card">
+              <div class="works-card__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product01.jpg"
                   alt=""></div>
-              <p class="works__text">株式会社〇〇様</p>
+              <p class="works-card__text">株式会社〇〇様</p>
             </a>
           </div>
           <div class="swiper-slide">
-            <a href="" class="works__link">
-              <div class="works__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product02.jpg"
+            <a href="" class="works__link works-card">
+              <div class="works-card__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product02.jpg"
                   alt=""></div>
-              <p class="works__text">株式会社〇〇様</p>
+              <p class="works-card__text">株式会社〇〇様</p>
             </a>
           </div>
           <div class="swiper-slide">
-            <a href="" class="works__link">
-              <div class="works__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product03.jpg"
+            <a href="" class="works__link works-card">
+              <div class="works-card__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product03.jpg"
                   alt=""></div>
-              <p class="works__text">株式会社〇〇様</p>
+              <p class="works-card__text">株式会社〇〇様</p>
             </a>
           </div>
           <div class="swiper-slide">
-            <a href="" class="works__link">
-              <div class="works__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product04.jpg"
+            <a href="" class="works__link works-card">
+              <div class="works-card__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product04.jpg"
                   alt=""></div>
-              <p class="works__text">株式会社〇〇様</p>
+              <p class="works-card__text">株式会社〇〇様</p>
             </a>
           </div>
           <div class="swiper-slide">
-            <a href="" class="works__link">
-              <div class="works__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product01.jpg"
+            <a href="" class="works__link works-card">
+              <div class="works-card__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product01.jpg"
                   alt=""></div>
-              <p class="works__text">株式会社〇〇様</p>
+              <p class="works-card__text">株式会社〇〇様</p>
             </a>
           </div>
           <div class="swiper-slide">
-            <a href="" class="works__link">
-              <div class="works__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product02.jpg"
+            <a href="" class="works__link works-card">
+              <div class="works-card__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product02.jpg"
                   alt=""></div>
-              <p class="works__text">株式会社〇〇様</p>
+              <p class="works-card__text">株式会社〇〇様</p>
             </a>
           </div>
           <div class="swiper-slide">
-            <a href="" class="works__link">
-              <div class="works__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product03.jpg"
+            <a href="" class="works__link works-card">
+              <div class="works-card__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product03.jpg"
                   alt=""></div>
-              <p class="works__text">株式会社〇〇様</p>
+              <p class="works-card__text">株式会社〇〇様</p>
             </a>
           </div>
           <div class="swiper-slide">
-            <a href="" class="works__link">
-              <div class="works__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product04.jpg"
+            <a href="" class="works__link works-card">
+              <div class="works-card__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product04.jpg"
                   alt=""></div>
-              <p class="works__text">株式会社〇〇様</p>
+              <p class="works-card__text">株式会社〇〇様</p>
             </a>
           </div>
         </div>
