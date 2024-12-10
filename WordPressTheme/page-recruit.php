@@ -11,7 +11,7 @@
     </div>
   </section>
   <?php get_template_part('template/parts', 'breadcrumbs'); ?>
-  <div class="recruit-page recruit-page--top-margin page-body">
+  <div class="recruit-page recruit-page-margin">
     <div class="recruit-page__inner inner">
       <div class="recruit-page__mv">
         <div class="recruit-page__image">
@@ -49,7 +49,7 @@
           </div>
         </div>
       </section>
-      <section>
+      <section class="recruit-page__jobs">
         <ul class="recruit-page__tabs job-tabs">
           <li class="job-tabs__button tab tab--active js-tab">
             <a href="#engineer">
@@ -69,16 +69,103 @@
         </ul>
         <div class="recruit-page__contents">
           <section id="engineer-content" class="recruit-page__content job-content job-content--active js-tab-content">
+            <p class="job-content__title">先輩の声</p>
             <div class="job-content__inner">
-              <p class="job-content__title">先輩の声</p>
               <div class="job-content__voices">
-                <div class="job-content-voice">
-                  <p class="job-content__text">自分が設計した機器が食品製造ラインで稼働する瞬間に達成感を感じます。Hygieia
-                    Systemsでは挑戦的なプロジェクトに参加でき、成長を実感できる環境が魅力です。</p>
+                <div class="job-content__voice">
                   <div class="job-content__image">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/recruit/recruit01.jpg" alt="">
                   </div>
+                  <p class="job-content__text">自分が設計した機器が食品製造ラインで稼働する瞬間に達成感を感じます。Hygieia
+                    Systemsでは挑戦的なプロジェクトに参加でき、成長を実感できる環境が魅力です。</p>
                 </div>
+                <div class="job-content__voice">
+                  <div class="job-content__image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/recruit/recruit02.jpg" alt="">
+                  </div>
+                  <p class="job-content__text">自分が設計した機器が食品製造ラインで稼働する瞬間に達成感を感じます。Hygieia
+                    Systemsでは挑戦的なプロジェクトに参加でき、成長を実感できる環境が魅力です。</p>
+                </div>
+              </div>
+              <div class="job-content__wrapper">
+                <p class="job-content__name">機械設計</p>
+                <div class="job-content__row">
+                  <div class="job-content__column">
+                    <p class="job-content__list-title">業務内容</p>
+                    <ul class="job-content__list">
+                      <li>食品製造機器の設計</li>
+                      <li>製品のプロトタイプ開発</li>
+                      <li>製造プロセスのサポート</li>
+                      <li>既存製品の改良</li>
+                    </ul>
+                  </div>
+                  <div class="job-content__column">
+                    <p>必要なスキル・資格</p>
+                    <ul class="job-content__list">
+                      <li>機械工学や関連分野の学位</li>
+                      <li>CADソフトウェアの操作経験</li>
+                      <li>機械設計の知識と経験</li>
+                      <li>問題解決能力とチームワークスキル</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="job-content__wrapper">
+                <p class="job-content__name">電気設計</p>
+                <div class="job-content__row">
+                  <div class="job-content__column">
+                    <p class="job-content__list-title">業務内容</p>
+                    <ul class="job-content__list">
+                      <li>食品製造機器の設計</li>
+                      <li>製品のプロトタイプ開発</li>
+                      <li>製造プロセスのサポート</li>
+                      <li>既存製品の改良</li>
+                    </ul>
+                  </div>
+                  <div class="job-content__column">
+                    <p>必要なスキル・資格</p>
+                    <ul class="job-content__list">
+                      <li>機械工学や関連分野の学位</li>
+                      <li>CADソフトウェアの操作経験</li>
+                      <li>機械設計の知識と経験</li>
+                      <li>問題解決能力とチームワークスキル</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="job-content__point">
+                <h2 class="job-content__title">募集要項</h2>
+                <dl class="job-content__point-list table-list">
+                  <div class="table-list__item table-item">
+                    <dt class="table-item__title">2024.01</dt>
+                    <dd class="table-item__text">Hygieia Systems（ハイジア システムズ）</dd>
+                  </div>
+                  <div class="table-list__item table-item">
+                    <dt class="table-item__title">20xx.01</dt>
+                    <dd class="table-item__text">2003年</dd>
+                  </div>
+                  <div class="table-list__item table-item">
+                    <dt class="table-item__title">20xx.01</dt>
+                    <dd class="table-item__text">東京都千代田区丸の内1-1-1　Hygieiaビル</dd>
+                  </div>
+                  <div class="table-list__item table-item">
+                    <dt class="table-item__title">20xx.01</dt>
+                    <dd class="table-item__text">代表取締役社長 山田太郎</dd>
+                  </div>
+                  <div class="table-list__item table-item">
+                    <dt class="table-item__title">20xx.01</dt>
+                    <dd class="table-item__text">150名</dd>
+                  </div>
+                  <div class="table-list__item table-item">
+                    <dt class="table-item__title">20xx.01</dt>
+                    <dd class="table-item__text">1億円</dd>
+                  </div>
+                  <div class="table-list__item table-item">
+                    <dt class="table-item__title">2024.12</dt>
+                    <dd class="table-item__text">国内拠点: 東京、名古屋、大阪<br>国内拠点: 東京、名古屋、大阪<br>
+                      海外拠点: シンガポール、ドイツ（フランクフルト）</dd>
+                  </div>
+                </dl>
               </div>
             </div>
           </section>

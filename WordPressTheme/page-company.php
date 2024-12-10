@@ -102,34 +102,34 @@
           <p class="section-header__title">History</p>
           <h2 class="section-header__subtitle">沿革</h2>
         </div>
-        <dl class="company-history__list">
-          <div class="company-history__item">
-            <dt class="company-history__title">2024.01</dt>
-            <dd class="company-history__text">Hygieia Systems（ハイジア システムズ）</dd>
+        <dl class="company-history__list table-list">
+          <div class="table-list__item table-item">
+            <dt class="table-item__title">2024.01</dt>
+            <dd class="table-item__text">Hygieia Systems（ハイジア システムズ）</dd>
           </div>
-          <div class="company-history__item">
-            <dt class="company-history__title">20xx.01</dt>
-            <dd class="company-history__text">2003年</dd>
+          <div class="table-list__item table-item">
+            <dt class="table-item__title">20xx.01</dt>
+            <dd class="table-item__text">2003年</dd>
           </div>
-          <div class="company-history__item">
-            <dt class="company-history__title">20xx.01</dt>
-            <dd class="company-history__text">東京都千代田区丸の内1-1-1　Hygieiaビル</dd>
+          <div class="table-list__item table-item">
+            <dt class="table-item__title">20xx.01</dt>
+            <dd class="table-item__text">東京都千代田区丸の内1-1-1　Hygieiaビル</dd>
           </div>
-          <div class="company-history__item">
-            <dt class="company-history__title">20xx.01</dt>
-            <dd class="company-history__text">代表取締役社長 山田太郎</dd>
+          <div class="table-list__item table-item">
+            <dt class="table-item__title">20xx.01</dt>
+            <dd class="table-item__text">代表取締役社長 山田太郎</dd>
           </div>
-          <div class="company-history__item">
-            <dt class="company-history__title">20xx.01</dt>
-            <dd class="company-history__text">150名</dd>
+          <div class="table-list__item table-item">
+            <dt class="table-item__title">20xx.01</dt>
+            <dd class="table-item__text">150名</dd>
           </div>
-          <div class="company-history__item">
-            <dt class="company-history__title">20xx.01</dt>
-            <dd class="company-history__text">1億円</dd>
+          <div class="table-list__item table-item">
+            <dt class="table-item__title">20xx.01</dt>
+            <dd class="table-item__text">1億円</dd>
           </div>
-          <div class="company-history__item">
-            <dt class="company-history__title">2024.12</dt>
-            <dd class="company-history__text">国内拠点: 東京、名古屋、大阪<br>国内拠点: 東京、名古屋、大阪<br>
+          <div class="table-list__item table-item">
+            <dt class="table-item__title">2024.12</dt>
+            <dd class="table-item__text">国内拠点: 東京、名古屋、大阪<br>国内拠点: 東京、名古屋、大阪<br>
               海外拠点: シンガポール、ドイツ（フランクフルト）</dd>
           </div>
         </dl>
@@ -147,29 +147,29 @@
       }
     endif; ?>
     <?php if ($check): ?>
-    <section class="company-gallery company-gallery-margin">
-      <div class="company-gallery__inner inner">
-        <div class="company-gallery__images">
-          <?php foreach ($gallery_images as $image) :
+      <section class="company-gallery company-gallery-margin">
+        <div class="company-gallery__inner inner">
+          <div class="company-gallery__images">
+            <?php foreach ($gallery_images as $image) :
               $image_url = wp_get_attachment_image_url($image['gallery-image'], 'full');
               $text = $image['image_description'];
               if ($image_url) :
             ?>
-          <a href="<?php echo esc_url($image_url); ?>" class="company-gallery__image js-modal">
-            <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo $text; ?>"></a>
-          <?php
+                <a href="<?php echo esc_url($image_url); ?>" class="company-gallery__image js-modal">
+                  <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo $text; ?>"></a>
+            <?php
               endif;
             endforeach;
             ?>
-          <div id="modal" class="company-gallery__modal">
-            <span class="company-gallery__close">&times;</span>
-            <div class="company-gallery__content">
-              <img id="modal-image" src="" alt="">
+            <div id="modal" class="company-gallery__modal">
+              <span class="company-gallery__close">&times;</span>
+              <div class="company-gallery__content">
+                <img id="modal-image" src="" alt="">
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     <?php endif; ?>
   </section>
   <?php get_footer(); ?>

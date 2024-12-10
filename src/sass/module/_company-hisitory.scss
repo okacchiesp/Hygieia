@@ -1,32 +1,4 @@
 @use "global" as *;
 .company-history__list {
-    max-width: rem(680);
-    width: 100%;
     margin: rem(40) auto 0;
-    border: 1px solid #d8d8d8;
-}
-.company-history__item {
-    background-color: $skyblue;
-    border-bottom: 1px solid #d8d8d8;
-    @include mq(md) {
-        display: flex;
-        align-items: center;
-    }
-}
-.company-history__item:last-child {
-    border-bottom: none;
-}
-.company-history__title {
-    padding: rem(12) rem(24);
-    background-color: $skyblue;
-    width: 14%;
-    text-align: center;
-    @include mq(md) {
-        padding: rem(12) 0;
-    }
-}
-.company-history__text {
-    background-color: $white;
-    padding: rem(12) rem(24);
-    flex: 1;
 }

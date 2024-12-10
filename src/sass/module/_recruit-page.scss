@@ -38,6 +38,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: rem(140);
 }
 .recruit-page__charm-title {
     font-size: rem(48);
@@ -96,5 +97,11 @@
 .recruit-page__charm-name {
     font-size: rem(24);
 }
-.recruit-page__charm-text {
+.recruit-page__jobs {
+    width: rem(900);
+    max-width: 100%;
+    margin: rem(140) auto 0;
+}
+.recruit-page__contents{
+    margin-top: rem(80);
 }

@@ -2,7 +2,12 @@
 .job-tabs {
     display: flex;
     align-items: center;
+    flex-direction: column;
+    @include mq(md) {
+        flex-direction: row;
+    }
 }
 .job-tabs__button {
     flex: 1;
+    width: 100%;
 }
