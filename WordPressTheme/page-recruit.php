@@ -183,7 +183,9 @@
                   <div class="job-content__image">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/recruit/recruit02.jpg" alt="">
                   </div>
-                  <p class="job-content__text">お客様の課題を解決し、信頼を築けたときの達成感は格別です。製品知識や提案力が磨かれ、自分自身の成長を実感しています。お客様の課題を解決し、信頼を築けたときの達成感は格別です。製品知識や提案力が磨かれ、自分自身の成長を実感しています。</p>
+                  <p class="job-content__text">
+                    お客様の課題を解決し、信頼を築けたときの達成感は格別です。製品知識や提案力が磨かれ、自分自身の成長を実感しています。お客様の課題を解決し、信頼を築けたときの達成感は格別です。製品知識や提案力が磨かれ、自分自身の成長を実感しています。
+                  </p>
                 </div>
               </div>
               <div class="job-content__wrapper">
@@ -214,18 +216,37 @@
               <div class="job-content__point">
                 <h2 class="job-content__title">募集要項</h2>
                 <dl class="job-content__point-list table-list">
+                  <?php
+                  $checkbox = get_field('employment');
+                  if ($checkbox && is_array($checkbox)):
+                  ?>
                   <div class="table-list__item table-item">
-                    <dt class="table-item__title">2024.01</dt>
-                    <dd class="table-item__text">Hygieia Systems（ハイジア システムズ）</dd>
+                    <dt class="table-item__title">雇用形態</dt>
+                    <dd class="table-item__text">
+                      <?php foreach ($checkbox as $index => $value): ?><?php echo esc_html($value); ?><?php if ($index < count($checkbox) - 1) echo ', '; ?><?php endforeach; ?>
+                    </dd>
                   </div>
+                  <?php endif; ?>
+                  <?php
+                  $checkbox = get_field('place');
+                  if ($checkbox && is_array($checkbox)):
+                  ?>
                   <div class="table-list__item table-item">
-                    <dt class="table-item__title">20xx.01</dt>
-                    <dd class="table-item__text">2003年</dd>
+                    <dt class="table-item__title">勤務地</dt>
+                    <dd class="table-item__text">
+                      <?php foreach ($checkbox as $index => $value): ?><?php echo esc_html($value); ?><?php if ($index < count($checkbox) - 1) echo ', '; ?><?php endforeach; ?>
+                    </dd>
                   </div>
+                  <?php endif; ?>
+                  <?php
+                  $time = get_field('time');
+                  if ($time && is_array($time)):
+                  ?>
                   <div class="table-list__item table-item">
-                    <dt class="table-item__title">20xx.01</dt>
-                    <dd class="table-item__text">東京都千代田区丸の内1-1-1　Hygieiaビル</dd>
+                    <dt class="table-item__title">勤務時間</dt>
+                    <dd class="table-item__text"><?php echo $time['start']; ?>〜<?php echo $time['end']; ?></dd>
                   </div>
+                  <?php endif; ?>
                   <div class="table-list__item table-item">
                     <dt class="table-item__title">20xx.01</dt>
                     <dd class="table-item__text">代表取締役社長 山田太郎</dd>
@@ -247,7 +268,8 @@
               </div>
             </div>
           </section>
-          <section id="maintenance-content" class="recruit-page__content job-content job-content--active js-tab-content">
+          <section id="maintenance-content"
+            class="recruit-page__content job-content job-content--active js-tab-content">
             <p class="job-content__title">先輩の声</p>
             <div class="job-content__inner">
               <div class="job-content__voices">
@@ -261,7 +283,9 @@
                   <div class="job-content__image">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/recruit/recruit02.jpg" alt="">
                   </div>
-                  <p class="job-content__text">現場での対応力が求められる仕事ですが、機械が正常に稼働しお客様に感謝されると、大きなやりがいを感じます。現場での対応力が求められる仕事ですが、機械が正常に稼働しお客様に感謝されると、大きなやりがいを感じます。</p>
+                  <p class="job-content__text">
+                    現場での対応力が求められる仕事ですが、機械が正常に稼働しお客様に感謝されると、大きなやりがいを感じます。現場での対応力が求められる仕事ですが、機械が正常に稼働しお客様に感謝されると、大きなやりがいを感じます。
+                  </p>
                 </div>
               </div>
               <div class="job-content__wrapper">
