@@ -80,10 +80,6 @@
     text-align: center;
   }
 }
-
-.contact-form__group--center {
-  text-align: center;
-}
 .contact-form__checkbox {
   display: flex;
   flex-direction: column;
@@ -193,23 +189,12 @@
 }
 .contact-form__btn {
   margin-top: rem(24);
+  margin-left: auto;
+  margin-right: auto;
   padding: 0;
   @include mq(md) {
     margin-top: rem(40);
   }
-}
-.contact-form__btn::before {
-  border: solid 1px #408f95;
-  bottom: 4px;
-  content: "";
-  display: block;
-  height: 100%;
-  left: 4px;
-  position: absolute;
-  right: 4px;
-  top: 4px;
-  width: 100%;
-  z-index: -1;
 }
 
 .contact-form__btn span {

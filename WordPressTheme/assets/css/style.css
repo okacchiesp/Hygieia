@@ -169,6 +169,10 @@ tr {
 	margin-top: 5rem;
 }
 
+.footer-margin {
+	margin-top: 5rem;
+}
+
 .mission-margin {
 	margin-top: 5rem;
 }
@@ -890,10 +894,6 @@ tr {
 	max-width: none;
 }
 
-.contact-form__group--center {
-	text-align: center;
-}
-
 .contact-form__checkbox {
 	display: flex;
 	flex-direction: column;
@@ -1000,22 +1000,10 @@ tr {
 }
 
 .contact-form__btn {
+	margin-left: auto;
+	margin-right: auto;
 	margin-top: 1.5rem;
 	padding: 0;
-}
-
-.contact-form__btn::before {
-	border: solid 1px #408f95;
-	bottom: 4px;
-	content: "";
-	display: block;
-	height: 100%;
-	left: 4px;
-	position: absolute;
-	right: 4px;
-	top: 4px;
-	width: 100%;
-	z-index: -1;
 }
 
 .contact-form__btn span {
@@ -2227,9 +2215,7 @@ tr {
 }
 
 .recruit-page__image {
-	max-width: 56.25rem;
-	overflow: hidden;
-	width: 100%;
+	display: none;
 }
 
 .recruit-page__image img {
@@ -2245,10 +2231,7 @@ tr {
 	color: #fff;
 	max-width: 45rem;
 	padding: 6.9375rem 1.5rem;
-	position: absolute;
-	right: 0;
 	width: 100%;
-	z-index: 10;
 }
 
 .recruit-page__catch {
@@ -2950,6 +2933,10 @@ html {
 	margin-top: 8.75rem;
 }
 
+.footer-margin {
+	margin-top: 8.75rem;
+}
+
 .product-margin {
 	margin-top: 8.75rem;
 }
@@ -3517,6 +3504,19 @@ html {
 .recruit-page__mv {
 	align-items: center;
 	flex-direction: row;
+}
+
+.recruit-page__image {
+	display: block;
+	max-width: 56.25rem;
+	overflow: hidden;
+	width: 100%;
+}
+
+.recruit-page__box {
+	position: absolute;
+	right: 0;
+	z-index: 10;
 }
 
 .recruit-page__charm-contents {

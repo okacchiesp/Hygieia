@@ -214,6 +214,42 @@ jQuery(function ($) {
     // 初期化処理
     initializeTab();
   });
+
+  //   採用ページタグ
+  $(document).ready(function () {
+    // タブをクリックしたときの処理
+    $(".js-tab a").click(function (e) {
+      e.preventDefault();
+      var targetTab = $(this).attr("href"); // クリックされたタブのhref属性を取得
+      jobTab(targetTab); // タブの切り替えを行う
+    });
+
+    // ページ読み込み時にハッシュに基づいてタブを表示
+    function initializeTab() {
+      var hash = window.location.hash; // URLのハッシュ部分を取得
+
+      if (hash) {
+        jobTab(hash); // ハッシュがある場合、そのタブを表示
+      }
+    }
+
+    // タブを表示する関数
+    function jobTab(tabId) {
+      // すべてのタブコンテンツを非表示にし、タブリンクのアクティブクラスを削除
+      $(".js-tab-content").removeClass("job-content--active");
+      $(".js-tab").removeClass("tab--active");
+
+      // 対応するタブコンテンツを表示し、タブリンクにアクティブクラスを追加
+      $(tabId + "-content").addClass("job-content--active");
+      $('a[href="' + tabId + '"]').parent(".js-tab").addClass("tab--active");
+
+      // URLのハッシュを更新
+      window.location.hash = tabId;
+    }
+
+    // 初期化処理
+    initializeTab();
+  });
   $(document).ready(function () {
     // モーダル要素を取得
     var modal = document.getElementById("modal");

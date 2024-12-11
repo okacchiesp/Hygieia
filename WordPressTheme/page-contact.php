@@ -11,7 +11,7 @@
     </div>
   </section>
   <?php get_template_part('template/parts', 'breadcrumbs'); ?>
-  <div class="contact-form contact-form--top-margin page-body">
+  <div class="contact-form contact-form-margin">
     <div class="contact-form__inner inner">
       <?php
       echo do_shortcode('[contact-form-7 id="097321a" title="お問い合わせ"]');

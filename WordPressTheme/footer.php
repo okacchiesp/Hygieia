@@ -20,7 +20,7 @@
 <!-- <div class="to-top">
   <a href="#top"></a>
 </div> -->
-<footer class="footer">
+<footer class="footer <?php if (is_page('contact')) echo 'footer-margin'; ?>">
   <div class="footer__inner inner">
     <nav class="footer__nav footer-nav">
       <ul class="footer-nav__list">
