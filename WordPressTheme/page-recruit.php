@@ -49,7 +49,7 @@
           </div>
         </div>
       </section>
-      <section class="recruit-page__jobs">
+      <section class="recruit-page__jobs" id="engineer">
         <ul class="recruit-page__tabs job-tabs">
           <li class="job-tabs__button tab tab--active js-tab">
             <a href="#engineer">
@@ -135,7 +135,7 @@
               </div>
             </div>
           </section>
-          <section id="sales-content" class="recruit-page__content job-content job-content--active js-tab-content">
+          <section id="sales-content" class="recruit-page__content job-content js-tab-content">
             <p class="job-content__title">先輩の声</p>
             <div class="job-content__inner">
               <div class="job-content__voices">
@@ -182,7 +182,7 @@
             </div>
           </section>
           <section id="maintenance-content"
-            class="recruit-page__content job-content job-content--active js-tab-content">
+            class="recruit-page__content job-content js-tab-content">
             <p class="job-content__title">先輩の声</p>
             <div class="job-content__inner">
               <div class="job-content__voices">
@@ -227,73 +227,77 @@
             </div>
           </section>
         </div>
-        <div class="job-content__point">
+        <div class="job-content__point" id="point">
           <h2 class="job-content__title">募集要項</h2>
           <dl class="job-content__point-list table-list">
             <?php
             $checkbox = get_field('employment');
-            if ($checkbox && is_array($checkbox)):
+            if ($checkbox):
             ?>
-            <div class="table-list__item table-item">
-              <dt class="table-item__title">雇用形態</dt>
-              <dd class="table-item__text">
-                <?php foreach ($checkbox as $index => $value): ?><?php echo esc_html($value); ?><?php if ($index < count($checkbox) - 1) echo ', '; ?><?php endforeach; ?>
-              </dd>
-            </div>
+              <div class="table-list__item table-item">
+                <dt class="table-item__title">雇用形態</dt>
+                <dd class="table-item__text">
+                  <?php foreach ($checkbox as $index => $value): ?><?php echo esc_html($value); ?><?php if ($index < count($checkbox) - 1) echo ', '; ?><?php endforeach; ?>
+                </dd>
+              </div>
             <?php endif; ?>
             <?php
             $checkbox = get_field('place');
-            if ($checkbox && is_array($checkbox)):
+            if ($checkbox):
             ?>
-            <div class="table-list__item table-item">
-              <dt class="table-item__title">勤務地</dt>
-              <dd class="table-item__text">
-                <?php foreach ($checkbox as $index => $value): ?><?php echo esc_html($value); ?><?php if ($index < count($checkbox) - 1) echo ', '; ?><?php endforeach; ?>
-              </dd>
-            </div>
+              <div class="table-list__item table-item">
+                <dt class="table-item__title">勤務地</dt>
+                <dd class="table-item__text">
+                  <?php foreach ($checkbox as $index => $value): ?><?php echo esc_html($value); ?><?php if ($index < count($checkbox) - 1) echo ', '; ?><?php endforeach; ?>
+                </dd>
+              </div>
             <?php endif; ?>
             <?php
             $time = get_field('time');
-            if ($time && is_array($time)):
+            if ($time):
             ?>
-            <div class="table-list__item table-item">
-              <dt class="table-item__title">勤務時間</dt>
-              <dd class="table-item__text"><?php echo $time['start']; ?>〜<?php echo $time['end']; ?></dd>
-            </div>
+              <div class="table-list__item table-item">
+                <dt class="table-item__title">勤務時間</dt>
+                <dd class="table-item__text"><?php echo $time['start']; ?>〜<?php echo $time['end']; ?></dd>
+              </div>
             <?php endif; ?>
             <?php
             $salary = get_field('salary');
-            $income = $salary['income'];
-            if ($income && is_array($income)):
+            if ($salary):
             ?>
-            <div class="table-list__item table-item">
-              <dt class="table-item__title">給与</dt>
-              <dd class="table-item__text">
-                年収<?php echo $income['min']; ?>〜<?php echo $income['max']; ?>万円（経験・スキルに応じて優遇）<br>
-                昇給年<?php echo $salary['salaryraise']; ?>回 賞与年<?php echo $salary['bonus']; ?>回</dd>
-            </div>
+              <div class="table-list__item table-item">
+                <dt class="table-item__title">給与</dt>
+                <dd class="table-item__text">
+                  年収<?php echo $salary['min']; ?>〜<?php echo $salary['max']; ?>万円（経験・スキルに応じて優遇）<br>
+                  昇給年<?php echo $salary['salaryraise']; ?>回 賞与年<?php echo $salary['bonus']; ?>回</dd>
+              </div>
             <?php endif; ?>
             <?php
             $welfare = get_field('welfare');
-            if ($welfare && is_array($welfare)) :
+            if ($welfare)
             ?>
             <div class="table-list__item table-item">
               <dt class="table-item__title">福利厚生</dt>
-              <dd class="table-item__text"><?php echo esc_html($welfare); ?></dd>
+              <dd class="table-item__text"><?php echo $welfare; ?></dd>
             </div>
-            <?php endif; ?>
+            <?php
+            $holiday = get_field('holiday');
+            if ($holiday)
+            ?>
             <div class="table-list__item table-item">
-              <dt class="table-item__title">20xx.01</dt>
-              <dd class="table-item__text">1億円</dd>
+              <dt class="table-item__title">休日・休暇</dt>
+              <dd class="table-item__text"><?php echo $holiday; ?></dd>
             </div>
+            <?php
+            $flow = get_field('flow');
+            if ($flow)
+            ?>
             <div class="table-list__item table-item">
-              <dt class="table-item__title">2024.12</dt>
-              <dd class="table-item__text">国内拠点: 東京、名古屋、大阪<br>国内拠点: 東京、名古屋、大阪<br>
-                海外拠点: シンガポール、ドイツ（フランクフルト）</dd>
+              <dt class="table-item__title">選考フロー</dt>
+              <dd class="table-item__text"><?php echo $flow; ?></dd>
             </div>
           </dl>
         </div>
-
       </section>
     </div>
   </div>

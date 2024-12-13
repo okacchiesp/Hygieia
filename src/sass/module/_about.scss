@@ -27,6 +27,11 @@
   height: 100%;
   background-color: rgba($color: #555, $alpha: 0.3);
   z-index: 5;
+  transition: all .3s;
+}
+
+.about__inner:hover::after{
+  background-color: rgba($color: #555, $alpha: 0);
 }
 
 .about__header{

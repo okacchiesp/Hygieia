@@ -1,0 +1,35 @@
+@use "global" as *;
+.news-list{
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+    width: 100%;
+}
+
+.news-list__item{
+    display: flex;
+    flex-direction: column;
+    gap: rem(4);
+    align-items: flex-start;
+    @include mq(md) {
+        align-items: center;
+        flex-direction: row;
+    }
+}
+
+.news-list__meta{
+    display: inline-flex;
+    align-self: flex-start;
+    column-gap: rem(24);
+    @include mq(md) {
+        align-items: center;
+        width: 25%;
+    }
+}
+
+.news-list__link{
+    margin-top: rem(24);
+    @include mq(md) {
+        margin-top: rem(40);
+    }
+}

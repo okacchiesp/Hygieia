@@ -4,9 +4,9 @@
     <h1 class="page-head__title">Contact</h1>
     <div class="page-head__image">
       <picture>
-        <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/contact/contact-img.jpg" alt="ビーチの写真"
+        <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/contact/contact-head.jpg" alt="ペンと白い紙"
           media="(min-width: 768px)" />
-        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/contact/contact-img_sp.jpg" alt="ビーチの写真" />
+        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/contact/contact-head_sp.jpg" alt="ペンと白い紙" />
       </picture>
     </div>
   </section>

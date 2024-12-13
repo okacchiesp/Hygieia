@@ -49,7 +49,7 @@
                 <h2 class="works-card__title">
                   <?php the_title(); ?>
                 </h2>
-                <p class="works-card__category category-tag">
+                <p class="works-card__category">
                   <?php
                   $terms = get_the_terms(get_the_ID(), 'works_category');
                   if ($terms && !is_wp_error($terms)) :

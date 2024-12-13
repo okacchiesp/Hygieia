@@ -30,9 +30,26 @@ jQuery(function ($) {
     });
   });
 
+  // mv
+  const mvSwiper = new Swiper(".js-mv-swiper", {
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
+    loop: true,
+    loopAdditionalSlides: 1,
+    speed: 2000,
+    autoplay: {
+      delay: 7000,
+      disableOnInteraction: false,
+      waitForTransition: false,
+    },
+    followFinger: false,
+  });
+
   // Swiper
   const slideLength = document.querySelectorAll(".js-works-swiper .swiper-slide").length;
-  var mvswiper = new Swiper(".js-works-swiper", {
+  var worksswiper = new Swiper(".js-works-swiper", {
     spaceBetween: 16,
     slidesPerView: "auto", // スライド幅を自動調整
     loop: true, // 無限ループを有効化
@@ -159,6 +176,7 @@ jQuery(function ($) {
     return false; //リンク自体の無効化
   });
 
+  // FAQ
   $(".js-faq-question").on("click", function () {
     var $answer = $(this).next(".faq-item__answer");
     var $icon = $(this).find(".faq-item__icon");
@@ -184,6 +202,7 @@ jQuery(function ($) {
     $(this).next(".archive-date__sub").slideToggle();
   });
 
+  // 製品情報タブ
   $(document).ready(function () {
     // タブをクリックしたときの処理
     $(".js-tab a").click(function (e) {

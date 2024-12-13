@@ -204,13 +204,13 @@ function wpcf7_autop_return_false()
 
 function add_original_choices($tag, $unused)
 {
-    if ($tag['name'] != 'campagin-menu') {
+    if ($tag['name'] != 'works-menu') {
         return $tag;
     }
 
     $args = array(
         'numberposts' => -1,
-        'post_type' => 'campaign',
+        'post_type' => 'works',
         'order' => 'ASC'
     );
 

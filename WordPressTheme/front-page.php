@@ -54,27 +54,43 @@
           <p class="section-header__title">News</p>
           <h2 class="section-header__subtitle">お知らせ</h2>
         </div>
-        <ul class="news__list">
-          <li class="news__item">
-            <div class="news__meta"><time>2024年11月16日</time><span class="news__tag tag">IR情報</span></div>
-            サンプルテキストサンプルテキストサンプルテキスト
-          </li>
-          <li class="news__item">
-            <div class="news__meta"><time>2024年11月16日</time><span class="news__tag tag">IR情報</span></div>
-            サンプルテキストサンプルテキストサンプルテキスト
-          </li>
-          <li class="news__item">
-            <div class="news__meta"><time>2024年11月16日</time><span class="news__tag tag">IR情報</span></div>
-            サンプルテキストサンプルテキストサンプルテキスト
-          </li>
-        </ul>
+        <?php
+        $args = array(
+          'post_type' => 'news', // カスタム投稿タイプ「works」を指定
+          'posts_per_page' => 3,  // 表示する投稿数
+          'orderby' => 'date',    // 日付順で並び替え
+          'order' => 'DESC'       // 降順（新しい順）
+        );
+        $news = new WP_Query($args);
+        ?>
+        <?php if (have_posts()) : ?>
+          <ul class="news__list news-list">
+            <?php while ($news->have_posts()) : $news->the_post(); ?>
+              <li class="news-list__item">
+                <div class="news-list__meta">
+                  <time><?php the_time('Y.m.d'); ?></time>
+                  <span class="news-list__tag tag">
+                    <?php
+                    $terms = get_the_terms(get_the_ID(), 'news_category');
+                    if ($terms && !is_wp_error($terms)) :
+                      foreach ($terms as $term) : ?>
+                        <?php echo esc_html($term->name); ?>
+                    <?php endforeach;
+                    endif; ?>
+                  </span>
+                </div>
+                <?php echo the_title(); ?>
+              </li>
+            <?php endwhile; ?>
+          </ul>
+        <?php endif; ?>
       </div>
-      <div class="news__link arrow-link"><a href="">お知らせ一覧へ<img
+      <div class="news__link arrow-link"><a href="<?php echo esc_url(home_url('/news')); ?>">お知らせ一覧へ<img
             src="<?php echo get_theme_file_uri(); ?>/assets/images/top/arrow.png" alt=""></a></div>
     </div>
   </section>
   <section class="about about-margin">
-    <a href="" class="about__inner">
+    <a href="<?php echo esc_url(home_url('/company')); ?>" class="about__inner">
       <div class="about__header section-header">
         <p class="section-header__title section-header--white">About us</p>
         <h2 class="section-header__subtitle section-header--white">会社案内</h2>
@@ -89,32 +105,28 @@
         <h2 class="section-header__subtitle">製品情報</h2>
       </div>
       <div class="product__list product-cards">
-        <a href="" class="product-cards__item product-card">
+        <a href="<?php echo esc_url(home_url('/product#clean')); ?>" class="product-cards__item product-card">
           <div class="product-card__body">
-            <h3 class="product-card__name">ライセンス取得</h3>
-            <p class="product-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-              ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
+            <h3 class="product-card__name">CleanLine</h3>
+            <p class="product-card__text">CleanLineシリーズは、Hygieia Systemsが提供する食品製造現場向けの衛生管理と効率性を追求した製造ライン機器の製品群です。高水準の清潔さを保ちながら、生産効率と安全性を同時に向上させる設計が特徴です。</p>
           </div>
         </a>
-        <a href="" class="product-cards__item product-card">
+        <a href="<?php echo esc_url(home_url('/product#pack')); ?>" class="product-cards__item product-card">
           <div class="product-card__body">
-            <h3 class="product-card__name">ライセンス取得</h3>
-            <p class="product-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-              ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
+            <h3 class="product-card__name">PackPro</h3>
+            <p class="product-card__text">PackProシリーズは、Hygieia Systemsが提供する食品製造業界向けの次世代包装機器の製品群です。正確で効率的な包装を実現し、食品の品質維持、衛生、安全性を最適化することを目的としています。</p>
           </div>
         </a>
-        <a href="" class="product-cards__item product-card">
+        <a href="<?php echo esc_url(home_url('/product#saniti')); ?>" class="product-cards__item product-card">
           <div class="product-card__body">
-            <h3 class="product-card__name">ライセンス取得</h3>
-            <p class="product-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-              ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
+            <h3 class="product-card__name">SanitiFlow</h3>
+            <p class="product-card__text">SanitiFlowシステムは、食品製造現場向けにHygieia Systemsが開発した次世代の衛生管理および自動化ソリューションです。食品の安全性と効率性を最大化するために設計されており、以下のような特長があります。</p>
           </div>
         </a>
-        <a href="" class="product-cards__item product-card">
+        <a href="<?php echo esc_url(home_url('/product#eco')); ?>" class="product-cards__item product-card">
           <div class="product-card__body">
-            <h3 class="product-card__name">ライセンス取得</h3>
-            <p class="product-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-              ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
+            <h3 class="product-card__name">EcoTrack</h3>
+            <p class="product-card__text">EcoTrackテクノロジーは、Hygieia Systemsが開発した食品製造プロセスのエネルギー効率化と環境負荷削減を目的とした統合ソリューションです。生産現場でのリソース最適化を支援し、持続可能な運営を可能にします。</p>
           </div>
         </a>
       </div>
@@ -126,74 +138,51 @@
         <p class="section-header__title">Works</p>
         <h2 class="section-header__subtitle">実績</h2>
       </div>
-      <div class="works__slider swiper js-works-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <a href="" class="works__link works-card">
-              <div class="works-card__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product01.jpg"
-                  alt=""></div>
-              <p class="works-card__text">株式会社〇〇様</p>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="" class="works__link works-card">
-              <div class="works-card__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product01.jpg"
-                  alt=""></div>
-              <p class="works-card__text">株式会社〇〇様</p>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="" class="works__link works-card">
-              <div class="works-card__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product02.jpg"
-                  alt=""></div>
-              <p class="works-card__text">株式会社〇〇様</p>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="" class="works__link works-card">
-              <div class="works-card__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product03.jpg"
-                  alt=""></div>
-              <p class="works-card__text">株式会社〇〇様</p>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="" class="works__link works-card">
-              <div class="works-card__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product04.jpg"
-                  alt=""></div>
-              <p class="works-card__text">株式会社〇〇様</p>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="" class="works__link works-card">
-              <div class="works-card__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product01.jpg"
-                  alt=""></div>
-              <p class="works-card__text">株式会社〇〇様</p>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="" class="works__link works-card">
-              <div class="works-card__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product02.jpg"
-                  alt=""></div>
-              <p class="works-card__text">株式会社〇〇様</p>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="" class="works__link works-card">
-              <div class="works-card__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product03.jpg"
-                  alt=""></div>
-              <p class="works-card__text">株式会社〇〇様</p>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="" class="works__link works-card">
-              <div class="works-card__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product04.jpg"
-                  alt=""></div>
-              <p class="works-card__text">株式会社〇〇様</p>
-            </a>
+      <?php
+      $args = array(
+        'post_type' => 'works', // カスタム投稿タイプ「works」を指定
+        'posts_per_page' => 10,  // 表示する投稿数
+        'orderby' => 'date',    // 日付順で並び替え
+        'order' => 'DESC'       // 降順（新しい順）
+      );
+      $query = new WP_Query($args);
+      ?>
+      <?php if (have_posts()) : ?>
+        <div class="works__slider swiper js-works-swiper">
+          <div class="swiper-wrapper">
+            <?php while ($query->have_posts()) : $query->the_post(); ?>
+              <div class="swiper-slide">
+                <a href="" class="works__link works-card">
+                  <div class="works-card__image">
+                    <?php if (has_post_thumbnail()) : ?>
+                      <?php the_post_thumbnail('full'); ?>
+                    <?php else : ?>
+                      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/product01.jpg" alt="">
+                    <?php endif; ?>
+                  </div>
+                  <div class="works-card__meta">
+                    <h2 class="works-card__title">
+                      <?php the_title(); ?>
+                    </h2>
+                    <p class="works-card__category">
+                      <?php
+                      $terms = get_the_terms(get_the_ID(), 'works_category');
+                      if ($terms && !is_wp_error($terms)) :
+                        foreach ($terms as $term) : ?>
+                          <?php echo esc_html($term->name); ?>
+                      <?php endforeach;
+                      endif; ?>
+                    </p>
+                  </div>
+                </a>
+              </div>
+            <?php endwhile; ?>
+            <?php wp_reset_postdata(); // クエリのリセット 
+            ?>
           </div>
         </div>
-      </div>
-      <div class="works__all arrow-link"><a href="">実績一覧へ<img
+      <?php endif; ?>
+      <div class="works__all arrow-link"><a href="<?php echo esc_url(home_url('/works')); ?>">実績一覧へ<img
             src="<?php echo get_theme_file_uri(); ?>/assets/images/top/arrow.png" alt=""></a></div>
     </div>
   </section>
@@ -204,28 +193,30 @@
         <h2 class="section-header__subtitle">採用情報</h2>
       </div>
       <div class="recruit__contents">
-        <div class="recruit__content">
-          <div class="recruit__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/recruit01.jpg"
+        <a href="<?php echo esc_url(home_url('/recruit#engineer')); ?>" class="recruit__content">
+          <div class="recruit__image"><span></span><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/recruit01.jpg"
               alt=""></div>
           <div class="recruit__body">
             <p class="recruit__text">
               サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
             </p>
-            <div class="recruit__link arrow-link"><a href="">先輩の声へ<img
-                  src="<?php echo get_theme_file_uri(); ?>/assets/images/top/arrow.png" alt=""></a></div>
+            <div class="recruit__arrow arrow-link">先輩の声へ<img
+                src="<?php echo get_theme_file_uri(); ?>/assets/images/top/arrow.png" alt=""></div>
           </div>
-        </div>
-        <div class="recruit__content">
-          <div class="recruit__image"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/recruit02.jpg"
+        </a>
+        <a href="<?php echo esc_url(home_url('/recruit#point')); ?>" class="recruit__content">
+          <div class="recruit__image"><span></span><img src="<?php echo get_theme_file_uri(); ?>/assets/images/top/recruit02.jpg"
               alt=""></div>
           <div class="recruit__body">
             <p class="recruit__text">
               サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
             </p>
-            <div class="recruit__link arrow-link"><a href="">募集要項へ<img
-                  src="<?php echo get_theme_file_uri(); ?>/assets/images/top/arrow.png" alt=""></a></div>
+            <div class="recruit__arrow arrow-link">募集要項へ<img
+                src="<?php echo get_theme_file_uri(); ?>/assets/images/top/arrow.png" alt="">
+            </div>
           </div>
-        </div>
+
+        </a>
       </div>
     </div>
   </section>
